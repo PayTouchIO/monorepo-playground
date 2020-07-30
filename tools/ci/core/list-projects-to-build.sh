@@ -37,6 +37,11 @@ CHANGED_PATHS=$(git diff $COMMIT_RANGE --name-status)
 
 # Look for dependencies between projects
 PROJECT_DEPENDENCIES=$(${DIR}/list-dependencies.sh)
+echo
+echo
+echo ${DIR}
+echo
+echo
 
 # Setup variables for output collecting
 CHANGED_PROJECTS=""
