@@ -32,11 +32,11 @@ for PROJECT in $(${DIR}/list-projects.sh); do
 
     # If project contain `includeBuild` function in any of it's *.gradle file
     # then there is dependency on included project
-    # grep --include=\*.gradle -rwh "$DIR/../../../$PROJECT" -e "includeBuild" | while read INCLUDE; do
-    #     INCLUDE=$(echo "$INCLUDE" | sed -r -n "s/^.*['\"](.*?)['\"].*$/\1/p")
-    #     INCLUDE=$(realpath --relative-to="$DIR/../../.." "$DIR/../../../$PROJECT/$INCLUDE")
-    #     echo "$PROJECT $INCLUDE"
-    # done
+    grep --include=\*.gradle -rwh "$DIR/../../../$PROJECT" -e "includeBuild" | while read INCLUDE; do
+        INCLUDE=$(echo "$INCLUDE" | sed -r -n "s/^.*['\"](.*?)['\"].*$/\1/p")
+        INCLUDE=$(realpath --relative-to="$DIR/../../.." "$DIR/../../../$PROJECT/$INCLUDE")
+        echo "$PROJECT $INCLUDE"
+    done
 
     # Additionaly look into dependency file where each row is path to other project
     # DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
@@ -46,6 +46,6 @@ for PROJECT in $(${DIR}/list-projects.sh); do
     #     done
     # fi
 
-    echo "$PROJECT apps/server"
-    echo "$PROJECT apps/client"
+    # echo "$PROJECT apps/server"
+    # echo "$PROJECT apps/client"
 done
