@@ -39,10 +39,13 @@ for PROJECT in $(${DIR}/list-projects.sh); do
     # done
 
     # Additionaly look into dependency file where each row is path to other project
-    DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
-    if [[ -f $DEPENDENCIES_FILE ]]; then
-        for INCLUDE in $(cat $DEPENDENCIES_FILE); do
-            echo "$PROJECT $INCLUDE"
-        done
-    fi
+    # DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
+    # if [[ -f $DEPENDENCIES_FILE ]]; then
+    #     for INCLUDE in $(cat $DEPENDENCIES_FILE); do
+    #         echo "$PROJECT $INCLUDE"
+    #     done
+    # fi
+
+    echo "$PROJECT apps/server"
+    echo "$PROJECT apps/client"
 done
