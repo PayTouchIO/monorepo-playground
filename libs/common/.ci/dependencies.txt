@@ -1,2 +1,2 @@
-apps/server
-apps/client
+./apps/server
+./apps/client
