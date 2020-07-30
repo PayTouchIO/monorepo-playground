@@ -42,8 +42,8 @@ for PROJECT in $(${DIR}/list-projects.sh); do
     DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
     if [[ -f $DEPENDENCIES_FILE ]]; then
         for INCLUDE in $(cat $DEPENDENCIES_FILE); do
-            INCLUDE=$(realpath --relative-to="$DIR/../../.." "$DIR/../../../$PROJECT/$INCLUDE")
-            echo "$PROJECT $INCLUDE"
+            INCLUDE=$(realpath --relative-to="$DIR/../../.." "$INCLUDE")
+            # echo "$PROJECT $INCLUDE"
         done
     fi
 done
