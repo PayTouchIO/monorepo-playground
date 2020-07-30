@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo 'list-projects-to-build'
+
 # Documentation
 read -r -d '' USAGE_TEXT << EOM
 Usage:
