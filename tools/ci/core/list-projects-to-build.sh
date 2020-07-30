@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo 'list-projects-to-build'
-
 # Documentation
 read -r -d '' USAGE_TEXT << EOM
 Usage:
@@ -55,10 +53,10 @@ CHANGED_DEPENDENCIES=""
 function process_dependants {
     local PROJECT=$1
     local DEPENDENCIES=$(echo "$PROJECT_DEPENDENCIES" | grep ".* $PROJECT")
-    echo "$NEW_DEPENDENCEIS" | while read DEPENDENCY; do
+    echo "$NEW_DEPENDENCIES" | while read DEPENDENCY; do
         DEPENDENCY=$(echo "$DEPENDENCY" | cut -d " " -f1)
         if [[ ! $(echo "$CHANGED_PROJECTS" | grep "$DEPENDENCY") ]]; then
-            NEW_DEPENDENCEIS="$DEPENDENCIES\n$(process_dependants $DEPENDENCY)"
+            NEW_DEPENDENCIES="$DEPENDENCIES\n$(process_dependants $DEPENDENCY)"
         fi
     done
     echo -e "$DEPENDENCIES"

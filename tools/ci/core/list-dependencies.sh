@@ -19,11 +19,6 @@
 #   list-dependencies.sh
 ##
 
-echo 'here'
-echo 'here'
-echo 'here'
-echo 'here'
-
 set -e
 
 # Find script directory (no support for symlinks)
@@ -45,7 +40,6 @@ for PROJECT in $(${DIR}/list-projects.sh); do
 
     # Additionaly look into dependency file where each row is path to other project
     DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
-
     if [[ -f $DEPENDENCIES_FILE ]]; then
         for INCLUDE in $(cat $DEPENDENCIES_FILE); do
             echo "$PROJECT $INCLUDE"
