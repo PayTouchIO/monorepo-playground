@@ -1,0 +1,68 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8
+    steps:
+      - checkout
+      - run:
+          name: Trigger build for modified projects
+          shell: /bin/bash
+          command: tools/ci/core/build.sh
+
+  server:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/project/apps/server
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Build Server
+          command: ./gradlew build
+
+  client:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/project/apps/client
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Build Client
+          command: ./gradlew build        
+
+  common:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/project/libs/common
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Build Common
+          command: ./gradlew build      
+
+  logging:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/project/libs/logging
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Build Logging
+          command: ./gradlew build      
+
+  gradle-versioning-plugin:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/project/tools/gradle-plugins/gradle-versioning-plugin
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Build Gradle Versioning Plugin
+          command: ./gradlew build   
+
