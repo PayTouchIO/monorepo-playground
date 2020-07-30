@@ -1,2 +1,2 @@
-server
-client
+apps/server
+apps/client
