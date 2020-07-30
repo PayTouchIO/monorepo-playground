@@ -19,8 +19,8 @@ jobs:
       - checkout:
           path: ~/project
       - run:
-          name: Build Server
-          command: ./gradlew build
+          command: |
+            echo Build Server
 
   client:
     docker:
@@ -30,8 +30,8 @@ jobs:
       - checkout:
           path: ~/project
       - run:
-          name: Build Client
-          command: ./gradlew build        
+          command: |
+            echo Build Client
 
   common:
     docker:
@@ -41,8 +41,8 @@ jobs:
       - checkout:
           path: ~/project
       - run:
-          name: Build Common
-          command: ./gradlew build      
+          command: |
+            echo Build Common
 
   logging:
     docker:
@@ -52,8 +52,8 @@ jobs:
       - checkout:
           path: ~/project
       - run:
-          name: Build Logging
-          command: ./gradlew build      
+          command: |
+            echo Build Logging
 
   gradle-versioning-plugin:
     docker:
@@ -64,5 +64,4 @@ jobs:
           path: ~/project
       - run:
           name: Build Gradle Versioning Plugin
-          command: ./gradlew build   
-
+          command: ./gradlew build
