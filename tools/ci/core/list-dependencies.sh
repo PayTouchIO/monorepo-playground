@@ -40,6 +40,9 @@ for PROJECT in $(${DIR}/list-projects.sh); do
 
     # Additionaly look into dependency file where each row is path to other project
     DEPENDENCIES_FILE="$DIR/../../../$PROJECT/$CI_DEPENDENCIES_FILE"
+    echo
+    echo $DEPENDENCIES_FILE
+    echo
     if [[ -f $DEPENDENCIES_FILE ]]; then
         for INCLUDE in $(cat $DEPENDENCIES_FILE); do
             echo "$PROJECT $INCLUDE"
