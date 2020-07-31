@@ -9,3 +9,4 @@ public class ClientApp {
 		System.out.println("For now I know our commons: " + Commons.tellMeWhoWeAre());
 	}
 }
+// 1
