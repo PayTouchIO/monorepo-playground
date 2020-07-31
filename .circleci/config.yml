@@ -14,7 +14,7 @@ jobs:
   server:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/apps/server
+    working_directory: ~/project/server
     steps:
       - checkout:
           path: ~/project
@@ -25,7 +25,7 @@ jobs:
   client:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/apps/client
+    working_directory: ~/project/client
     steps:
       - checkout:
           path: ~/project
@@ -36,21 +36,10 @@ jobs:
   common:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/libs/common
+    working_directory: ~/project/common
     steps:
       # - checkout:
       #     path: ~/project
       - run:
           command: |
             echo Build Common
-
-  logging:
-    docker:
-      - image: circleci/openjdk:8
-    working_directory: ~/project/libs/logging
-    steps:
-      - checkout:
-          path: ~/project
-      - run:
-          command: |
-            echo Build Logging
