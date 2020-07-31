@@ -20,7 +20,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # Resolve commit range for current build
 LAST_SUCCESSFUL_COMMIT=$(${CI_PLUGIN} hash last)
 echo "Last commit: ${LAST_SUCCESSFUL_COMMIT}"
-if [[ ${LAST_SUCCESSFUL_COMMIT} == "null" || -z $(git branch --contains ${LAST_SUCCESSFUL_COMMIT})]]; then
+if [[ ${LAST_SUCCESSFUL_COMMIT} == "null" || -z $(git branch --contains ${LAST_SUCCESSFUL_COMMIT}) ]]; then
     COMMIT_RANGE="origin/master"
 else
     COMMIT_RANGE="$(${CI_PLUGIN} hash current)..${LAST_SUCCESSFUL_COMMIT}"
