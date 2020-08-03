@@ -18,9 +18,19 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - restore_cache:
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: sbt-cache
       - run:
           command: |
             sbt compile
+      - save_cache:
+          key: sbt-cache
+          paths:
+            - "~/.cache/coursier"
+            - "~/.ivy2/cache"
+            - "~/.m2"
+            - "~/.sbt"
 
   domain:
     docker:
@@ -29,9 +39,19 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - restore_cache:
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: sbt-cache
       - run:
           command: |
             sbt test
+      - save_cache:
+          key: sbt-cache
+          paths:
+            - "~/.cache/coursier"
+            - "~/.ivy2/cache"
+            - "~/.m2"
+            - "~/.sbt"
 
   pt_core:
     docker:
@@ -40,9 +60,19 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - restore_cache:
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: sbt-cache
       - run:
           command: |
             sbt test
+      - save_cache:
+          key: sbt-cache
+          paths:
+            - "~/.cache/coursier"
+            - "~/.ivy2/cache"
+            - "~/.m2"
+            - "~/.sbt"
 
   pt_ordering:
     docker:
@@ -51,6 +81,16 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - restore_cache:
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: sbt-cache
       - run:
           command: |
             sbt test
+      - save_cache:
+          key: sbt-cache
+          paths:
+            - "~/.cache/coursier"
+            - "~/.ivy2/cache"
+            - "~/.m2"
+            - "~/.sbt"

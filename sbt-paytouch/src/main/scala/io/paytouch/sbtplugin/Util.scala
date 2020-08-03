@@ -7,7 +7,8 @@ import scala.sys.process._
 import sbt._
 
 object Util {
-  def styled(in: Any): String = scala.Console.CYAN + in + scala.Console.RESET
+  def styled(in: Any): String =
+    scala.Console.CYAN + in + scala.Console.RESET
 
   def prompt(projectName: String): String =
     gitPrompt
