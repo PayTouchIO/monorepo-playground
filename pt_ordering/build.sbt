@@ -39,8 +39,8 @@ lazy val persistence =
     .in(file("server/02-persistence"))
     .dependsOn(core % Cctt)
 
-// lazy val `pt_core/client` =
-//   ProjectRef(file("../pt_core"), "client")
+lazy val `pt_core/client` =
+  ProjectRef(file("../pt_core"), "client")
 
 lazy val server =
   project
