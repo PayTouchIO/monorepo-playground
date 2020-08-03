@@ -1,4 +1,2 @@
 sbt-paytouch
 domain
-pt_core
-pt_ordering

@@ -11,35 +11,42 @@ jobs:
           shell: /bin/bash
           command: tools/ci/core/build.sh
 
-  server:
+  sbt-paytouch:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/server
+    working_directory: ~/sbt-paytouch
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - run:
           command: |
-            echo Build Server
+            sbt compile
 
-  client:
+  domain:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/client
+    working_directory: ~/domain
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - run:
           command: |
-            echo Build Client
+            sbt test
 
-  common:
+  pt_core:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/common
+    working_directory: ~/pt_core
     steps:
-      # - checkout:
-      #     path: ~/project
+      - checkout
       - run:
           command: |
-            echo Build Common
+            sbt test
+
+  pt_ordering:
+    docker:
+      - image: circleci/openjdk:8
+    working_directory: ~/pt_core
+    steps:
+      - checkout
+      - run:
+          command: |
+            sbt test
