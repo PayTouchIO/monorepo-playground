@@ -1,7 +1,6 @@
 lazy val `pt_core` =
   project
     .in(file("."))
-    .settings(name := "pt_core")
     .aggregate(
       core,
       delivery,
