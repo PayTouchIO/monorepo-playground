@@ -3,7 +3,7 @@ package sbtplugin
 
 import sbt._
 
-trait Dependencies {
+object Dependencies {
   case object com {
     case object github {
       case object alexarchambault {
