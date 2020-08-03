@@ -30,7 +30,7 @@ lazy val persistence =
 
 lazy val server =
   project
-    .in(file("server/04-server"))
+    .in(file("server/03-server"))
     .dependsOn(delivery % Cctt)
     .dependsOn(persistence % Cctt)
 
