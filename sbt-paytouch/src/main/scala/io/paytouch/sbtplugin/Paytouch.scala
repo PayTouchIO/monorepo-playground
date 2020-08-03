@@ -9,15 +9,15 @@ import org.scalafmt.sbt.ScalafmtPlugin.autoImport._
 
 import bloop.integrations.sbt._
 
-import Dependencies._
 import Util._
 
 object Paytouch extends AutoPlugin {
   // Everything inside of this object can be used without imports in client projects.
-  object autoImport {
-    val Dependencies = sbtplugin.Dependencies
+  object autoImport extends Dependencies.Binary with Dependencies.Source {
     val Cctt = sbtplugin.Util.Cctt
   }
+
+  import autoImport._
 
   // The plugin will be automatically enabled by the clients (I think).
   // To disable use project.disablePlugins(Paytouch).

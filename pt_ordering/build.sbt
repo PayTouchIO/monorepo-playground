@@ -9,18 +9,6 @@ lazy val `pt_ordering` =
       client
     )
 
-lazy val domain =
-  ProjectRef(file("../domain"), "domain")
-
-// lazy val misc =
-//   ProjectRef(file("../misc"), "misc")
-
-// lazy val protocol =
-//   ProjectRef(file("../protocol"), "protocol")
-
-// lazy val util =
-//   ProjectRef(file("../util"), "util")
-
 lazy val core =
   project
     .in(file("server/01-core"))
