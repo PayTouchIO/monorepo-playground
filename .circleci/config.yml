@@ -14,9 +14,10 @@ jobs:
   sbt-paytouch:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/sbt-paytouch
+    working_directory: ~/project/sbt-paytouch
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
           command: |
             sbt compile
@@ -24,9 +25,10 @@ jobs:
   domain:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/domain
+    working_directory: ~/project/domain
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
           command: |
             sbt test
@@ -34,9 +36,10 @@ jobs:
   pt_core:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/pt_core
+    working_directory: ~/project/pt_core
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
           command: |
             sbt test
@@ -44,9 +47,10 @@ jobs:
   pt_ordering:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/pt_core
+    working_directory: ~/project/pt_ordering
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - run:
           command: |
             sbt test
