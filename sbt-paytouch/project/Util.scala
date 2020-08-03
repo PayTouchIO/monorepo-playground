@@ -40,7 +40,7 @@ object Util {
         .split(" ")
         .toSeq
         .!!(noopProcessLogger)
-        .trim
+        .trim,
     ).toOption
 
   private val noopProcessLogger: ProcessLogger =

@@ -62,6 +62,7 @@ lazy val persistence =
     .dependsOn(core % Cctt)
     .settings(commonSettings: _*)
 
+// works fine locally but fails on CI
 // lazy val `pt_core/client` =
 //   ProjectRef(file("../pt_core"), "client")
 

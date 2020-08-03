@@ -14,7 +14,7 @@ jobs:
   sbt-paytouch:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/sbt-paytouch
+    working_directory: ~/project
     steps:
       - checkout:
           path: ~/project
@@ -23,6 +23,7 @@ jobs:
           key: sbt-cache
       - run:
           command: |
+            cd sbt-paytouch
             sbt compile
       - save_cache:
           key: sbt-cache
@@ -35,7 +36,7 @@ jobs:
   domain:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/domain
+    working_directory: ~/project
     steps:
       - checkout:
           path: ~/project
@@ -44,6 +45,7 @@ jobs:
           key: sbt-cache
       - run:
           command: |
+            cd domain
             sbt test
       - save_cache:
           key: sbt-cache
@@ -56,7 +58,7 @@ jobs:
   pt_core:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/pt_core
+    working_directory: ~/project
     steps:
       - checkout:
           path: ~/project
@@ -65,6 +67,7 @@ jobs:
           key: sbt-cache
       - run:
           command: |
+            cd pt_core
             sbt test
       - save_cache:
           key: sbt-cache
@@ -77,7 +80,7 @@ jobs:
   pt_ordering:
     docker:
       - image: circleci/openjdk:8
-    working_directory: ~/project/pt_ordering
+    working_directory: ~/project
     steps:
       - checkout:
           path: ~/project
@@ -86,6 +89,7 @@ jobs:
           key: sbt-cache
       - run:
           command: |
+            cd pt_ordering
             sbt test
       - save_cache:
           key: sbt-cache
