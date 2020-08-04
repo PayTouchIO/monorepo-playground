@@ -19,7 +19,7 @@ jobs:
       - checkout:
           path: ~/project
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           key: sbt-cache
       - run:
@@ -34,12 +34,12 @@ jobs:
             - "~/.m2"
             - "~/.sbt"
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
-            - sbt-paytouch/target
-            - domain/target
-            - pt_core/target
-            - pt_ordering/target
+            - project/sbt-paytouch/target
+            - project/domain/target
+            - project/pt_core/target
+            - project/pt_ordering/target
 
   domain:
     docker:
@@ -49,7 +49,7 @@ jobs:
       - checkout:
           path: ~/project
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           key: sbt-cache
       - run:
@@ -64,12 +64,12 @@ jobs:
             - "~/.m2"
             - "~/.sbt"
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
-            - sbt-paytouch/target
-            - domain/target
-            - pt_core/target
-            - pt_ordering/target
+            - project/sbt-paytouch/target
+            - project/domain/target
+            - project/pt_core/target
+            - project/pt_ordering/target
 
   pt_core:
     docker:
@@ -79,7 +79,7 @@ jobs:
       - checkout:
           path: ~/project
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           key: sbt-cache
       - run:
@@ -94,12 +94,12 @@ jobs:
             - "~/.m2"
             - "~/.sbt"
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
-            - sbt-paytouch/target
-            - domain/target
-            - pt_core/target
-            - pt_ordering/target
+            - project/sbt-paytouch/target
+            - project/domain/target
+            - project/pt_core/target
+            - project/pt_ordering/target
 
   pt_ordering:
     docker:
@@ -109,7 +109,7 @@ jobs:
       - checkout:
           path: ~/project
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           key: sbt-cache
       - run:
@@ -124,9 +124,9 @@ jobs:
             - "~/.m2"
             - "~/.sbt"
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
-            - sbt-paytouch/target
-            - domain/target
-            - pt_core/target
-            - pt_ordering/target
+            - project/sbt-paytouch/target
+            - project/domain/target
+            - project/pt_core/target
+            - project/pt_ordering/target
