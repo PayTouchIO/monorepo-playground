@@ -18,8 +18,9 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - attach_workspace:
+          at: ~/project
       - restore_cache:
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: sbt-cache
       - run:
           command: |
@@ -32,6 +33,10 @@ jobs:
             - "~/.ivy2/cache"
             - "~/.m2"
             - "~/.sbt"
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target/*
 
   domain:
     docker:
@@ -40,8 +45,9 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - attach_workspace:
+          at: ~/project
       - restore_cache:
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: sbt-cache
       - run:
           command: |
@@ -54,6 +60,10 @@ jobs:
             - "~/.ivy2/cache"
             - "~/.m2"
             - "~/.sbt"
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target/*
 
   pt_core:
     docker:
@@ -62,8 +72,9 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - attach_workspace:
+          at: ~/project
       - restore_cache:
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: sbt-cache
       - run:
           command: |
@@ -76,6 +87,10 @@ jobs:
             - "~/.ivy2/cache"
             - "~/.m2"
             - "~/.sbt"
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target/*
 
   pt_ordering:
     docker:
@@ -84,8 +99,9 @@ jobs:
     steps:
       - checkout:
           path: ~/project
+      - attach_workspace:
+          at: ~/project
       - restore_cache:
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: sbt-cache
       - run:
           command: |
@@ -98,3 +114,7 @@ jobs:
             - "~/.ivy2/cache"
             - "~/.m2"
             - "~/.sbt"
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target/*
