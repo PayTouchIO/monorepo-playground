@@ -36,10 +36,10 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - sbt-paytouch/target/*
-            - domain/target/*
-            - pt_core/target/*
-            - pt_ordering/target/*
+            - sbt-paytouch/target
+            - domain/target
+            - pt_core/target
+            - pt_ordering/target
 
   domain:
     docker:
@@ -66,10 +66,10 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - sbt-paytouch/target/*
-            - domain/target/*
-            - pt_core/target/*
-            - pt_ordering/target/*
+            - sbt-paytouch/target
+            - domain/target
+            - pt_core/target
+            - pt_ordering/target
 
   pt_core:
     docker:
@@ -96,10 +96,10 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - sbt-paytouch/target/*
-            - domain/target/*
-            - pt_core/target/*
-            - pt_ordering/target/*
+            - sbt-paytouch/target
+            - domain/target
+            - pt_core/target
+            - pt_ordering/target
 
   pt_ordering:
     docker:
@@ -126,7 +126,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - sbt-paytouch/target/*
-            - domain/target/*
-            - pt_core/target/*
-            - pt_ordering/target/*
+            - sbt-paytouch/target
+            - domain/target
+            - pt_core/target
+            - pt_ordering/target
