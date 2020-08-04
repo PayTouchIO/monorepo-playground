@@ -36,7 +36,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - target/*
+            - sbt-paytouch/target/*
 
   domain:
     docker:
@@ -63,7 +63,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - target/*
+            - domain/target/*
 
   pt_core:
     docker:
@@ -90,7 +90,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - target/*
+            - pt_core/target/*
 
   pt_ordering:
     docker:
@@ -117,4 +117,4 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - target/*
+            - pt_ordering/target/*
