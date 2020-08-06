@@ -91,13 +91,13 @@ commands:
       - run:
           name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
           command: |
-            cd domain
+            cd $CIRCLE_JOB
             find -name target -exec tar -zcf targets.tar.gz -H posix {} +
 
       - persist_to_workspace:
           root: ~/project
           paths:
-            - domain/targets.tar.gz
+            - $CIRCLE_JOB/targets.tar.gz
 
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
