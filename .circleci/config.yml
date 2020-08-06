@@ -91,10 +91,10 @@ commands:
       - persist_to_workspace:
           root: /tmp/domain
           paths:
-            - ~/project/domain/*
+            - domain/*
 
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
     steps:
       - attach_workspace:
-          at: ~/project/domain
+          at: /tmp/domain
