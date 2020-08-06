@@ -89,7 +89,7 @@ commands:
     description: "Caches sbt output (the target) folder."
     steps:
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: ~/project
           paths:
             - domain
 
