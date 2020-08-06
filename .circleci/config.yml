@@ -98,4 +98,4 @@ commands:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: cp -r /tmp/workspace/domain ~/project
+      - run: cp --verbose -r /tmp/workspace/domain ~/project
