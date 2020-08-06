@@ -24,7 +24,7 @@ jobs:
       - run:
           command: |
             cd sbt-paytouch
-            sbt compile
+            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
       - cache_dependencies_across_workflows:
           project: sbt-paytouch
       - cache_compilation_within_workflow:
@@ -39,7 +39,7 @@ jobs:
       - run:
           command: |
             cd domain
-            sbt compile
+            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
       - cache_dependencies_across_workflows:
           project: domain
       - cache_compilation_within_workflow:
@@ -54,7 +54,7 @@ jobs:
       - run:
           command: |
             cd pt_core
-            sbt compile
+            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
       - cache_dependencies_across_workflows:
           project: pt_core
       - cache_compilation_within_workflow:
@@ -69,7 +69,7 @@ jobs:
       - run:
           command: |
             cd pt_ordering
-            sbt compile
+            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
       - cache_dependencies_across_workflows:
           project: pt_ordering
 
@@ -114,6 +114,7 @@ commands:
         type: string
     steps:
       - restore_cache:
+          name: Restoring << parameters.project >> dependencies
           key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
 
   cache_compilation_within_workflow:
@@ -155,6 +156,6 @@ commands:
         type: string
     steps:
       - run:
-          name: Restoring << parameters.project >> (step succeeds even if restoration fails)
+          name: Restoring << parameters.project >> compilation (step succeeds even if restoration fails)
           command: |
             tar -xvf /tmp/workspace/<< parameters.project >>/targets.tar.gz --directory ~/project/<< parameters.project >> || true
