@@ -2,7 +2,7 @@ version: 2.1
 
 workflows:
   version: 2
-  qa:
+  QA:
     jobs:
       - sbt-paytouch
       - domain:
@@ -37,12 +37,14 @@ jobs:
             cd domain
             sbt compile
       - cache_dependencies_across_workflows
+      - cache_compilation_within_workflow
 
   pt_core:
     executor: jdk
     steps:
       - checkout
       - restore_dependencies
+      - restore_compilation
       - run:
           command: |
             cd pt_core
@@ -82,10 +84,17 @@ commands:
     steps:
       - restore_cache:
           key: dependencies
-  # cache_compilation_within_workflow:
-  #   description: "Caches sbt output (the target) folder"
-  #   steps:
-  #     - persist_to_workspace:
-  #         root: ~/
-  #         paths:
-  #           - target/*
+
+  cache_compilation_within_workflow:
+    description: "Caches sbt output (the target) folder."
+    steps:
+      - persist_to_workspace:
+          root: ~/domain
+          paths:
+            - target/*
+
+  restore_compilation:
+    description: "Restores sbt output (the target) folder from cache."
+    steps:
+      - attach_workspace:
+          at: ~/domain
