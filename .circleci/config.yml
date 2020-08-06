@@ -136,6 +136,8 @@ commands:
   restore_all_compilations:
     description: "Restores sbt output (the target) folder from cache."
     steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - restore_single_project_compilation:
           project: sbt-paytouch
       - restore_single_project_compilation:
@@ -152,9 +154,7 @@ commands:
         description: project
         type: string
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
       - run:
-          name: Restore << parameters.project >> (step succeeds even if restoration fails)
+          name: Restoring << parameters.project >> (step succeeds even if restoration fails)
           command: |
             tar -xvf /tmp/workspace/<< parameters.project >>/targets.tar.gz --directory ~/project/<< parameters.project >> || true
