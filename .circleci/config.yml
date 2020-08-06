@@ -1,102 +1,64 @@
 version: 2.1
 
+workflows:
+  version: 2
+  qa:
+    jobs:
+      - sbt-paytouch
+      - domain:
+          requires:
+            - sbt-paytouch
+      - pt_core:
+          requires:
+            - domain
+      - pt_ordering:
+          requires:
+            - pt_core
+
 jobs:
-  build:
+  sbt-paytouch:
     executor: jdk
     steps:
       - checkout
-      - run:
-          name: Trigger build for modified projects
-          shell: /bin/bash
-          command: tools/ci/core/build.sh
-
-  sbt-paytouch:
-    executor: jdk
-    working_directory: ~/project
-    steps:
-      - checkout:
-          path: ~/project
-      - attach_workspace:
-          at: ~/
       - restore_dependencies
       - run:
           command: |
             cd sbt-paytouch
             sbt compile
-      - cache_dependencies
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/sbt-paytouch/target*
-            - project/domain/target*
-            - project/pt_core/target*
-            - project/pt_ordering/target*
+      - cache_dependencies_across_workflows
 
   domain:
     executor: jdk
-    working_directory: ~/project
     steps:
-      - checkout:
-          path: ~/project
-      - attach_workspace:
-          at: ~/
+      - checkout
       - restore_dependencies
       - run:
           command: |
             cd domain
-            sbt test
-      - cache_dependencies
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/sbt-paytouch/target*
-            - project/domain/target*
-            - project/pt_core/target*
-            - project/pt_ordering/target*
+            sbt compile
+      - cache_dependencies_across_workflows
 
   pt_core:
     executor: jdk
-    working_directory: ~/project
     steps:
-      - checkout:
-          path: ~/project
-      - attach_workspace:
-          at: ~/
+      - checkout
       - restore_dependencies
       - run:
           command: |
             cd pt_core
-            sbt test
-      - cache_dependencies
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/sbt-paytouch/target*
-            - project/domain/target*
-            - project/pt_core/target*
-            - project/pt_ordering/target*
+            sbt compile
+      - cache_dependencies_across_workflows
 
   pt_ordering:
     executor: jdk
-    working_directory: ~/project
     steps:
-      - checkout:
-          path: ~/project
-      - attach_workspace:
-          at: ~/
+      - checkout
       - restore_dependencies
       - run:
           command: |
             cd pt_ordering
-            sbt test
-      - cache_dependencies
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - project/sbt-paytouch/target*
-            - project/domain/target*
-            - project/pt_core/target*
-            - project/pt_ordering/target*
+            sbt compile
+      - cache_dependencies_across_workflows
 
 executors:
   jdk:
@@ -104,19 +66,26 @@ executors:
       - image: circleci/openjdk:8
 
 commands:
-  cache_dependencies:
+  cache_dependencies_across_workflows:
     description: "Caches coursier, ivy2, m2 and sbt artifacts."
     steps:
       - save_cache:
           key: dependencies
           paths:
-            - "~/.cache/coursier"
-            - "~/.ivy2/cache"
-            - "~/.m2"
-            - "~/.sbt"
+            - ~/.cache/coursier
+            - ~/.ivy2/cache
+            - ~/.m2
+            - ~/.sbt
 
   restore_dependencies:
     description: "Restores coursier, ivy2, m2 and sbt artifacts from cache."
     steps:
       - restore_cache:
           key: dependencies
+  # cache_compilation_within_workflow:
+  #   description: "Caches sbt output (the target) folder"
+  #   steps:
+  #     - persist_to_workspace:
+  #         root: ~/
+  #         paths:
+  #           - target/*
