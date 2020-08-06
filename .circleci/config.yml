@@ -2,8 +2,7 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: circleci/openjdk:8
+    executor: jdk
     steps:
       - checkout
       - run:
@@ -12,8 +11,7 @@ jobs:
           command: tools/ci/core/build.sh
 
   sbt-paytouch:
-    docker:
-      - image: circleci/openjdk:8
+    executor: jdk
     working_directory: ~/project
     steps:
       - checkout:
@@ -35,8 +33,7 @@ jobs:
             - project/pt_ordering/target*
 
   domain:
-    docker:
-      - image: circleci/openjdk:8
+    executor: jdk
     working_directory: ~/project
     steps:
       - checkout:
@@ -58,8 +55,7 @@ jobs:
             - project/pt_ordering/target*
 
   pt_core:
-    docker:
-      - image: circleci/openjdk:8
+    executor: jdk
     working_directory: ~/project
     steps:
       - checkout:
@@ -81,8 +77,7 @@ jobs:
             - project/pt_ordering/target*
 
   pt_ordering:
-    docker:
-      - image: circleci/openjdk:8
+    executor: jdk
     working_directory: ~/project
     steps:
       - checkout:
@@ -102,6 +97,11 @@ jobs:
             - project/domain/target*
             - project/pt_core/target*
             - project/pt_ordering/target*
+
+executors:
+  jdk:
+    docker:
+      - image: circleci/openjdk:8
 
 commands:
   cache_dependencies:
