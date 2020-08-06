@@ -91,6 +91,7 @@ commands:
       - run:
           name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
           command: |
+            echo $CIRCLE_JOB
             cd $CIRCLE_JOB
             find -name target -exec tar -zcf targets.tar.gz -H posix {} +
 
