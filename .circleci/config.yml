@@ -88,6 +88,7 @@ commands:
   cache_compilation_within_workflow:
     description: "Caches sbt output (the target) folder."
     steps:
+      - run: mkdir -p /tmp/domain
       - persist_to_workspace:
           root: /tmp/domain
           paths:
@@ -96,6 +97,5 @@ commands:
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
     steps:
-      - run: mkdir -p /tmp/domain
       - attach_workspace:
           at: /tmp/domain
