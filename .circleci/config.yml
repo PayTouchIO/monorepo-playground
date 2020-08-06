@@ -115,7 +115,7 @@ commands:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: tar -xvf /tmp/workspace/sbt-paytouch/targets.tar.gz --directory ~/project/sbt-paytouch
-      - run: tar -xvf /tmp/workspace/domain/targets.tar.gz --directory ~/project/domain
-      - run: tar -xvf /tmp/workspace/pt_core/targets.tar.gz --directory ~/project/pt_core
-      # - run: tar -xvf /tmp/workspace/pt_ordering/targets.tar.gz --directory ~/project/pt_ordering # not necessary for now
+      - run: tar -xvf /tmp/workspace/sbt-paytouch/targets.tar.gz --directory ~/project/sbt-paytouch || true
+      - run: tar -xvf /tmp/workspace/domain/targets.tar.gz --directory ~/project/domain || true
+      - run: tar -xvf /tmp/workspace/pt_core/targets.tar.gz --directory ~/project/pt_core || true
+      - run: tar -xvf /tmp/workspace/pt_ordering/targets.tar.gz --directory ~/project/pt_ordering || true
