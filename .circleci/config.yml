@@ -91,8 +91,7 @@ commands:
       - run:
           name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
           command: |
-            find -name target -exec tar -zcf domain/targets.tar.gz -H posix {} + && \
-            find -name target -exec rm -r {} +
+            find -name target -exec tar -zcf domain/targets.tar.gz -H posix {}
 
       - persist_to_workspace:
           root: ~/project
@@ -104,5 +103,4 @@ commands:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: cp -p /tmp/workspace/domain/targets.tar.gz ~/project/domain
-      - run: tar -xvf ~/project/domain/targets.tar.gz --directory ~/project/domain
+      - run: tar -xvf /tmp/workspace/domain/targets.tar.gz --directory ~/project/domain
