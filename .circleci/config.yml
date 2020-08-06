@@ -91,16 +91,16 @@ commands:
       - run:
           name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
           command: |
-            find -name target -exec tar -zcf ~/project/domain/targets.tar.gz -H posix {} +
+            find -name target -exec tar -zcf ~/project/domain-targets.tar.gz -H posix {} +
 
       - persist_to_workspace:
           root: ~/project
           paths:
-            - domain/targets.tar.gz
+            - domain-targets.tar.gz
 
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: tar -xvf /tmp/workspace/domain/targets.tar.gz --directory ~/project/domain
+      - run: tar -xvf /tmp/workspace/domain-targets.tar.gz --directory ~/project/domain
