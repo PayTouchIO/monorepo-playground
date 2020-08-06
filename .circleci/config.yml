@@ -88,14 +88,21 @@ commands:
   cache_compilation_within_workflow:
     description: "Caches sbt output (the target) folder."
     steps:
+      - run:
+          name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
+          command: |
+            find -name target -exec tar -zcf targets.tar.gz -H posix {} + && \
+            find -name target -exec rm -r {} +
+
       - persist_to_workspace:
           root: ~/project
           paths:
-            - domain
+            - domain/targets.tar.gz
 
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - run: cp -rpv /tmp/workspace/domain/. ~/project/domain
+      - run: cp -p /tmp/workspace/domain/targets.tar.gz ~/project/domain
+      - run: tar -xvf ~/project/domain/targets.tar.gz --directory ~/project/domain
