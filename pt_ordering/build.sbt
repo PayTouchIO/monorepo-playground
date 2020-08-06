@@ -6,16 +6,16 @@ lazy val `pt_ordering` =
       delivery,
       persistence,
       server,
-      client
+      client,
     )
 
 lazy val core =
   project
     .in(file("server/01-core"))
     .dependsOn(domain % Cctt)
-    // .dependsOn(misc % Cctt)
-    // .dependsOn(protocol % Cctt)
-    // .dependsOn(util % Cctt)
+// .dependsOn(misc % Cctt)
+// .dependsOn(protocol % Cctt)
+// .dependsOn(util % Cctt)
 
 lazy val delivery =
   project

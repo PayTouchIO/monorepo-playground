@@ -6,7 +6,7 @@ addCommandAlias("t", "test")
 addCommandAlias("r", "run")
 addCommandAlias(
   "up2date",
-  "reload plugins; dependencyUpdates; reload return; dependencyUpdates"
+  "reload plugins; dependencyUpdates; reload return; dependencyUpdates",
 )
 
 onLoadMessage +=
