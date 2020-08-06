@@ -37,7 +37,8 @@ jobs:
             cd domain
             sbt compile
       - cache_dependencies_across_workflows
-      - cache_compilation_within_workflow
+      - cache_compilation_within_workflow:
+          project: domain
 
   pt_core:
     executor: jdk
@@ -87,18 +88,21 @@ commands:
 
   cache_compilation_within_workflow:
     description: "Caches sbt output (the target) folder."
+    parameters:
+      project:
+        description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
+        type: string
     steps:
       - run:
           name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
           command: |
-            echo ${CIRCLE_JOB}
-            cd ${CIRCLE_JOB}
+            cd << parameters.project >>
             find -name target -exec tar -zcf targets.tar.gz -H posix {} +
 
       - persist_to_workspace:
           root: ~/project
           paths:
-            - ${CIRCLE_JOB}/targets.tar.gz
+            - << parameters.project >>/targets.tar.gz
 
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
