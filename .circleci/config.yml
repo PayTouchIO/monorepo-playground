@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -20,19 +20,12 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          key: sbt-cache
+      - restore_dependencies
       - run:
           command: |
             cd sbt-paytouch
             sbt compile
-      - save_cache:
-          key: sbt-cache
-          paths:
-            - "~/.cache/coursier"
-            - "~/.ivy2/cache"
-            - "~/.m2"
-            - "~/.sbt"
+      - cache_dependencies
       - persist_to_workspace:
           root: ~/
           paths:
@@ -50,19 +43,12 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          key: sbt-cache
+      - restore_dependencies
       - run:
           command: |
             cd domain
             sbt test
-      - save_cache:
-          key: sbt-cache
-          paths:
-            - "~/.cache/coursier"
-            - "~/.ivy2/cache"
-            - "~/.m2"
-            - "~/.sbt"
+      - cache_dependencies
       - persist_to_workspace:
           root: ~/
           paths:
@@ -80,19 +66,12 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          key: sbt-cache
+      - restore_dependencies
       - run:
           command: |
             cd pt_core
             sbt test
-      - save_cache:
-          key: sbt-cache
-          paths:
-            - "~/.cache/coursier"
-            - "~/.ivy2/cache"
-            - "~/.m2"
-            - "~/.sbt"
+      - cache_dependencies
       - persist_to_workspace:
           root: ~/
           paths:
@@ -110,19 +89,12 @@ jobs:
           path: ~/project
       - attach_workspace:
           at: ~/
-      - restore_cache:
-          key: sbt-cache
+      - restore_dependencies
       - run:
           command: |
             cd pt_ordering
             sbt test
-      - save_cache:
-          key: sbt-cache
-          paths:
-            - "~/.cache/coursier"
-            - "~/.ivy2/cache"
-            - "~/.m2"
-            - "~/.sbt"
+      - cache_dependencies
       - persist_to_workspace:
           root: ~/
           paths:
@@ -130,3 +102,21 @@ jobs:
             - project/domain/target*
             - project/pt_core/target*
             - project/pt_ordering/target*
+
+commands:
+  cache_dependencies:
+    description: "Caches coursier, ivy2, m2 and sbt artifacts."
+    steps:
+      - save_cache:
+          key: dependencies
+          paths:
+            - "~/.cache/coursier"
+            - "~/.ivy2/cache"
+            - "~/.m2"
+            - "~/.sbt"
+
+  restore_dependencies:
+    description: "Restores coursier, ivy2, m2 and sbt artifacts from cache."
+    steps:
+      - restore_cache:
+          key: dependencies
