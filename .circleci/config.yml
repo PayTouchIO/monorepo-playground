@@ -87,7 +87,7 @@ commands:
         type: string
     steps:
       - save_cache:
-          key: v1-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/scala/Paytouch.scala" }}
+          key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
           paths:
             - ~/.cache/coursier
             - ~/.ivy2/cache
@@ -114,7 +114,7 @@ commands:
         type: string
     steps:
       - restore_cache:
-          key: v1-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/scala/Paytouch.scala" }}
+          key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
 
   cache_compilation_within_workflow:
     description: Caches sbt output (the target) folder.
