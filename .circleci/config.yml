@@ -26,12 +26,15 @@ jobs:
             cd sbt-paytouch
             sbt compile
       - cache_dependencies_across_workflows
+      - cache_compilation_within_workflow:
+          project: sbt-paytouch
 
   domain:
     executor: jdk
     steps:
       - checkout
       - restore_dependencies
+      - restore_compilation
       - run:
           command: |
             cd domain
@@ -51,12 +54,15 @@ jobs:
             cd pt_core
             sbt compile
       - cache_dependencies_across_workflows
+      - cache_compilation_within_workflow:
+          project: pt_core
 
   pt_ordering:
     executor: jdk
     steps:
       - checkout
       - restore_dependencies
+      - restore_compilation
       - run:
           command: |
             cd pt_ordering
@@ -81,20 +87,20 @@ commands:
             - ~/.sbt
 
   restore_dependencies:
-    description: "Restores coursier, ivy2, m2 and sbt artifacts from cache."
+    description: Restores coursier, ivy2, m2 and sbt artifacts from cache.
     steps:
       - restore_cache:
           key: dependencies
 
   cache_compilation_within_workflow:
-    description: "Caches sbt output (the target) folder."
+    description: Caches sbt output (the target) folder.
     parameters:
       project:
         description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
         type: string
     steps:
       - run:
-          name: "Work around incremental compilation issues by preserving timestamps in nanoseconds."
+          name: Work around incremental compilation issues by preserving timestamps in nanoseconds
           command: |
             cd << parameters.project >>
             find -name target -exec tar -zcf targets.tar.gz -H posix {} +
@@ -109,4 +115,7 @@ commands:
     steps:
       - attach_workspace:
           at: /tmp/workspace
+      - run: tar -xvf /tmp/workspace/sbt-paytouch/targets.tar.gz --directory ~/project/sbt-paytouch
       - run: tar -xvf /tmp/workspace/domain/targets.tar.gz --directory ~/project/domain
+      - run: tar -xvf /tmp/workspace/pt_core/targets.tar.gz --directory ~/project/pt_core
+      # - run: tar -xvf /tmp/workspace/pt_ordering/targets.tar.gz --directory ~/project/pt_ordering # not necessary for now
