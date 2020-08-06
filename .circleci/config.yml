@@ -89,7 +89,7 @@ commands:
     description: "Caches sbt output (the target) folder."
     steps:
       - persist_to_workspace:
-          root: ~/domain
+          root: ~/project/domain
           paths:
             - target/*
 
@@ -97,4 +97,4 @@ commands:
     description: "Restores sbt output (the target) folder from cache."
     steps:
       - attach_workspace:
-          at: ~/domain
+          at: ~/project/domain
