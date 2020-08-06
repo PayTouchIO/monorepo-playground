@@ -96,6 +96,6 @@ commands:
   restore_compilation:
     description: "Restores sbt output (the target) folder from cache."
     steps:
-      - run: mkdir -r /tmp/domain
+      - run: mkdir -p /tmp/domain
       - attach_workspace:
           at: /tmp/domain
