@@ -9,24 +9,28 @@ workflows:
           name: sbt-paytouch-compile
           config: main
           task: compile
+          resource_class: small
       - domain:
           name: domain-compile
           config: main
           task: compile
           requires:
             - sbt-paytouch-compile
+          resource_class: small
       - pt_core:
           name: pt_core-compile
           config: main
           task: compile
           requires:
             - domain-compile
+          resource_class: small
       - pt_ordering:
           name: pt_ordering-compile
           config: main
           task: compile
           requires:
             - pt_core-compile
+          resource_class: small
 
       # test:compile
       - sbt-paytouch:
@@ -35,24 +39,28 @@ workflows:
           task: test:compile
           requires:
             - sbt-paytouch-compile
+          resource_class: small
       - domain:
           name: domain-test:compile
           config: test
           task: test:compile
           requires:
             - domain-compile
+          resource_class: small
       - pt_core:
           name: pt_core-test:compile
           config: test
           task: test:compile
           requires:
             - pt_core-compile
+          resource_class: small
       - pt_ordering:
           name: pt_ordering-test:compile
           config: test
           task: test:compile
           requires:
             - pt_ordering-compile
+          resource_class: small
 
       # test
       - sbt-paytouch:
@@ -61,24 +69,28 @@ workflows:
           task: test
           requires:
             - sbt-paytouch-test:compile
+          resource_class: small
       - domain:
           name: domain-test
           config: test
           task: test
           requires:
             - domain-test:compile
+          resource_class: small
       - pt_core:
           name: pt_core-test
           config: test
           task: test
           requires:
             - pt_core-test:compile
+          resource_class: small
       - pt_ordering:
           name: pt_ordering-test
           config: test
           task: test
           requires:
             - pt_ordering-test:compile
+          resource_class: small
 
 jobs:
   sbt-paytouch:
@@ -223,7 +235,6 @@ commands:
     description: "Caches coursier, ivy2, m2 and sbt artifacts."
     parameters:
       project:
-        description: circleci doesn't evaluate env variables outside of run steps so we can't use $CIRCLE_JOB here
         type: string
     steps:
       - save_cache:
@@ -249,7 +260,6 @@ commands:
     description: Caches sbt output (the target) folder.
     parameters:
       project:
-        description: circleci doesn't evaluate env variables outside of run steps so we can't use $CIRCLE_JOB here
         type: string
       config:
         description: will be used as suffix for the cache since workspaces are prepend only we can't reuse the names
