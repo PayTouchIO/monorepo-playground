@@ -4,16 +4,81 @@ workflows:
   version: 2
   QA:
     jobs:
-      - sbt-paytouch
+      # compile
+      - sbt-paytouch:
+          name: sbt-paytouch-compile
+          config: main
+          task: compile
       - domain:
+          name: domain-compile
+          config: main
+          task: compile
           requires:
-            - sbt-paytouch
+            - sbt-paytouch-compile
       - pt_core:
+          name: pt_core-compile
+          config: main
+          task: compile
           requires:
-            - domain
+            - domain-compile
       - pt_ordering:
+          name: pt_ordering-compile
+          config: main
+          task: compile
           requires:
-            - pt_core
+            - pt_core-compile
+
+      # test:compile
+      - sbt-paytouch:
+          name: sbt-paytouch-test:compile
+          config: test
+          task: test:compile
+          requires:
+            - sbt-paytouch-compile
+      - domain:
+          name: domain-test:compile
+          config: test
+          task: test:compile
+          requires:
+            - domain-compile
+      - pt_core:
+          name: pt_core-test:compile
+          config: test
+          task: test:compile
+          requires:
+            - pt_core-compile
+      - pt_ordering:
+          name: pt_ordering-test:compile
+          config: test
+          task: test:compile
+          requires:
+            - pt_ordering-compile
+
+      # test
+      - sbt-paytouch:
+          name: sbt-paytouch-test
+          config: test
+          task: test
+          requires:
+            - sbt-paytouch-test:compile
+      - domain:
+          name: domain-test
+          config: test
+          task: test
+          requires:
+            - domain-test:compile
+      - pt_core:
+          name: pt_core-test
+          config: test
+          task: test
+          requires:
+            - pt_core-test:compile
+      - pt_ordering:
+          name: pt_ordering-test
+          config: test
+          task: test
+          requires:
+            - pt_ordering-test:compile
 
 jobs:
   sbt-paytouch:
@@ -22,7 +87,10 @@ jobs:
         description: main or test
         type: enum
         enum: ["main", "test"]
-        default: "main"
+      task:
+        description: compile, test:compile or test
+        type: enum
+        enum: ["compile", "test:compile", "test"]
     executor: jdk
     steps:
       - checkout
@@ -32,10 +100,10 @@ jobs:
           name: Running the actual job
           command: |
             cd sbt-paytouch
-            if [ << parameters.config >> = "main" ]; then
+            if [ << parameters.task >> = "compile" ]; then
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
-              sbt test
+              sbt << parameters.task >>
             fi
       - cache_dependencies_across_workflows:
           project: sbt-paytouch
@@ -49,7 +117,10 @@ jobs:
         description: main or test
         type: enum
         enum: ["main", "test"]
-        default: "main"
+      task:
+        description: compile, test:compile or test
+        type: enum
+        enum: ["compile", "test:compile", "test"]
     executor: jdk
     steps:
       - checkout
@@ -62,10 +133,10 @@ jobs:
           name: Running the actual job
           command: |
             cd domain
-            if [ << parameters.config >> = "main" ]; then
+            if [ << parameters.task >> = "compile" ]; then
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
-              sbt test
+              sbt << parameters.task >>
             fi
       - cache_dependencies_across_workflows:
           project: domain
@@ -79,7 +150,10 @@ jobs:
         description: main or test
         type: enum
         enum: ["main", "test"]
-        default: "main"
+      task:
+        description: compile, test:compile or test
+        type: enum
+        enum: ["compile", "test:compile", "test"]
     executor: jdk
     steps:
       - checkout
@@ -94,10 +168,10 @@ jobs:
           name: Running the actual job
           command: |
             cd pt_core
-            if [ << parameters.config >> = "main" ]; then
+            if [ << parameters.task >> = "compile" ]; then
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
-              sbt test
+              sbt << parameters.task >>
             fi
       - cache_dependencies_across_workflows:
           project: pt_core
@@ -111,7 +185,10 @@ jobs:
         description: main or test
         type: enum
         enum: ["main", "test"]
-        default: "main"
+      task:
+        description: compile, test:compile or test
+        type: enum
+        enum: ["compile", "test:compile", "test"]
     executor: jdk
     steps:
       - checkout
@@ -128,10 +205,10 @@ jobs:
           name: Running the actual job
           command: |
             cd pt_ordering
-            if [ << parameters.config >> = "main" ]; then
+            if [ << parameters.task >> = "compile" ]; then
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
-              sbt test
+              sbt << parameters.task >>
             fi
       - cache_dependencies_across_workflows:
           project: pt_ordering
@@ -178,7 +255,6 @@ commands:
         description: will be used as suffix for the cache since workspaces are prepend only we can't reuse the names
         type: enum
         enum: ["main", "test"]
-        default: "main"
     steps:
       - run:
           name: Work around incremental compilation issues by preserving timestamps in nanoseconds
