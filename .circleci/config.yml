@@ -184,7 +184,7 @@ jobs:
       - run:
           name: Skipping job because nothing changed
           command: |
-            if [ true ]; then
+            if [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_core " ]]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -298,8 +298,8 @@ commands:
           paths:
             - << parameters.project >>/targets-<< parameters.config >>.tar.gz
 
-  # This step is instant so we can always restore all compilations
-  # even the ones that we don't need.
+  # restore_all_compilations executes instantly so we can always restore all compilations
+  # even the ones that we don't need or the ones that don't exist yet.
   restore_all_compilations:
     description: "Restores sbt output (the target) folder from cache."
     steps:
@@ -322,7 +322,7 @@ commands:
         type: string
     steps:
       - run:
-          name: Restoring << parameters.project >> compilation (step succeeds even if restoration fails)
+          name: Restoring << parameters.project >> compilation (succeeds even if restoration fails)
           command: |
             tar -xf /tmp/workspace/<< parameters.project >>/targets-main.tar.gz --directory ~/project/<< parameters.project >> || true
             tar -xf /tmp/workspace/<< parameters.project >>/targets-test.tar.gz --directory ~/project/<< parameters.project >> || true
