@@ -110,6 +110,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - run:
+          name: Determining weather project was changed since the last successful run
+          command: |
+            echo Projects with changes:
+            echo $PROJECTS_WITH_CHANGES
+            echo
+            if [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " sbt-paytouch " ]]; then
+              circleci-agent step halt
+            fi
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - run:
@@ -144,6 +153,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - run:
+          name: Determining weather project was changed since the last successful run
+          command: |
+            echo Projects with changes:
+            echo $PROJECTS_WITH_CHANGES
+            echo
+            if [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " domain " ]]; then
+              circleci-agent step halt
+            fi
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
@@ -182,8 +200,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Skipping job because nothing changed
+          name: Determining weather project was changed since the last successful run
           command: |
+            echo Projects with changes:
+            echo $PROJECTS_WITH_CHANGES
+            echo
             if [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_core " ]]; then
               circleci-agent step halt
             fi
@@ -226,6 +247,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - run:
+          name: Determining weather project was changed since the last successful run
+          command: |
+            echo Projects with changes:
+            echo $PROJECTS_WITH_CHANGES
+            echo
+            if [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_ordering " ]]; then
+              circleci-agent step halt
+            fi
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
