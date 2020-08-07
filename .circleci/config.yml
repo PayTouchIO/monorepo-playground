@@ -17,21 +17,39 @@ workflows:
 
 jobs:
   sbt-paytouch:
+    parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
+        default: "main"
     executor: jdk
     steps:
       - checkout
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - run:
+          name: Running the actual job
           command: |
             cd sbt-paytouch
-            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            if [ << parameters.config >> = "main" ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt test
+            fi
       - cache_dependencies_across_workflows:
           project: sbt-paytouch
       - cache_compilation_within_workflow:
           project: sbt-paytouch
+          config: << parameters.config >>
 
   domain:
+    parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
+        default: "main"
     executor: jdk
     steps:
       - checkout
@@ -41,15 +59,27 @@ jobs:
           project: domain
       - restore_all_compilations
       - run:
+          name: Running the actual job
           command: |
             cd domain
-            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            if [ << parameters.config >> = "main" ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt test
+            fi
       - cache_dependencies_across_workflows:
           project: domain
       - cache_compilation_within_workflow:
           project: domain
+          config: << parameters.config >>
 
   pt_core:
+    parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
+        default: "main"
     executor: jdk
     steps:
       - checkout
@@ -61,15 +91,27 @@ jobs:
           project: pt_core
       - restore_all_compilations
       - run:
+          name: Running the actual job
           command: |
             cd pt_core
-            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            if [ << parameters.config >> = "main" ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt test
+            fi
       - cache_dependencies_across_workflows:
           project: pt_core
       - cache_compilation_within_workflow:
           project: pt_core
+          config: << parameters.config >>
 
   pt_ordering:
+    parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
+        default: "main"
     executor: jdk
     steps:
       - checkout
@@ -83,9 +125,14 @@ jobs:
           project: pt_ordering
       - restore_all_compilations
       - run:
+          name: Running the actual job
           command: |
             cd pt_ordering
-            sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            if [ << parameters.config >> = "main" ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt test
+            fi
       - cache_dependencies_across_workflows:
           project: pt_ordering
 
