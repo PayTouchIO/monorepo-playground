@@ -9,28 +9,28 @@ workflows:
           name: sbt-paytouch-compile
           config: main
           task: compile
-          resource_class: small
+          # resource_class: medium+
       - domain:
           name: domain-compile
           config: main
           task: compile
           requires:
             - sbt-paytouch-compile
-          resource_class: small
+          resource_class: medium+
       - pt_core:
           name: pt_core-compile
           config: main
           task: compile
           requires:
             - domain-compile
-          resource_class: small
+          resource_class: medium+
       - pt_ordering:
           name: pt_ordering-compile
           config: main
           task: compile
           requires:
             - pt_core-compile
-          resource_class: small
+          resource_class: medium+
 
       # test:compile
       - sbt-paytouch:
@@ -39,28 +39,28 @@ workflows:
           task: test:compile
           requires:
             - sbt-paytouch-compile
-          resource_class: small
+          resource_class: medium+
       - domain:
           name: domain-test:compile
           config: test
           task: test:compile
           requires:
             - domain-compile
-          resource_class: small
+          resource_class: medium+
       - pt_core:
           name: pt_core-test:compile
           config: test
           task: test:compile
           requires:
             - pt_core-compile
-          resource_class: small
+          resource_class: medium+
       - pt_ordering:
           name: pt_ordering-test:compile
           config: test
           task: test:compile
           requires:
             - pt_ordering-compile
-          resource_class: small
+          resource_class: medium+
 
       # test
       - sbt-paytouch:
@@ -69,28 +69,28 @@ workflows:
           task: test
           requires:
             - sbt-paytouch-test:compile
-          resource_class: small
+          resource_class: medium
       - domain:
           name: domain-test
           config: test
           task: test
           requires:
             - domain-test:compile
-          resource_class: small
+          resource_class: medium
       - pt_core:
           name: pt_core-test
           config: test
           task: test
           requires:
             - pt_core-test:compile
-          resource_class: small
+          resource_class: medium
       - pt_ordering:
           name: pt_ordering-test
           config: test
           task: test
           requires:
             - pt_ordering-test:compile
-          resource_class: small
+          resource_class: medium
 
 jobs:
   sbt-paytouch:
@@ -103,7 +103,11 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      resource_class:
+        type: string
+        default: small
     executor: jdk
+    resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - restore_single_project_depenencies:
@@ -133,7 +137,11 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      resource_class:
+        type: string
+        default: small
     executor: jdk
+    resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - restore_single_project_depenencies:
@@ -166,7 +174,11 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      resource_class:
+        type: string
+        default: small
     executor: jdk
+    resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - restore_single_project_depenencies:
@@ -201,7 +213,11 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      resource_class:
+        type: string
+        default: small
     executor: jdk
+    resource_class: << parameters.resource_class >>
     steps:
       - checkout
       - restore_single_project_depenencies:
