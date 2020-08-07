@@ -1,8 +1,8 @@
 package io.paytouch
-package pt_core
+package ptcore
 
 final class ExampleSuite extends TestSuite {
-  test("hello world") {
+  test("core/server") {
     1 shouldBe 1
   }
 }

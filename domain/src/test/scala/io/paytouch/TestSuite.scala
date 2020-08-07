@@ -1,5 +1,4 @@
 package io.paytouch
-package pt_core
 
 import org.scalacheck.ScalacheckShapeless
 

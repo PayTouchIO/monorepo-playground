@@ -1,21 +1,12 @@
 lazy val `pt_core` =
   project
     .in(file("."))
-    .aggregate(
-      core,
-      delivery,
-      persistence,
-      server,
-      client,
-    )
+    .aggregate(core, delivery, persistence, server, client)
 
 lazy val core =
   project
     .in(file("server/01-core"))
     .dependsOn(domain % Cctt)
-// .dependsOn(misc % Cctt)
-// .dependsOn(protocol % Cctt)
-// .dependsOn(util % Cctt)
 
 lazy val delivery =
   project

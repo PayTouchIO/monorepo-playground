@@ -1,5 +1,5 @@
 package io.paytouch
-package pt_core
+package ptcore
 
 object Main extends App {
   println("─" * 100)

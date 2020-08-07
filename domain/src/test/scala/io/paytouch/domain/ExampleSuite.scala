@@ -2,7 +2,7 @@ package io.paytouch
 package domain
 
 final class ExampleSuite extends TestSuite {
-  test("hello world") {
+  test("domain") {
     1 shouldBe 1
   }
 }
