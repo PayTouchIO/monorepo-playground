@@ -20,13 +20,14 @@ jobs:
     executor: jdk
     steps:
       - checkout
-      - restore_all_dependencies
+      - restore_single_project_depenencies:
+          project: sbt-paytouch
       - run:
           command: |
             cd sbt-paytouch
             sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
       - cache_dependencies_across_workflows:
-          project: $CIRCLE_JOB
+          project: sbt-paytouch
       - cache_compilation_within_workflow:
           project: sbt-paytouch
 
@@ -34,7 +35,10 @@ jobs:
     executor: jdk
     steps:
       - checkout
-      - restore_all_dependencies
+      - restore_single_project_depenencies:
+          project: sbt-paytouch
+      - restore_single_project_depenencies:
+          project: domain
       - restore_all_compilations
       - run:
           command: |
@@ -49,7 +53,12 @@ jobs:
     executor: jdk
     steps:
       - checkout
-      - restore_all_dependencies
+      - restore_single_project_depenencies:
+          project: sbt-paytouch
+      - restore_single_project_depenencies:
+          project: domain
+      - restore_single_project_depenencies:
+          project: pt_core
       - restore_all_compilations
       - run:
           command: |
@@ -64,7 +73,14 @@ jobs:
     executor: jdk
     steps:
       - checkout
-      - restore_all_dependencies
+      - restore_single_project_depenencies:
+          project: sbt-paytouch
+      - restore_single_project_depenencies:
+          project: domain
+      - restore_single_project_depenencies:
+          project: pt_core
+      - restore_single_project_depenencies:
+          project: pt_ordering
       - restore_all_compilations
       - run:
           command: |
@@ -86,11 +102,6 @@ commands:
         description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
         type: string
     steps:
-      - run:
-          name: echo
-          command: |
-            echo << parameters.project >>
-            echo $CIRCLE_JOB
       - save_cache:
           key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
           paths:
@@ -98,18 +109,6 @@ commands:
             - ~/.ivy2/cache
             - ~/.m2
             - ~/.sbt
-
-  restore_all_dependencies:
-    description: "Restores sbt output (the target) folder from cache."
-    steps:
-      - restore_single_project_depenencies:
-          project: sbt-paytouch
-      - restore_single_project_depenencies:
-          project: domain
-      - restore_single_project_depenencies:
-          project: pt_core
-      - restore_single_project_depenencies:
-          project: pt_ordering
 
   restore_single_project_depenencies:
     description: Restores coursier, ivy2, m2 and sbt artifacts from cache.
@@ -139,6 +138,8 @@ commands:
           paths:
             - << parameters.project >>/targets.tar.gz
 
+  # This step is instant so we can always restore all compilations
+  # even the ones that we don't need.
   restore_all_compilations:
     description: "Restores sbt output (the target) folder from cache."
     steps:
