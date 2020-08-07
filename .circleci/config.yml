@@ -19,10 +19,6 @@ jobs:
   sbt-paytouch:
     executor: jdk
     steps:
-      - run:
-          name: Sourcing Environment Variables
-          command: |
-            echo "export VLAD=$CIRCLE_JOB" >> $BASH_ENV
       - checkout
       - restore_all_dependencies
       - run:
@@ -37,10 +33,6 @@ jobs:
   domain:
     executor: jdk
     steps:
-      - run:
-          name: Sourcing Environment Variables
-          command: |
-            echo "export VLAD=$CIRCLE_JOB" >> $BASH_ENV
       - checkout
       - restore_all_dependencies
       - restore_all_compilations
@@ -98,10 +90,9 @@ commands:
           name: echo
           command: |
             echo << parameters.project >>
-            echo $VLAD
             echo $CIRCLE_JOB
       - save_cache:
-          key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
+          key: v0-${CIRCLE_JOB}-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
           paths:
             - ~/.cache/coursier
             - ~/.ivy2/cache
