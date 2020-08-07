@@ -99,7 +99,7 @@ commands:
     description: "Caches coursier, ivy2, m2 and sbt artifacts."
     parameters:
       project:
-        description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
+        description: circleci doesn't evaluate env variables outside of run steps so we can't use $CIRCLE_JOB here
         type: string
     steps:
       - save_cache:
@@ -125,18 +125,23 @@ commands:
     description: Caches sbt output (the target) folder.
     parameters:
       project:
-        description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
+        description: circleci doesn't evaluate env variables outside of run steps so we can't use $CIRCLE_JOB here
         type: string
+      config:
+        description: will be used as suffix for the cache since workspaces are prepend only we can't reuse the names
+        type: enum
+        enum: ["main", "test"]
+        default: "main"
     steps:
       - run:
           name: Work around incremental compilation issues by preserving timestamps in nanoseconds
           command: |
             cd << parameters.project >>
-            find -name target -exec tar -zcf targets.tar.gz -H posix {} +
+            find -name target -exec tar -zcf targets-<< parameters.config >>.tar.gz -H posix {} +
       - persist_to_workspace:
           root: ~/project
           paths:
-            - << parameters.project >>/targets.tar.gz
+            - << parameters.project >>/targets-<< parameters.config >>.tar.gz
 
   # This step is instant so we can always restore all compilations
   # even the ones that we don't need.
@@ -164,4 +169,5 @@ commands:
       - run:
           name: Restoring << parameters.project >> compilation (step succeeds even if restoration fails)
           command: |
-            tar -xvf /tmp/workspace/<< parameters.project >>/targets.tar.gz --directory ~/project/<< parameters.project >> || true
+            tar -xf /tmp/workspace/<< parameters.project >>/targets-main.tar.gz --directory ~/project/<< parameters.project >> || true
+            tar -xf /tmp/workspace/<< parameters.project >>/targets-test.tar.gz --directory ~/project/<< parameters.project >> || true
