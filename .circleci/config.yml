@@ -25,7 +25,8 @@ jobs:
           command: |
             cd sbt-paytouch
             sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-      - cache_dependencies_across_workflows
+      - cache_dependencies_across_workflows:
+          project: $CIRCLE_JOB
       - cache_compilation_within_workflow:
           project: sbt-paytouch
 
@@ -84,7 +85,6 @@ commands:
       project:
         description: project (circleci doesn't evaluate env variables so we can't use $CIRCLE_JOB here)
         type: string
-        default: $CIRCLE_JOB
     steps:
       - run:
           name: echo
