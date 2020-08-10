@@ -137,7 +137,7 @@ jobs:
             echo Projects with changes:
             cat /tmp/workspace/projects-with-changes
             echo
-            if [ -z $(grep sbt-paytouch /tmp/workspace/projects-with-changes) ]
+            if [ -z $(grep sbt-paytouch /tmp/workspace/projects-with-changes) ]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
