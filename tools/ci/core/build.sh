@@ -55,7 +55,7 @@ echo "Following projects need to be built"
 echo -e "$PROJECTS_TO_BUILD"
 
 mkdir -p ~/workspace
-echo "export PROJECTS_WITH_CHANGES=$PROJECTS_TO_BUILD" >> ~/workspace/projects-with-changes
+echo -e "$PROJECTS_TO_BUILD" >> ~/workspace/projects-with-changes
 
 # Build all modified projects
 # echo -e "$PROJECTS_TO_BUILD" | while read PROJECTS; do

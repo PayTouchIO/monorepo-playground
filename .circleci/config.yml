@@ -134,11 +134,10 @@ jobs:
       - run:
           name: Determining weather project was changed since the last successful run
           command: |
-            source /tmp/workspace/projects-with-changes
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            cat /tmp/workspace/projects-with-changes
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " sbt-paytouch " ]]; then
+            if [ -z $(grep sbt-paytouch /tmp/workspace/projects-with-changes) ]
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
