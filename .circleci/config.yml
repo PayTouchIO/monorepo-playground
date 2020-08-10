@@ -174,13 +174,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            cat /tmp/workspace/projects-with-changes
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " domain " ]]; then
+            if [ -z $(grep domain /tmp/workspace/projects-with-changes) ]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -220,13 +222,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            cat /tmp/workspace/projects-with-changes
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_core " ]]; then
+            if [ -z $(grep pt_core /tmp/workspace/projects-with-changes) ]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -268,13 +272,15 @@ jobs:
     resource_class: << parameters.resource_class >>
     steps:
       - checkout
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            cat /tmp/workspace/projects-with-changes
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_ordering " ]]; then
+            if [ -z $(grep pt_ordering /tmp/workspace/projects-with-changes) ]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
