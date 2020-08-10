@@ -105,7 +105,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Trigger build for modified projects
+          name: Determining which projects were changed since the last successful run
           shell: /bin/bash
           command: tools/ci/core/build.sh
       - persist_to_workspace:
