@@ -45,6 +45,8 @@ fi
 # Collect all modified projects
 PROJECTS_TO_BUILD=$($DIR/list-projects-to-build.sh $COMMIT_RANGE)
 
+mkdir -p ~/workspace
+
 # If nothing to build inform and exit
 if [[ -z "$PROJECTS_TO_BUILD" ]]; then
     echo "No projects to build"
@@ -54,7 +56,6 @@ fi
 echo "Following projects need to be built"
 echo -e "$PROJECTS_TO_BUILD"
 
-mkdir -p ~/workspace
 echo -e "$PROJECTS_TO_BUILD" >> ~/workspace/projects-with-changes
 
 # Build all modified projects
