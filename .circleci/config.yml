@@ -101,6 +101,7 @@ jobs:
   tag-changed-projects:
     docker:
       - image: cimg/base:stable
+    resource_class: small
     steps:
       - checkout
       - run:
@@ -128,9 +129,9 @@ jobs:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            echo $PROJECTS_TO_BUILD
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " sbt-paytouch " ]]; then
+            if ! [[ " ${PROJECTS_TO_BUILD[@]} " =~ " sbt-paytouch " ]]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -171,9 +172,9 @@ jobs:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            echo $PROJECTS_TO_BUILD
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " domain " ]]; then
+            if ! [[ " ${PROJECTS_TO_BUILD[@]} " =~ " domain " ]]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -217,9 +218,9 @@ jobs:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            echo $PROJECTS_TO_BUILD
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_core " ]]; then
+            if ! [[ " ${PROJECTS_TO_BUILD[@]} " =~ " pt_core " ]]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
@@ -265,9 +266,9 @@ jobs:
           name: Determining weather project was changed since the last successful run
           command: |
             echo Projects with changes:
-            echo $PROJECTS_WITH_CHANGES
+            echo $PROJECTS_TO_BUILD
             echo
-            if ! [[ " ${PROJECTS_WITH_CHANGES[@]} " =~ " pt_ordering " ]]; then
+            if ! [[ " ${PROJECTS_TO_BUILD[@]} " =~ " pt_ordering " ]]; then
               circleci-agent step halt
             fi
       - restore_single_project_depenencies:
