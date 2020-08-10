@@ -4,11 +4,16 @@ workflows:
   version: 2
   QA:
     jobs:
+      # determine which projects/jobs need to be rerun and which can be skipped
+      - tag-changed-projects
+
       # compile
       - sbt-paytouch:
           name: sbt-paytouch-compile
           config: main
           task: compile
+          requires:
+            - tag-changed-projects
           # resource_class: medium+
       - domain:
           name: domain-compile
@@ -93,6 +98,15 @@ workflows:
           # resource_class: medium
 
 jobs:
+  tag-changed-projects:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Trigger build for modified projects
+          shell: /bin/bash
+          command: tools/ci/core/build.sh
   sbt-paytouch:
     parameters:
       config:

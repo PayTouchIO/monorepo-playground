@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Documentation 
+# Documentation
 read -r -d '' USAGE_TEXT << EOM
 Usage: circleci.sh command [<param>...]
 Run given command in circleci.
@@ -10,13 +10,13 @@ Requires circleci environment variables (additional may be required for specific
     CIRCLE_PROJECT_USERNAME
     CIRCLE_PROJECT_REPONAME
 
-Available commands:  
+Available commands:
     build <project_name>    start build of given project
                             outputs build number
-                            requires: CIRCLE_BRANCH  
+                            requires: CIRCLE_BRANCH
     status <build_number>   get status of build identified by given build number
                             outputs one of: success | failed | null
-    kill <build_number>     kills running build identified by given build number                            
+    kill <build_number>     kills running build identified by given build number
     hash <position>         get revision hash on given positions
                             available positions:
                                 last        hash of last succesfull build commit
@@ -24,8 +24,8 @@ Available commands:
                                             requires: CIRCLE_BRANCH
                                 current     hash of current commit
                                             requires: CIRCLE_SHA1
-                                            requires: CIRCLE_BRANCH                            
-    help                    display this usage text                             
+                                            requires: CIRCLE_BRANCH
+    help                    display this usage text
 EOM
 
 set -e
@@ -70,7 +70,7 @@ function require_env_var {
     local ENV_VAR=$1
     if [[ -z "${!ENV_VAR}" ]]; then
         fail "$ENV_VAR is not set"
-    fi  
+    fi
 }
 
 ##
@@ -126,7 +126,7 @@ function get {
 function trigger_build {
     local PROJECT_NAME=$1
     require_env_var CIRCLE_BRANCH
-    require_not_null "Project name not speficied" ${PROJECT_NAME} 
+    require_not_null "Project name not speficied" ${PROJECT_NAME}
     TRIGGER_RESPONSE=$(post "tree/$CIRCLE_BRANCH" "build_parameters[CIRCLE_JOB]=${PROJECT_NAME}")
     echo "$TRIGGER_RESPONSE" | jq -r '.["build_num"]'
 }
@@ -142,7 +142,7 @@ function trigger_build {
 ##
 function get_build_status {
     local BUILD_NUM=$1
-    require_not_null "Build number not speficied" ${BUILD_NUM} 
+    require_not_null "Build number not speficied" ${BUILD_NUM}
     STATUS_RESPONSE=$(get ${BUILD_NUM})
     echo "$STATUS_RESPONSE" | jq -r '.["outcome"]'
 }
@@ -156,7 +156,7 @@ function get_build_status {
 ##
 function kill_build {
     local BUILD_NUM=$1
-    require_not_null "Build number not speficied" ${BUILD_NUM} 
+    require_not_null "Build number not speficied" ${BUILD_NUM}
     STATUS_RESPONSE=$(post ${BUILD_NUM}/cancel)
 }
 
@@ -169,7 +169,7 @@ function kill_build {
 function get_last_successful_commit {
     require_env_var CIRCLE_BRANCH
     get "tree/$CIRCLE_BRANCH?filter=successful&limit=100" \
-        | jq --raw-output '[.[]|select(.workflows.job_name=="build")] | max_by(.build_num).vcs_revision'    
+        | jq --raw-output '[.[]|select(.workflows.job_name=="tag-changed-projects")] | max_by(.build_num).vcs_revision'
 }
 
 ##
@@ -194,7 +194,7 @@ require_env_var CIRCLE_PROJECT_REPONAME
 
 # Parse command
 case $1 in
-    build)        
+    build)
         trigger_build $2
         ;;
     status)
@@ -202,7 +202,7 @@ case $1 in
         ;;
     kill)
         kill_build $2
-        ;;    
+        ;;
     hash)
         case $2 in
             last)
@@ -212,11 +212,11 @@ case $1 in
                 get_current_commit
                 ;;
             *)
-                fail "Unknown hash position $2"             
+                fail "Unknown hash position $2"
                 ;;
         esac
-        ;;        
+        ;;
     *)
         fail "Unknown command $1"
-        ;;        
+        ;;
 esac
