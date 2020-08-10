@@ -6,6 +6,7 @@ object Main extends App {
 
   println("hello world")
   println(Domain)
+  println("hello world")
 
   println("─" * 100)
 }
