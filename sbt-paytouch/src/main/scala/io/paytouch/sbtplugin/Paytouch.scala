@@ -104,30 +104,28 @@ object Paytouch extends AutoPlugin {
       .union {
         onLoadMessage +=
           s"""|
-              |───────────────────────────────────
-              |      List of defined ${styled("aliases")}
-              |────────────────┬──────────────────
-              |${styled("l")} | ${styled("ll")} | ${styled("ls")}     │ projects
-              |${styled("cd")}              │ project
-              |${styled("root")}            │ cd root
-              |${styled("c")}               │ compile
-              |${styled("ca")}              │ compile all
-              |${styled("t")}               │ test
-              |${styled("r")}               │ run
-              |${styled("up2date")}         │ dependencyUpdates
-              |${styled("loadSeeds")}       │ TODO
-              |${styled("liquibaseUpdate")} │ TODO
-              |────────────────┴──────────────────""".stripMargin
+              |───────────────────────────────
+              |    List of defined ${styled("aliases")}
+              |────────────┬──────────────────
+              |${styled("l")} | ${styled("ll")} | ${styled("ls")} │ projects
+              |${styled("cd")}          │ project
+              |${styled("root")}        │ cd root
+              |${styled("c")}           │ compile
+              |${styled("ca")}          │ compile all
+              |${styled("t")}           │ test
+              |${styled("r")}           │ run
+              |${styled("up2date")}     │ dependencyUpdates
+              |────────────┴──────────────────""".stripMargin
       }
 
   lazy val dependencySettings: Seq[Def.Setting[_]] = Seq(
     // io.paytouch dependencies are not allowed here, since they would be circular
     libraryDependencies ++= Seq(
-      com.github.alexarchambault.`scalacheck-shapeless_1.14`,
-      org.scalacheck.scalacheck,
-      org.scalatest.scalatest,
-      org.scalatestplus.`scalacheck-1-14`,
-      org.typelevel.`discipline-scalatest`,
+      `com.github.alexarchambault`.`scalacheck-shapeless_1.14`,
+      `org.scalacheck`.`scalacheck`,
+      `org.scalatest`.`scalatest`,
+      `org.scalatestplus`.`scalacheck-1-14`,
+      `org.typelevel`.`discipline-scalatest`,
     ).map(_ % Test),
   )
 }

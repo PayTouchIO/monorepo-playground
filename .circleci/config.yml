@@ -15,6 +15,13 @@ workflows:
           requires:
             - tag-changed-projects
           # resource_class: medium+
+      - authentikat-jwt:
+          name: authentikat-jwt-compile
+          config: main
+          task: compile
+          requires:
+            - sbt-paytouch-compile
+          # resource_class: medium+
       - domain:
           name: domain-compile
           config: main
@@ -27,6 +34,7 @@ workflows:
           config: main
           task: compile
           requires:
+            - authentikat-jwt-compile
             - domain-compile
           # resource_class: medium+
       - pt_ordering:
@@ -34,6 +42,7 @@ workflows:
           config: main
           task: compile
           requires:
+            - authentikat-jwt-compile
             - domain-compile
           # resource_class: medium+
 
@@ -44,6 +53,14 @@ workflows:
           task: test:compile
           requires:
             - sbt-paytouch-compile
+          # resource_class: medium+
+      - authentikat-jwt:
+          name: authentikat-jwt-test:compile
+          config: test
+          task: test:compile
+          requires:
+            - sbt-paytouch-test:compile
+            - authentikat-jwt-compile
           # resource_class: medium+
       - domain:
           name: domain-test:compile
@@ -59,6 +76,7 @@ workflows:
           task: test:compile
           requires:
             - pt_core-compile
+            - authentikat-jwt-test:compile
             - domain-test:compile
           # resource_class: medium+
       - pt_ordering:
@@ -67,6 +85,7 @@ workflows:
           task: test:compile
           requires:
             - pt_ordering-compile
+            - authentikat-jwt-test:compile
             - domain-test:compile
           # resource_class: medium+
 
@@ -77,6 +96,13 @@ workflows:
           task: test
           requires:
             - sbt-paytouch-test:compile
+          # resource_class: medium
+      - authentikat-jwt:
+          name: authentikat-jwt-test
+          config: test
+          task: test
+          requires:
+            - authentikat-jwt-test:compile
           # resource_class: medium
       - domain:
           name: domain-test
@@ -151,6 +177,45 @@ jobs:
           project: sbt-paytouch
           config: << parameters.config >>
 
+  authentikat-jwt:
+    parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
+      task:
+        description: compile, test:compile or test
+        type: enum
+        enum: ["compile", "test:compile", "test"]
+      resource_class:
+        type: string
+        default: small
+    executor: jdk
+    resource_class: << parameters.resource_class >>
+    steps:
+      - checkout
+      - run_or_skip:
+          project: authentikat-jwt
+      - restore_single_project_depenencies:
+          project: sbt-paytouch
+      - restore_single_project_depenencies:
+          project: authentikat-jwt
+      - restore_all_compilations
+      - run:
+          name: Running the actual job
+          command: |
+            cd authentikat-jwt
+            if [ << parameters.task >> = "compile" ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt << parameters.task >>
+            fi
+      - cache_dependencies_across_workflows:
+          project: authentikat-jwt
+      - cache_compilation_within_workflow:
+          project: authentikat-jwt
+          config: << parameters.config >>
+
   domain:
     parameters:
       config:
@@ -212,6 +277,8 @@ jobs:
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
+          project: authentikat-jwt
+      - restore_single_project_depenencies:
           project: domain
       - restore_single_project_depenencies:
           project: pt_core
@@ -252,6 +319,8 @@ jobs:
           project: pt_ordering
       - restore_single_project_depenencies:
           project: sbt-paytouch
+      - restore_single_project_depenencies:
+          project: authentikat-jwt
       - restore_single_project_depenencies:
           project: domain
       - restore_single_project_depenencies:
@@ -294,6 +363,7 @@ commands:
             if [ -z $(grep << parameters.project >> /tmp/workspace/projects-with-changes) ]; then
               circleci-agent step halt
             fi
+
   cache_dependencies_across_workflows:
     description: "Caches coursier, ivy2, m2 and sbt artifacts."
     parameters:
@@ -348,6 +418,8 @@ commands:
           at: /tmp/workspace
       - restore_single_project_compilation:
           project: sbt-paytouch
+      - restore_single_project_compilation:
+          project: authentikat-jwt
       - restore_single_project_compilation:
           project: domain
       - restore_single_project_compilation:

@@ -9,4 +9,5 @@ lazy val `pt_core` =
 lazy val core =
   project
     .in(file("core"))
+    .dependsOn(`authentikat-jwt` % Cctt)
     .dependsOn(domain % Cctt)

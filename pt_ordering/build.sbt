@@ -8,4 +8,5 @@ lazy val `pt_ordering` =
 lazy val ordering =
   project
     .in(file("ordering"))
+    .dependsOn(`authentikat-jwt` % Cctt)
     .dependsOn(domain % Cctt)

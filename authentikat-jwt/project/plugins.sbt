@@ -1,0 +1,1 @@
+../../sbt-paytouch/src/main/sbt/plugins.sbt
