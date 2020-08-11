@@ -58,6 +58,7 @@ workflows:
           task: test:compile
           requires:
             - pt_core-compile
+            - domain-test:compile
           # resource_class: medium+
       - pt_ordering:
           name: pt_ordering-test:compile
@@ -65,6 +66,7 @@ workflows:
           task: test:compile
           requires:
             - pt_ordering-compile
+            - domain-test:compile
           # resource_class: medium+
 
       # test
