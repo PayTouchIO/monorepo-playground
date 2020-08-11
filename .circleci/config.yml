@@ -50,6 +50,7 @@ workflows:
           config: test
           task: test:compile
           requires:
+            - sbt-paytouch-test:compile
             - domain-compile
           # resource_class: medium+
       - pt_core:
