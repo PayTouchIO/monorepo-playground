@@ -1,28 +1,32 @@
 {
-	"folders": [
-		{
-      "name": "00_sbt-paytouch",
-			"path": "sbt-paytouch"
-		},
-		{
-      "name": "01_domain",
-			"path": "domain"
-		},
-		{
-      "name": "02_core",
-			"path": "pt_core"
-		},
-		{
-      "name": "02_ordering",
-			"path": "pt_ordering"
-		},
-		{
-			"path": "tools"
-		},
-		{
+  "folders": [
+    {
+      "name": "00-sbt-paytouch",
+      "path": "sbt-paytouch"
+    },
+    {
+      "name": "01-authentikat-jwt",
+      "path": "authentikat-jwt"
+    },
+    {
+      "name": "01-domain",
+      "path": "domain"
+    },
+    {
+      "name": "02-core",
+      "path": "pt_core"
+    },
+    {
+      "name": "02-ordering",
+      "path": "pt_ordering"
+    },
+    {
+      "path": "tools"
+    },
+    {
       "name": "root",
-			"path": "."
-		}
-	],
-	"settings": {}
+      "path": "."
+    }
+  ],
+  "settings": {}
 }
