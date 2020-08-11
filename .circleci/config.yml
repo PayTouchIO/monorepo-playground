@@ -34,7 +34,7 @@ workflows:
           config: main
           task: compile
           requires:
-            - pt_core-compile
+            - domain-compile
           # resource_class: medium+
 
       # test:compile
@@ -252,8 +252,6 @@ jobs:
       - restore_single_project_depenencies:
           project: domain
       - restore_single_project_depenencies:
-          project: pt_core
-      - restore_single_project_depenencies:
           project: pt_ordering
       - restore_all_compilations
       - run:
@@ -267,6 +265,9 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: pt_ordering
+      - cache_compilation_within_workflow:
+          project: pt_ordering
+          config: << parameters.config >>
 
 executors:
   jdk:

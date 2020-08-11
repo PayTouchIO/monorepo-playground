@@ -1,8 +1,8 @@
 package io.paytouch
-package domain
+package ptordering
 
 final class ExampleSuite extends TestSuite {
-  test("domain") {
+  test("ordering") {
     Domain shouldBe Domain
   }
 }

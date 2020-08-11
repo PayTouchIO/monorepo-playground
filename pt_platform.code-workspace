@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+      "name": "00_sbt-paytouch",
+			"path": "sbt-paytouch"
+		},
+		{
+      "name": "01_domain",
+			"path": "domain"
+		},
+		{
+      "name": "02_core",
+			"path": "pt_core"
+		},
+		{
+      "name": "02_ordering",
+			"path": "pt_ordering"
+		},
+		{
+			"path": "tools"
+		},
+		{
+      "name": "root",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

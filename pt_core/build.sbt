@@ -1,30 +1,12 @@
+addCommandAlias("root", "project pt_core")
+addCommandAlias("loadSeeds", "seeds/run")
+
 lazy val `pt_core` =
   project
     .in(file("."))
-    .aggregate(core, delivery, persistence, server, client)
+    .aggregate(core)
 
 lazy val core =
   project
-    .in(file("server/01-core"))
+    .in(file("core"))
     .dependsOn(domain % Cctt)
-
-lazy val delivery =
-  project
-    .in(file("server/02-delivery"))
-    .dependsOn(core % Cctt)
-
-lazy val persistence =
-  project
-    .in(file("server/02-persistence"))
-    .dependsOn(core % Cctt)
-
-lazy val server =
-  project
-    .in(file("server/03-server"))
-    .dependsOn(delivery % Cctt)
-    .dependsOn(persistence % Cctt)
-
-lazy val client =
-  project
-    .in(file("client"))
-    .dependsOn(delivery % Cctt)

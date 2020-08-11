@@ -87,8 +87,10 @@ object Paytouch extends AutoPlugin {
       .union(dependencySettings)
 
   lazy val aliasSettings: Seq[Def.Setting[_]] = // format: off
-             addCommandAlias("cd", "project") // format: on
-      .union(addCommandAlias("root", "cd root")) // todo
+             addCommandAlias("l", "projects") // format: on
+      .union(addCommandAlias("ll", "projects"))
+      .union(addCommandAlias("ls", "projects"))
+      .union(addCommandAlias("cd", "project"))
       .union(addCommandAlias("c", "compile"))
       .union(addCommandAlias("ca", "test:compile"))
       .union(addCommandAlias("t", "test"))
@@ -99,16 +101,15 @@ object Paytouch extends AutoPlugin {
           "reload plugins; dependencyUpdates; reload return; dependencyUpdates",
         ),
       )
-      // .union(addCommandAlias("loadSeeds", "seeds/run")) // todo
-      // .union(addCommandAlias("liquibaseUpdate", "liquibase/liquibaseUpdate")) // todo
       .union {
         onLoadMessage +=
           s"""|
               |───────────────────────────────────
               |      List of defined ${styled("aliases")}
               |────────────────┬──────────────────
+              |${styled("l")} | ${styled("ll")} | ${styled("ls")}     │ projects
               |${styled("cd")}              │ project
-              |${styled("root")}            │ TODO
+              |${styled("root")}            │ cd root
               |${styled("c")}               │ compile
               |${styled("ca")}              │ compile all
               |${styled("t")}               │ test
