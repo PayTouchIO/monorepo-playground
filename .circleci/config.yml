@@ -294,6 +294,7 @@ jobs:
           command: |
             cd pt_core
             if [ << parameters.task >> = "compile" ]; then
+              bin/build_swagger && \
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
               sbt << parameters.task >>
@@ -341,6 +342,7 @@ jobs:
           command: |
             cd pt_ordering
             if [ << parameters.task >> = "compile" ]; then
+              bin/build_swagger && \
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
             else
               sbt << parameters.task >>
@@ -351,6 +353,7 @@ jobs:
           project: pt_ordering
           config: << parameters.config >>
 
+# https://circleci.com/docs/2.0/docker-image-tags.json
 executors:
   jdk:
     docker:
@@ -359,10 +362,6 @@ executors:
     docker:
       - image: circleci/openjdk:8
       - image: circleci/postgres:9.6.15
-        environment:
-          POSTGRES_USER: paytouch
-          POSTGRES_PASS: paytouch
-          POSTGRES_DB: paytouch_test
       - image: circleci/redis
 
 commands:

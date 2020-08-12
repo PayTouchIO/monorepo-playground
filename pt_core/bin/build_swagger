@@ -1,0 +1,11 @@
+#!/bin/bash -x
+
+cp core/src/main/resources/swagger/base.yml core/src/main/resources/swagger.yml
+sed 's/definitions.yml//' core/src/main/resources/swagger/base.yml > core/src/main/resources/swagger.yml
+echo "" >> core/src/main/resources/swagger.yml
+cat core/src/main/resources/swagger/definitions.yml >> core/src/main/resources/swagger.yml
+
+if [ -z "$CIRCLECI" ]; then
+  OPENAPI_CLI="docker run --rm -v ${PWD}/core/src/main/resources:/resources openapitools/openapi-generator-cli"
+  $OPENAPI_CLI validate -i /resources/swagger.yml
+fi
