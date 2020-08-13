@@ -416,7 +416,7 @@ commands:
           name: Work around incremental compilation issues by preserving timestamps in nanoseconds
           command: |
             cd << parameters.project >>
-            find -name target -exec tar -zcf targets.tar.gz -H posix {} +
+            find -name target -exec tar -zcf targets.tar.gz -H posix {} + || touch targets.tar.gz
       - persist_to_workspace:
           root: ~/project
           paths:
