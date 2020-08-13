@@ -10,24 +10,28 @@ workflows:
       # compile
       - sbt-paytouch:
           name: sbt-paytouch-compile
+          config: main
           task: compile
           requires:
             - tag-changed-projects
           # resource_class: medium+
       - authentikat-jwt:
           name: authentikat-jwt-compile
+          config: main
           task: compile
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
       - domain:
           name: domain-compile
+          config: main
           task: compile
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
       - pt_core:
           name: pt_core-compile
+          config: main
           task: compile
           requires:
             - authentikat-jwt-compile
@@ -35,6 +39,7 @@ workflows:
           # resource_class: medium+
       - pt_ordering:
           name: pt_ordering-compile
+          config: main
           task: compile
           requires:
             - authentikat-jwt-compile
@@ -44,12 +49,14 @@ workflows:
       # test:compile
       - sbt-paytouch:
           name: sbt-paytouch-test:compile
+          config: test
           task: test:compile
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
       - authentikat-jwt:
           name: authentikat-jwt-test:compile
+          config: test
           task: test:compile
           requires:
             - sbt-paytouch-test:compile
@@ -57,6 +64,7 @@ workflows:
           # resource_class: medium+
       - domain:
           name: domain-test:compile
+          config: test
           task: test:compile
           requires:
             - sbt-paytouch-test:compile
@@ -64,6 +72,7 @@ workflows:
           # resource_class: medium+
       - pt_core:
           name: pt_core-test:compile
+          config: test
           task: test:compile
           requires:
             - pt_core-compile
@@ -72,6 +81,7 @@ workflows:
           # resource_class: medium+
       - pt_ordering:
           name: pt_ordering-test:compile
+          config: test
           task: test:compile
           requires:
             - pt_ordering-compile
@@ -82,18 +92,21 @@ workflows:
       # test
       - sbt-paytouch:
           name: sbt-paytouch-test
+          config: test
           task: test
           requires:
             - sbt-paytouch-test:compile
           # resource_class: medium
       - authentikat-jwt:
           name: authentikat-jwt-test
+          config: test
           task: test
           requires:
             - authentikat-jwt-test:compile
           # resource_class: medium
       - domain:
           name: domain-test
+          config: test
           task: test
           requires:
             - domain-test:compile
@@ -101,6 +114,7 @@ workflows:
       - pt_core:
           name: pt_core-test
           executor: jdk-postgres-redis
+          config: test
           task: test
           requires:
             - pt_core-test:compile
@@ -108,6 +122,7 @@ workflows:
       - pt_ordering:
           name: pt_ordering-test
           executor: jdk-postgres-redis
+          config: test
           task: test
           requires:
             - pt_ordering-test:compile
@@ -117,6 +132,7 @@ workflows:
       - pt_core:
           name: pt_core-package
           executor: jdk
+          config: package
           task: package
           requires:
             - pt_core-test
@@ -124,6 +140,7 @@ workflows:
       - pt_ordering:
           name: pt_ordering-package
           executor: jdk
+          config: package
           task: package
           requires:
             - pt_ordering-test
@@ -144,9 +161,12 @@ jobs:
           root: ~/workspace
           paths:
             - projects-with-changes
-
   sbt-paytouch:
     parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
       task:
         description: compile, test:compile or test
         type: enum
@@ -160,7 +180,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: sbt-paytouch
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: sbt-paytouch
       - run:
           name: Running the actual job
@@ -175,10 +195,16 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: sbt-paytouch
-      - cache_all_compilations_within_workflow
+      - cache_compilation_within_workflow:
+          project: sbt-paytouch
+          config: << parameters.config >>
 
   authentikat-jwt:
     parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
       task:
         description: compile, test:compile or test
         type: enum
@@ -192,9 +218,9 @@ jobs:
       - checkout
       - run_or_skip:
           project: authentikat-jwt
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: sbt-paytouch
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: authentikat-jwt
       - restore_all_compilations
       - run:
@@ -210,10 +236,16 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: authentikat-jwt
-      - cache_all_compilations_within_workflow
+      - cache_compilation_within_workflow:
+          project: authentikat-jwt
+          config: << parameters.config >>
 
   domain:
     parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test"]
       task:
         description: compile, test:compile or test
         type: enum
@@ -227,9 +259,9 @@ jobs:
       - checkout
       - run_or_skip:
           project: domain
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: sbt-paytouch
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: domain
       - restore_all_compilations
       - run:
@@ -245,10 +277,16 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: domain
-      - cache_all_compilations_within_workflow
+      - cache_compilation_within_workflow:
+          project: domain
+          config: << parameters.config >>
 
   pt_core:
     parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test", "package"]
       task:
         description: compile, test:compile or test
         type: enum
@@ -266,13 +304,13 @@ jobs:
       - checkout
       - run_or_skip:
           project: pt_core
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: sbt-paytouch
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: authentikat-jwt
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: domain
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: pt_core
       - restore_all_compilations
       - run:
@@ -291,10 +329,16 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: pt_core
-      - cache_all_compilations_within_workflow
+      - cache_compilation_within_workflow:
+          project: pt_core
+          config: << parameters.config >>
 
   pt_ordering:
     parameters:
+      config:
+        description: main or test
+        type: enum
+        enum: ["main", "test", "package"]
       task:
         description: compile, test:compile or test
         type: enum
@@ -312,13 +356,13 @@ jobs:
       - checkout
       - run_or_skip:
           project: pt_ordering
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: sbt-paytouch
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: authentikat-jwt
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: domain
-      - restore_single_project_dependencies:
+      - restore_single_project_depenencies:
           project: pt_ordering
       - restore_all_compilations
       - run:
@@ -337,7 +381,9 @@ jobs:
             fi
       - cache_dependencies_across_workflows:
           project: pt_ordering
-      - cache_all_compilations_within_workflow
+      - cache_compilation_within_workflow:
+          project: pt_ordering
+          config: << parameters.config >>
 
 # https://circleci.com/docs/2.0/docker-image-tags.json
 executors:
@@ -382,7 +428,7 @@ commands:
             - ~/.m2
             - ~/.sbt
 
-  restore_single_project_dependencies:
+  restore_single_project_depenencies:
     description: Restores coursier, ivy2, m2 and sbt artifacts from cache.
     parameters:
       project:
@@ -393,36 +439,25 @@ commands:
           name: Restoring << parameters.project >> dependencies
           key: v0-<< parameters.project >>-dependencies-{{ checksum "sbt-paytouch/project/plugins.sbt" }}-{{ checksum "sbt-paytouch/build.sbt" }}-{{ checksum "sbt-paytouch/src/main/scala/io/paytouch/sbtplugin/Paytouch.scala" }}
 
-  cache_all_compilations_within_workflow:
-    steps:
-      - cache_single_project_compilation_within_workflow:
-          project: sbt-paytouch
-      - cache_single_project_compilation_within_workflow:
-          project: authentikat-jwt
-      - cache_single_project_compilation_within_workflow:
-          project: domain
-      - cache_single_project_compilation_within_workflow:
-          project: pt_core
-      - cache_single_project_compilation_within_workflow:
-          project: pt_ordering
-
-  cache_single_project_compilation_within_workflow:
+  cache_compilation_within_workflow:
     description: Caches sbt output (the target) folder.
     parameters:
       project:
         type: string
+      config:
+        description: "Suffix for the cache since workspaces are prepend only we can't reuse the names."
+        type: enum
+        enum: ["main", "test", "package"]
     steps:
       - run:
           name: Work around incremental compilation issues by preserving timestamps in nanoseconds
           command: |
-            mkdir -p << parameters.project >>
             cd << parameters.project >>
-            find -name target -exec tar -zcf targets.tar.gz -H posix {} +
-            touch targets.tar.gz
+            find -name target -exec tar -zcf targets-<< parameters.config >>.tar.gz -H posix {} +
       - persist_to_workspace:
           root: ~/project
           paths:
-            - << parameters.project >>/targets.tar.gz
+            - << parameters.project >>/targets-<< parameters.config >>.tar.gz
 
   # restore_all_compilations executes instantly so we can always restore all compilations
   # even the ones that we don't need or the ones that don't exist yet.
@@ -449,7 +484,28 @@ commands:
         description: project
         type: string
     steps:
+      - restore_single_project_compilation_for_config:
+          project: << parameters.project >>
+          config: main
+      - restore_single_project_compilation_for_config:
+          project: << parameters.project >>
+          config: test
+      - restore_single_project_compilation_for_config:
+          project: << parameters.project >>
+          config: package
+
+  restore_single_project_compilation_for_config:
+    description: "Restores sbt output (the target) folder from cache."
+    parameters:
+      project:
+        description: project
+        type: string
+      config:
+        description: "Suffix for the cache since workspaces are prepend only we can't reuse the names."
+        type: enum
+        enum: ["main", "test", "package"]
+    steps:
       - run:
           name: Restoring << parameters.project >> compilation (succeeds even if restoration fails)
           command: |
-            tar -xf /tmp/workspace/<< parameters.project >>/targets.tar.gz --directory ~/project/<< parameters.project >> || true
+            tar -xf /tmp/workspace/<< parameters.project >>/targets-<< parameters.config >>.tar.gz --directory ~/project/<< parameters.project >> || true
