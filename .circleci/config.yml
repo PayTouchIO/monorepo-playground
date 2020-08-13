@@ -415,6 +415,7 @@ commands:
       - run:
           name: Work around incremental compilation issues by preserving timestamps in nanoseconds
           command: |
+            mkdir -p << parameters.project >>
             cd << parameters.project >>
             find -name target -exec tar -zcf targets.tar.gz -H posix {} + || touch targets.tar.gz
       - persist_to_workspace:
