@@ -367,7 +367,8 @@ jobs:
           project: pt_core
           config: << parameters.config >>
       - when:
-          equal: [<< parameters.task >>, "package"]
+          condition:
+            equal: [<< parameters.task >>, "package"]
           steps:
             - persist_to_workspace:
                 root: ~/workspace
