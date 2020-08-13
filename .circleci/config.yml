@@ -166,6 +166,8 @@ jobs:
           project: sbt-paytouch
       - run:
           name: Running the actual job
+          environment:
+            CIRCLECI: "true"
           command: |
             cd sbt-paytouch
             if [ << parameters.task >> = "compile" ]; then
@@ -205,6 +207,8 @@ jobs:
       - restore_all_compilations
       - run:
           name: Running the actual job
+          environment:
+            CIRCLECI: "true"
           command: |
             cd authentikat-jwt
             if [ << parameters.task >> = "compile" ]; then
@@ -244,6 +248,8 @@ jobs:
       - restore_all_compilations
       - run:
           name: Running the actual job
+          environment:
+            CIRCLECI: "true"
           command: |
             cd domain
             if [ << parameters.task >> = "compile" ]; then
@@ -291,6 +297,8 @@ jobs:
       - restore_all_compilations
       - run:
           name: Running the actual job
+          environment:
+            CIRCLECI: "true"
           command: |
             cd pt_core
             if [ << parameters.task >> = "compile" ]; then
@@ -339,6 +347,8 @@ jobs:
       - restore_all_compilations
       - run:
           name: Running the actual job
+          environment:
+            CIRCLECI: "true"
           command: |
             cd pt_ordering
             if [ << parameters.task >> = "compile" ]; then
