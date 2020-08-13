@@ -12,6 +12,7 @@ workflows:
           name: sbt-paytouch-compile
           config: main
           task: compile
+          always_run_never_skip: true
           requires:
             - tag-changed-projects
           # resource_class: medium+
@@ -19,6 +20,7 @@ workflows:
           name: authentikat-jwt-compile
           config: main
           task: compile
+          always_run_never_skip: true
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
@@ -26,6 +28,7 @@ workflows:
           name: domain-compile
           config: main
           task: compile
+          always_run_never_skip: true
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
@@ -51,6 +54,7 @@ workflows:
           name: sbt-paytouch-test:compile
           config: test
           task: test:compile
+          always_run_never_skip: true
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
@@ -58,6 +62,7 @@ workflows:
           name: authentikat-jwt-test:compile
           config: test
           task: test:compile
+          always_run_never_skip: true
           requires:
             - sbt-paytouch-test:compile
             - authentikat-jwt-compile
@@ -66,6 +71,7 @@ workflows:
           name: domain-test:compile
           config: test
           task: test:compile
+          always_run_never_skip: true
           requires:
             - sbt-paytouch-test:compile
             - domain-compile
@@ -171,6 +177,9 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      always_run_never_skip:
+        type: boolean
+        default: false
       resource_class:
         type: string
         default: small
@@ -180,6 +189,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: sbt-paytouch
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - run:
@@ -209,6 +219,9 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      always_run_never_skip:
+        type: boolean
+        default: false
       resource_class:
         type: string
         default: small
@@ -218,6 +231,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: authentikat-jwt
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
@@ -250,6 +264,9 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test"]
+      always_run_never_skip:
+        type: boolean
+        default: false
       resource_class:
         type: string
         default: small
@@ -259,6 +276,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: domain
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
@@ -291,6 +309,9 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test", "package"]
+      always_run_never_skip:
+        type: boolean
+        default: false
       executor:
         type: enum
         enum: ["jdk", "jdk-postgres-redis"]
@@ -304,6 +325,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: pt_core
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
@@ -343,6 +365,9 @@ jobs:
         description: compile, test:compile or test
         type: enum
         enum: ["compile", "test:compile", "test", "package"]
+      always_run_never_skip:
+        type: boolean
+        default: false
       executor:
         type: enum
         enum: ["jdk", "jdk-postgres-redis"]
@@ -356,6 +381,7 @@ jobs:
       - checkout
       - run_or_skip:
           project: pt_ordering
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
@@ -401,18 +427,24 @@ commands:
     parameters:
       project:
         type: string
+    always_run_never_skip:
+      type: boolean
+      default: false
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - run:
-          name: Determining weather project was changed since the last successful run
-          command: |
-            echo Projects with changes:
-            cat /tmp/workspace/projects-with-changes
-            echo
-            if [ -z $(grep << parameters.project >> /tmp/workspace/projects-with-changes) ]; then
-              circleci-agent step halt
-            fi
+      - unless:
+          condition: << parameters.always_run_never_skip >>
+          steps:
+            - attach_workspace:
+                at: /tmp/workspace
+            - run:
+                name: Determining weather project was changed since the last successful run
+                command: |
+                  echo Projects with changes:
+                  cat /tmp/workspace/projects-with-changes
+                  echo
+                  if [ -z $(grep << parameters.project >> /tmp/workspace/projects-with-changes) ]; then
+                    circleci-agent step halt
+                  fi
 
   cache_dependencies_across_workflows:
     description: "Caches coursier, ivy2, m2 and sbt artifacts."
