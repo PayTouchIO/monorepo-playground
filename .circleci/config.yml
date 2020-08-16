@@ -316,16 +316,16 @@ jobs:
     executor: << parameters.executor >>
     resource_class: << parameters.resource_class >>
     steps:
+      - checkout
+      - run_or_skip:
+          project: pt_core
+          always_run_never_skip: << parameters.always_run_never_skip >>
       - when:
           condition:
             equal: [<< parameters.task >>, "package"]
           steps:
             - setup_remote_docker:
                 docker_layer_caching: true
-      - checkout
-      - run_or_skip:
-          project: pt_core
-          always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
