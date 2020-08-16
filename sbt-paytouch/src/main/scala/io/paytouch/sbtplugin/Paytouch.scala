@@ -270,7 +270,7 @@ object Paytouch extends AutoPlugin {
           registry = Some(sys.env("ECR_REPOSITORY_URL")),
           namespace = Some(organization.value),
           repository = repository, // pt_core or pt_ordering
-          tag = Some(sys.env(envKey)),
+          tag = Some(s"vlad-${sys.env(envKey)}"),
         )
       },
       docker / dockerfile := new Dockerfile {
