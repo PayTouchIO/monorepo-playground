@@ -1,0 +1,1034 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Daniela Sfregola <daniela@paytouch.io>
+      changes:
+        - modifySql:
+            dbms: postgresql
+            replace:
+              replace: TIMESTAMP WITHOUT TIME ZONE
+              with: TIMESTAMP WITH TIME ZONE
+        - createTable:
+            tableName: merchants
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: url_slug
+                  type: varchar(255)
+                  constraints: { nullable: false, unique: true }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: stores
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: location_id
+                  type: uuid
+                  constraints: { nullable: false, unique: true }
+              - column:
+                  name: merchant_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_merchant,
+                      references: merchants(id),
+                    }
+              - column:
+                  name: currency
+                  type: varchar(3)
+                  constraints: { nullable: false }
+              - column:
+                  name: url_slug
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: catalog_id
+                  type: uuid
+              - column:
+                  name: active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints: { nullable: false }
+              - column:
+                  name: description
+                  type: text
+              - column:
+                  name: hero_bg_color
+                  type: varchar(255)
+              - column:
+                  name: take_out_enabled
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints: { nullable: false }
+              - column:
+                  name: take_out_stop_mins_before_closing
+                  type: int
+              - column:
+                  name: delivery_enabled
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints: { nullable: false }
+              - column:
+                  name: delivery_min_amount
+                  type: number(12,2)
+              - column:
+                  name: delivery_max_amount
+                  type: number(12,2)
+              - column:
+                  name: delivery_max_distance
+                  type: number(12,2)
+              - column:
+                  name: delivery_stop_mins_before_closing
+                  type: int
+              - column:
+                  name: delivery_fee_amount
+                  type: number(12,2)
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - addUniqueConstraint:
+            tableName: stores
+            columnNames: merchant_id, url_slug
+        - createTable:
+            tableName: carts
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: order_id
+                  type: uuid
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: currency
+                  type: varchar(3)
+                  constraints: { nullable: false }
+              - column:
+                  name: total_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: subtotal_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: tax_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: tip_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: phone_number
+                  type: varchar(255)
+              - column:
+                  name: email
+                  type: varchar(255)
+              - column:
+                  name: delivery_address_line_1
+                  type: varchar(255)
+              - column:
+                  name: delivery_address_line_2
+                  type: varchar(255)
+              - column:
+                  name: delivery_city
+                  type: varchar(255)
+              - column:
+                  name: delivery_state
+                  type: varchar(255)
+              - column:
+                  name: delivery_country
+                  type: varchar(255)
+              - column:
+                  name: delivery_postal_code
+                  type: varchar(12)
+              - column:
+                  name: order_type
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: prepare_by_time
+                  type: varchar(255)
+              - column:
+                  name: driving_distance_in_meters
+                  type: number(12,2)
+              - column:
+                  name: estimated_driving_time_in_mins
+                  type: int
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: cart_tax_rates
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart,
+                      references: carts(id),
+                    }
+              - column:
+                  name: tax_rate_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: value
+                  type: number(5,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: total_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart,
+                      references: carts(id),
+                    }
+              - column:
+                  name: product_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: product_name
+                  type: varchar(255)
+              - column:
+                  name: product_description
+                  type: varchar(255)
+              - column:
+                  name: quantity
+                  type: number(12,4)
+                  constraints: { nullable: false }
+              - column:
+                  name: unit
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: price_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: tax_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: base_price_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: total_price_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: notes
+                  type: text
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: cart_item_variant_options
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_item_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart_item,
+                      references: cart_items(id),
+                    }
+              - column:
+                  name: variant_option_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: option_name
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: option_type_name
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: cart_item_modifier_options
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_item_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart_item,
+                      references: cart_items(id),
+                    }
+              - column:
+                  name: modifier_option_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: type
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: price_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: quantity
+                  type: number(12,4)
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createTable:
+            tableName: cart_item_tax_rates
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_item_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart_item,
+                      references: cart_items(id),
+                    }
+              - column:
+                  name: tax_rate_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints: { nullable: false }
+              - column:
+                  name: value
+                  type: number(5,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: total_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: apply_to_price
+                  type: boolean
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+  - changeSet:
+      id: 2
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - dropColumn:
+            tableName: carts
+            columnName: prepare_by_time
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: prepare_by
+                  type: time
+  - changeSet:
+      id: 3
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: merchant_id
+                  type: uuid
+        - sql:
+            sql: >
+              UPDATE carts
+              SET merchant_id = stores.merchant_id
+              FROM stores
+              WHERE carts.store_id = stores.id;
+        - addNotNullConstraint:
+            tableName: carts
+            columnName: merchant_id
+  - changeSet:
+      id: 4
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: first_name
+                  type: varchar(255)
+              - column:
+                  name: last_name
+                  type: varchar(255)
+  - changeSet:
+      id: 5
+      author: Daniela Sfregola <daniela@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: cost_amount
+                  type: number(12,2)
+        - renameColumn:
+            tableName: cart_items
+            oldColumnName: base_price_amount
+            newColumnName: calculated_price_amount
+  - changeSet:
+      id: 6
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: delivery_fee_amount
+                  type: number(12,2)
+  - changeSet:
+      id: 7
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: stores
+            columns:
+              - column:
+                  name: hero_image_urls
+                  type: jsonb
+                  constraints: { nullable: false }
+                  defaultValue: "[]"
+              - column:
+                  name: logo_image_urls
+                  type: jsonb
+                  constraints: { nullable: false }
+                  defaultValue: "[]"
+  - changeSet:
+      id: 8
+      author: Daniela Sfregola <daniela@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: merchants
+            columns:
+              - column:
+                  name: ekashu_seller_id
+                  type: varchar(20)
+                  value: "99963178"
+              - column:
+                  name: ekashu_seller_key
+                  type: varchar(255)
+                  value: "3VW4jG4TDAy6TVrT"
+              - column:
+                  name: ekashu_hash_key
+                  type: varchar(255)
+                  value: "pYBN0soopJoO7XKCBjbQK3r//Ys="
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: ekashu_seller_id
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: ekashu_seller_key
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: ekashu_hash_key
+  - changeSet:
+      id: 9
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: order_number
+                  type: varchar(255)
+  - changeSet:
+      id: 10
+      author: Daniela Sfregola <daniela@paytouch.io>
+      changes:
+        - createTable:
+            tableName: ekashu_callbacks
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: reference
+                  type: varchar(255)
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: payload
+                  type: jsonb
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+  - changeSet:
+      id: 11
+      author: Daniela Sfregola <daniela@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: store_address
+                  type: jsonb
+  - changeSet:
+      id: 12
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: merchants
+            columns:
+              - column:
+                  name: payment_processor
+                  type: varchar(15)
+                  value: ekashu
+              - column:
+                  name: payment_processor_config
+                  type: jsonb
+        - sql:
+            sql: >
+              UPDATE merchants
+              SET payment_processor_config = ('{"jsonClass":"EkashuConfig","sellerId":"' || ekashu_seller_id || '","sellerKey":"' || ekashu_seller_key || '","hashKey":"' || ekashu_hash_key || '"}')::json;
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor_config
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: payment_processor
+                  type: varchar(15)
+                  value: ekashu
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor_config
+  - changeSet:
+      id: 13
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - dropColumn:
+            tableName: merchants
+            columnName: ekashu_seller_id
+        - dropColumn:
+            tableName: merchants
+            columnName: ekashu_seller_key
+        - dropColumn:
+            tableName: merchants
+            columnName: ekashu_hash_key
+  - changeSet:
+      id: 14
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - renameTable:
+            oldTableName: ekashu_callbacks
+            newTableName: payment_processor_callbacks
+        - addColumn:
+            tableName: payment_processor_callbacks
+            columns:
+              - column:
+                  name: payment_processor
+                  type: varchar(15)
+        - sql:
+            sql: >
+              UPDATE payment_processor_callbacks SET payment_processor = 'ekashu';
+              UPDATE payment_processor_callbacks SET payment_processor = 'jetdirect' WHERE payload::varchar like '%jp_return_hash%';
+        - addNotNullConstraint:
+            tableName: payment_processor_callbacks
+            columnName: payment_processor
+  - changeSet:
+      id: 15
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: bundle_sets
+                  type: jsonb
+  - changeSet:
+      id: 16
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - dropNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor
+        - dropNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor_config
+        - addColumn:
+            tableName: stores
+            columns:
+              - column:
+                  name: payment_methods
+                  type: jsonb
+                  defaultValue: []
+                  constraints: { nullable: true }
+        - sql:
+            sql: >
+              UPDATE stores SET payment_methods = ('[{"type":"' || merchants.payment_processor || '", "active": true}]')::json FROM merchants WHERE merchants.id = stores.merchant_id;
+              UPDATE stores SET payment_methods = ('[]')::json WHERE payment_methods IS NULL;
+        - addNotNullConstraint:
+            tableName: stores
+            columnName: payment_methods
+  - changeSet:
+      id: 17
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - modifyDataType:
+            tableName: cart_items
+            columnName: product_description
+            newDataType: text
+        - modifyDataType:
+            tableName: merchants
+            columnName: url_slug
+            newDataType: text
+  - changeSet:
+      id: 18
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: status
+                  type: varchar(20)
+                  defaultValue: "new"
+                  constraints: { nullable: false }
+        - sql:
+            sql: >
+              UPDATE carts SET status = 'paid' WHERE order_id IS NOT NULL;
+  - changeSet:
+      id: 19
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: payment_method_type
+                  type: varchar(20)
+        - sql:
+            sql: >
+              UPDATE carts SET payment_method_type = payment_processor WHERE status = 'paid';
+  - changeSet:
+      id: 20
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - dropNotNullConstraint:
+            tableName: carts
+            columnName: payment_processor
+  - changeSet:
+      id: 21
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - createTable:
+            tableName: worldpay_payments
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: store_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_store,
+                      references: stores(id),
+                    }
+              - column:
+                  name: cart_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_cart,
+                      references: carts(id),
+                    }
+              - column:
+                  name: transaction_setup_id
+                  type: varchar(255)
+                  constraints: { nullable: false, unique: true }
+              - column:
+                  name: success_return_url
+                  type: text
+                  constraints: { nullable: false }
+              - column:
+                  name: failure_return_url
+                  type: text
+                  constraints: { nullable: false }
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+  - changeSet:
+      id: 22
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - modifyDataType:
+            tableName: cart_tax_rates
+            columnName: value
+            newDataType: number(6,3)
+        - modifyDataType:
+            tableName: cart_item_tax_rates
+            columnName: value
+            newDataType: number(6,3)
+  - changeSet:
+      id: 23
+      author: Luca Spiller <luca@paytouch.io>
+      changes:
+        - createTable:
+            tableName: payment_intents
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints: { primaryKey: true }
+              - column:
+                  name: merchant_id
+                  type: uuid
+                  constraints:
+                    {
+                      nullable: false,
+                      deleteCascade: true,
+                      foreignKeyName: fk_merchant,
+                      references: merchants(id),
+                    }
+              - column:
+                  name: order_id
+                  type: uuid
+                  constraints: { nullable: false }
+              - column:
+                  name: order_item_ids
+                  type: jsonb
+                  constraints: { nullable: false }
+              - column:
+                  name: subtotal_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: tax_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: tip_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: total_amount
+                  type: number(12,2)
+                  constraints: { nullable: false }
+              - column:
+                  name: payment_method_type
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: success_return_url
+                  type: text
+                  constraints: { nullable: false }
+              - column:
+                  name: failure_return_url
+                  type: text
+                  constraints: { nullable: false }
+              - column:
+                  name: status
+                  type: varchar(20)
+                  constraints: { nullable: false }
+              - column:
+                  name: metadata
+                  type: jsonb
+                  constraints: { nullable: false }
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints: { nullable: false }
+              - column:
+                  name: updated_at
+                  type: datetime
+                  constraints: { nullable: false }
+        - createIndex:
+            columns:
+              - column:
+                  name: merchant_id
+              - column:
+                  name: order_id
+            indexName: idx_payment_intents_merchant_id_order_id
+            tableName: payment_intents
+        - addColumn:
+            tableName: worldpay_payments
+            columns:
+              - column:
+                  name: object_id
+                  type: uuid
+              - column:
+                  name: object_type
+                  type: varchar(20)
+        - sql:
+            sql: >
+              UPDATE worldpay_payments SET object_id = cart_id, object_type = 'Cart';
+        - addNotNullConstraint:
+            tableName: worldpay_payments
+            columnName: object_id
+        - addNotNullConstraint:
+            tableName: worldpay_payments
+            columnName: object_type
+        - dropColumn:
+            tableName: worldpay_payments
+            columnName: cart_id
+        - dropColumn:
+            tableName: worldpay_payments
+            columnName: store_id
+  - changeSet:
+      id: 24
+      author: Vladyslav Pekker <vlad@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: cart_items
+            columns:
+              - column:
+                  name: type
+                  type: varchar(255)
+              - column:
+                  name: gift_card_data
+                  type: jsonb
+        - sql:
+            sql: >
+              UPDATE cart_items SET type = 'product';
+        - addNotNullConstraint:
+            tableName: cart_items
+            columnName: type
+  - changeSet:
+      id: 25
+      author: Vladyslav Pekker <vlad@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: applied_gift_card_passes
+                  type: jsonb
+                  constraints: { nullable: false }
+                  defaultValue: "[]"
+  - changeSet:
+      id: 26
+      author: Vladyslav Pekker <vlad@paytouch.io>
+      changes:
+        - addColumn:
+            tableName: carts
+            columns:
+              - column:
+                  name: total_amount_without_gift_cards
+                  type: number(12,2)
+        - sql:
+            sql: >
+              UPDATE carts SET total_amount_without_gift_cards = total_amount;
+        - addNotNullConstraint:
+            tableName: carts
+            columnName: total_amount_without_gift_cards
+  - changeSet:
+      id: 27
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - addNotNullConstraint:
+            tableName: stores
+            columnName: catalog_id
+  - changeSet:
+      id: 28
+      author: Francesco Levorato <francesco@paytouch.io>
+      changes:
+        - sql:
+            sql: >
+              UPDATE merchants SET payment_processor = 'paytouch'
+               WHERE payment_processor is null;
+              UPDATE merchants SET payment_processor_config = jsonb_build_object('jsonClass', 'PaytouchConfig')
+               WHERE payment_processor_config is null;
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor
+        - addNotNullConstraint:
+            tableName: merchants
+            columnName: payment_processor_config
+        - sql:
+            sql: >
+              UPDATE merchants SET payment_processor = 'paytouch'
+               WHERE payment_processor is null;
+              UPDATE merchants SET payment_processor_config = jsonb_build_object('jsonClass', 'PaytouchConfig')
+               WHERE payment_processor_config is null;
