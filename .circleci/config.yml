@@ -316,6 +316,8 @@ jobs:
     executor: << parameters.executor >>
     resource_class: << parameters.resource_class >>
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
       - checkout
       - run_or_skip:
           project: pt_core
