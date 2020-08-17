@@ -211,15 +211,9 @@ jobs:
           always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
-      - run:
-          name: Running the actual job
-          command: |
-            cd sbt-paytouch
-            if [ << parameters.task >> = "compile" ]; then
-              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-            else
-              sbt << parameters.task >>
-            fi
+      - sbt:
+          project: sbt-paytouch
+          task: << parameters.task >>
       - cache_dependencies_across_workflows:
           project: sbt-paytouch
       - cache_compilation_within_workflow:
@@ -254,15 +248,9 @@ jobs:
       - restore_single_project_depenencies:
           project: authentikat-jwt
       - restore_all_compilations
-      - run:
-          name: Running the actual job
-          command: |
-            cd authentikat-jwt
-            if [ << parameters.task >> = "compile" ]; then
-              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-            else
-              sbt << parameters.task >>
-            fi
+      - sbt:
+          project: authentikat-jwt
+          task: << parameters.task >>
       - cache_dependencies_across_workflows:
           project: authentikat-jwt
       - cache_compilation_within_workflow:
@@ -297,15 +285,9 @@ jobs:
       - restore_single_project_depenencies:
           project: domain
       - restore_all_compilations
-      - run:
-          name: Running the actual job
-          command: |
-            cd domain
-            if [ << parameters.task >> = "compile" ]; then
-              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-            else
-              sbt << parameters.task >>
-            fi
+      - sbt:
+          project: domain
+          task: << parameters.task >>
       - cache_dependencies_across_workflows:
           project: domain
       - cache_compilation_within_workflow:
@@ -350,22 +332,21 @@ jobs:
       - restore_all_compilations
       - when:
           condition:
+            equal: [<< parameters.task >>, "compile"]
+            steps:
+              - build_swagger:
+                  project: pt_core
+      - when:
+          condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
-          steps:
-            - aws_install
-            - aws_login
-            - download_additional_artifacts:
-                project: pt_core
-      - run:
-          name: Running the actual job
-          command: |
-            cd pt_core
-            if [ << parameters.task >> = "compile" ]; then
-              bin/build_swagger && \
-              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-            else
-              sbt << parameters.task >>
-            fi
+            steps:
+              - aws_install
+              - aws_login
+              - download_additional_artifacts:
+                  project: pt_core
+      - sbt:
+          project: pt_core
+          task: << parameters.task >>
       - cache_dependencies_across_workflows:
           project: pt_core
       - cache_compilation_within_workflow:
@@ -415,22 +396,21 @@ jobs:
       - restore_all_compilations
       - when:
           condition:
+            equal: [<< parameters.task >>, "compile"]
+            steps:
+              - build_swagger:
+                  project: pt_ordering
+      - when:
+          condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
-          steps:
-            - aws_install
-            - aws_login
-            - download_additional_artifacts:
-                project: pt_ordering
-      - run:
-          name: Running the actual job
-          command: |
-            cd pt_ordering
-            if [ << parameters.task >> = "compile" ]; then
-              bin/build_swagger && \
-              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
-            else
-              sbt << parameters.task >>
-            fi
+            steps:
+              - aws_install
+              - aws_login
+              - download_additional_artifacts:
+                  project: pt_ordering
+      - sbt:
+          project: pt_ordering
+          task: << parameters.task >>
       - cache_dependencies_across_workflows:
           project: pt_ordering
       - cache_compilation_within_workflow:
@@ -654,3 +634,33 @@ commands:
           root: ~/workspace
           paths:
             - build-step-build-num
+
+  build_swagger:
+    parameters:
+      project:
+        type: string
+    steps:
+      - run:
+          name: Building swagger
+          command: |
+            cd << parameters.project >>
+            bin/build_swagger
+
+  sbt:
+    parameters:
+      project:
+        type: string
+      task:
+        description: compile, test:compile, test or dockerBuildAndPush
+        type: enum
+        enum: ["compile", "test:compile", "test", "dockerBuildAndPush"]
+    steps:
+      - run:
+          name: Running the actual job
+          command: |
+            cd << parameters.project >>
+            if [ << parameters.task >> = compile ]; then
+              sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
+            else
+              sbt << parameters.task >>
+            fi
