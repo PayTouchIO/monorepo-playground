@@ -3,6 +3,6 @@ package ptordering
 
 final class ExampleSuite extends TestSuite {
   test("ordering") {
-    Domain shouldBe Domain
+    Shared shouldBe Shared
   }
 }

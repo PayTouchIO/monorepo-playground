@@ -254,8 +254,8 @@ object Dependencies {
     lazy val `authentikat-jwt` =
       ProjectRef(file("../authentikat-jwt"), "authentikat-jwt")
 
-    lazy val domain =
-      ProjectRef(file("../domain"), "domain")
+    lazy val shared =
+      ProjectRef(file("../shared"), "shared")
 
     lazy val misc =
       ProjectRef(file("../misc"), "misc")

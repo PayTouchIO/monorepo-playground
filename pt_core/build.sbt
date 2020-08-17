@@ -10,7 +10,7 @@ lazy val core =
   project
     .in(file("core"))
     .dependsOn(`authentikat-jwt` % Cctt)
-    .dependsOn(domain % Cctt)
+    .dependsOn(shared % Cctt)
     .enablePlugins(SbtLiquibase, DockerPlugin)
     .settings(
       assembly / mainClass := Some("io.paytouch.core.Main"),

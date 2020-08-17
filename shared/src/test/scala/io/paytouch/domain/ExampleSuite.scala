@@ -1,8 +1,8 @@
 package io.paytouch
-package domain
+package shared
 
 final class ExampleSuite extends TestSuite {
-  test("domain") {
-    Domain shouldBe Domain
+  test("shared") {
+    Shared shouldBe Shared
   }
 }

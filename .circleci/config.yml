@@ -24,8 +24,8 @@ workflows:
           requires:
             - sbt-paytouch-compile
           # resource_class: medium+
-      - domain:
-          name: domain-compile
+      - shared:
+          name: shared-compile
           config: main
           task: compile
           always_run_never_skip: true
@@ -38,7 +38,7 @@ workflows:
           task: compile
           requires:
             - authentikat-jwt-compile
-            - domain-compile
+            - shared-compile
           # resource_class: medium+
       - pt_ordering:
           name: pt_ordering-compile
@@ -46,7 +46,7 @@ workflows:
           task: compile
           requires:
             - authentikat-jwt-compile
-            - domain-compile
+            - shared-compile
           # resource_class: medium+
 
       # test:compile
@@ -67,14 +67,14 @@ workflows:
             - sbt-paytouch-test:compile
             - authentikat-jwt-compile
           # resource_class: medium+
-      - domain:
-          name: domain-test:compile
+      - shared:
+          name: shared-test:compile
           config: test
           task: test:compile
           always_run_never_skip: true
           requires:
             - sbt-paytouch-test:compile
-            - domain-compile
+            - shared-compile
           # resource_class: medium+
       - pt_core:
           name: pt_core-test:compile
@@ -83,7 +83,7 @@ workflows:
           requires:
             - pt_core-compile
             - authentikat-jwt-test:compile
-            - domain-test:compile
+            - shared-test:compile
           # resource_class: medium+
       - pt_ordering:
           name: pt_ordering-test:compile
@@ -92,7 +92,7 @@ workflows:
           requires:
             - pt_ordering-compile
             - authentikat-jwt-test:compile
-            - domain-test:compile
+            - shared-test:compile
           # resource_class: medium+
 
       # test
@@ -110,12 +110,12 @@ workflows:
           requires:
             - authentikat-jwt-test:compile
           # resource_class: medium
-      - domain:
-          name: domain-test
+      - shared:
+          name: shared-test
           config: test
           task: test
           requires:
-            - domain-test:compile
+            - shared-test:compile
           # resource_class: medium
       - pt_core:
           name: pt_core-test
@@ -257,7 +257,7 @@ jobs:
           project: authentikat-jwt
           config: << parameters.config >>
 
-  domain:
+  shared:
     parameters:
       config:
         description: main or test
@@ -278,20 +278,20 @@ jobs:
     steps:
       - checkout
       - run_or_skip:
-          project: domain
+          project: shared
           always_run_never_skip: << parameters.always_run_never_skip >>
       - restore_single_project_depenencies:
           project: sbt-paytouch
       - restore_single_project_depenencies:
-          project: domain
+          project: shared
       - restore_all_compilations
       - sbt:
-          project: domain
+          project: shared
           task: << parameters.task >>
       - cache_dependencies_across_workflows:
-          project: domain
+          project: shared
       - cache_compilation_within_workflow:
-          project: domain
+          project: shared
           config: << parameters.config >>
 
   pt_core:
@@ -326,7 +326,7 @@ jobs:
       - restore_single_project_depenencies:
           project: authentikat-jwt
       - restore_single_project_depenencies:
-          project: domain
+          project: shared
       - restore_single_project_depenencies:
           project: pt_core
       - restore_all_compilations
@@ -390,7 +390,7 @@ jobs:
       - restore_single_project_depenencies:
           project: authentikat-jwt
       - restore_single_project_depenencies:
-          project: domain
+          project: shared
       - restore_single_project_depenencies:
           project: pt_ordering
       - restore_all_compilations
@@ -537,7 +537,7 @@ commands:
       - restore_single_project_compilation:
           project: authentikat-jwt
       - restore_single_project_compilation:
-          project: domain
+          project: shared
       - restore_single_project_compilation:
           project: pt_core
       - restore_single_project_compilation:

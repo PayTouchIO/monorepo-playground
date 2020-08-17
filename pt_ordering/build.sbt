@@ -10,7 +10,7 @@ lazy val ordering =
   project
     .in(file("ordering"))
     .dependsOn(`authentikat-jwt` % Cctt)
-    .dependsOn(domain % Cctt)
+    .dependsOn(shared % Cctt)
     .enablePlugins(SbtLiquibase, DockerPlugin)
     .settings(
       assembly / mainClass := Some("io.paytouch.ordering.Main"),

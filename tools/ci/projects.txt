@@ -1,5 +1,5 @@
 sbt-paytouch
 authentikat-jwt
-domain
+shared
 pt_core
 pt_ordering

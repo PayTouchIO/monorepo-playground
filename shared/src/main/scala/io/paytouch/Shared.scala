@@ -1,3 +1,3 @@
 package io.paytouch
 
-case object Domain
+case object Shared

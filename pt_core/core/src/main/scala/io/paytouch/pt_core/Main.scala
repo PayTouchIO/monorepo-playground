@@ -4,7 +4,7 @@ package ptcore
 object Main extends App {
   println("─" * 100)
 
-  println(Domain)
+  println(Shared)
 
   println("─" * 100)
 }
