@@ -86,7 +86,7 @@ workflows:
             - pt_core-compile
             - authentikat-jwt-test:compile
             - shared-test:compile
-          resource_class: medium
+          resource_class: medium+
       - pt_ordering:
           name: pt_ordering-test:compile
           config: test
@@ -95,7 +95,7 @@ workflows:
             - pt_ordering-compile
             - authentikat-jwt-test:compile
             - shared-test:compile
-          resource_class: medium
+          resource_class: medium+
 
       # test
       - sbt-paytouch:
@@ -664,8 +664,7 @@ commands:
       - run:
           name: Running the actual job
           environment:
-            # JAVA_TOOL_OPTIONS: -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss4M -Xms200M -Xmx3G -Duser.timezone=UTC
-            JAVA_TOOL_OPTIONS: -Xss16M -XX:+UseContainerSupport -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Duser.timezone=UTC
+            JAVA_TOOL_OPTIONS: -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss4M -Xms200M -Xmx5G -Duser.timezone=UTC
           no_output_timeout: 30m
           command: |
             cd << parameters.project >>
