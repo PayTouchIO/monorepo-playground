@@ -657,6 +657,8 @@ commands:
     steps:
       - run:
           name: Running the actual job
+          environment:
+            JAVA_TOOL_OPTIONS: -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xms200M -Xmx3G -Duser.timezone=UTC
           command: |
             cd << parameters.project >>
             if [ << parameters.task >> = compile ]; then
