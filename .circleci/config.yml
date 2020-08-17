@@ -357,7 +357,7 @@ jobs:
 
               sbt dockerBuildAndPush
 
-              git tag vlad-$CIRCLE_BUILD_NUM vlad-$CIRCLE_SHA1
+              git tag vlad-$CIRCLE_BUILD_NUM $CIRCLE_SHA1
               git push origin vlad-$CIRCLE_BUILD_NUM
 
               mkdir -p ~/workspace
