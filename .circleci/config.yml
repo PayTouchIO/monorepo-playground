@@ -321,7 +321,7 @@ jobs:
       task:
         description: compile, test:compile or test
         type: enum
-        enum: ["compile", "test:compile", "test", "package"]
+        enum: ["compile", "test:compile", "test", "dockerBuildAndPush"]
       always_run_never_skip:
         type: boolean
         default: false
@@ -384,7 +384,7 @@ jobs:
       task:
         description: compile, test:compile or test
         type: enum
-        enum: ["compile", "test:compile", "test", "package"]
+        enum: ["compile", "test:compile", "test", "dockerBuildAndPush"]
       always_run_never_skip:
         type: boolean
         default: false
