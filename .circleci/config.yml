@@ -95,7 +95,7 @@ workflows:
             - pt_ordering-compile
             - authentikat-jwt-test:compile
             - shared-test:compile
-          resource_class: medium+
+          resource_class: medium
 
       # test
       - sbt-paytouch:
@@ -126,7 +126,7 @@ workflows:
           task: test
           requires:
             - pt_core-test:compile
-          # resource_class: medium
+          resource_class: medium
       - pt_ordering:
           name: pt_ordering-test
           executor: jdk-postgres-redis
