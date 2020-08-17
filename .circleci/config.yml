@@ -664,7 +664,8 @@ commands:
       - run:
           name: Running the actual job
           environment:
-            JAVA_TOOL_OPTIONS: -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss4M -Xms200M -Xmx3G -Duser.timezone=UTC
+            # JAVA_TOOL_OPTIONS: -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Xss4M -Xms200M -Xmx3G -Duser.timezone=UTC
+            JAVA_TOOL_OPTIONS: -XX:+UseContainerSupport -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -Duser.timezone=UTC
           no_output_timeout: 30m
           command: |
             cd << parameters.project >>
