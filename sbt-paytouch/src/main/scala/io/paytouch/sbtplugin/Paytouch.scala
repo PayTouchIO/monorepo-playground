@@ -90,7 +90,9 @@ object Paytouch extends AutoPlugin {
 
   override lazy val projectSettings: Seq[Def.Setting[_]] = // format: off
              aliasSettings // format: on
+      .union(compilerPluginSettings)
       .union(dependencySettings)
+      .union(otherCommonSettings)
 
   lazy val aliasSettings: Seq[Def.Setting[_]] = // format: off
              addCommandAlias("l", "projects") // format: on
@@ -248,6 +250,13 @@ object Paytouch extends AutoPlugin {
       Resolver.bintrayRepo("underscoreio", "libraries"),
       "jitpack".at("https://jitpack.io"),
     ),
+    dependencyOverrides ++= Seq(
+      // We need to stay on 3.5.x until https://github.com/json4s/json4s/issues/507
+      // which breaks extraction of case classes with type constructors is solved
+      `org.json4s`.`json4s-core`,
+      `org.json4s`.`json4s-jackson`,
+      `org.json4s`.`json4s-native`,
+    ),
     // io.paytouch dependencies are not allowed here, since they would be circular
     libraryDependencies ++= Seq(
       `com.github.alexarchambault`.`scalacheck-shapeless_1.14`,
@@ -258,7 +267,7 @@ object Paytouch extends AutoPlugin {
     ).map(_ % Test),
   )
 
-  def dockerSettings(repository: String) = {
+  def dockerSettings(repository: String): Seq[Def.Setting[_]] = {
     import sbtdocker.DockerPlugin.autoImport._
 
     import sbtassembly.AssemblyKeys._
@@ -301,4 +310,12 @@ object Paytouch extends AutoPlugin {
       },
     )
   }
+
+  lazy val compilerPluginSettings: Seq[Def.Setting[_]] = Seq(
+    addCompilerPlugin(`org.typelevel`.`kind-projector`),
+  )
+
+  lazy val otherCommonSettings: Seq[Def.Setting[_]] = Seq(
+    update / evictionWarningOptions := EvictionWarningOptions.empty,
+  )
 }

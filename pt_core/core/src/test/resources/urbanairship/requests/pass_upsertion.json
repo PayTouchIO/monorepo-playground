@@ -1,0 +1,22 @@
+{
+  "headers":{
+    "barcode_value":{
+      "value":"abc1234567890",
+    }
+  },
+  "fields":{
+    "Points":{
+      "value": 57
+    },
+    "Merchant Website":{
+      "value": "https:\/\/www.whitehouse.gov"
+    },
+    "Member Name":{
+      "value":"Barak Obama"
+    }
+  },
+  "beacons":[],
+  "publicUrl" : {
+    "type" : "single"
+  }
+}

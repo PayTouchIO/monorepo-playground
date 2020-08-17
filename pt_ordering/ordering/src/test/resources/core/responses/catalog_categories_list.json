@@ -1,0 +1,101 @@
+{
+  "data": [{
+    "id": "80bd48e6-3dd8-41e9-bb36-4b69c9b0cb18",
+    "name": "Appetizers",
+    "catalog_id": "60f0b330-2116-4d50-8e55-fab0ddc4e7b0",
+    "merchant_id": "152444e7-168f-4b1b-8e28-a33fc3f5f92a",
+    "description": "Nice description here",
+    "avatar_bg_color": "2b98f0",
+    "avatar_image_url": null,
+    "avatar_image_urls": [
+      {
+        "image_upload_id": "152444e7-168f-4b1b-8e28-a33fc3f5f92a",
+        "urls": {
+          "medium": "http://my-image-url-medium",
+          "thumbnail": "http://my-image-url-thumbnail",
+          "small": "http://my-image-url-small",
+          "original": "http://my-image-url-original",
+          "large": "http://my-image-url-large"
+        }
+      }
+    ],
+    "position": 0,
+    "active": true,
+    "subcategories": null,
+    "location_overrides": {
+      "0876e07d-3cbc-3916-b6e0-bda7cbe66112": {
+        "active": true,
+        "availabilities": {
+          "sunday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "friday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "monday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "saturday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "tuesday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "wednesday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }],
+          "thursday": [{
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }]
+        }
+      }
+    },
+    "products_count": null,
+    "availabilities": {
+      "sunday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "friday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "monday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "saturday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "tuesday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "wednesday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }],
+      "thursday": [{
+        "start": "12:00:00",
+        "end": "00:00:00"
+      }]
+    }
+  }],
+  "object": "list",
+  "pagination": {
+    "prev": null,
+    "next": null,
+    "first": "http://core-dev.paytouch.io/v1/categories.list?expand%5B%5D=subcatalog_categories,locations,availabilities&page=1",
+    "last": "http://core-dev.paytouch.io/v1/categories.list?expand%5B%5D=subcatalog_categories,locations,availabilities&page=1",
+    "per_page": 30,
+    "total_count": 1
+  }
+}

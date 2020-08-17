@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Response xmlns="https://transaction.elementexpress.com">
+  <Response>
+    <ExpressResponseCode>103</ExpressResponseCode>
+    <ExpressResponseMessage>The element 'Transaction
+Setup' in namespace 'https://transaction.elementexpress.com' has invalid child element 'CustomCss' in namespace 'https://transaction.elementexpress.com'. List
+ of possible elements expected: 'EWIC, Batch, EBT, Token, Host, UpdateDetail, Address, ExtendedParameters, Card, Identification, PaymentAccount, DemandDeposit
+Account, ValidateCredentials' in namespace 'https://transaction.elementexpress.com'.</ExpressResponseMessage>
+  </Response>
+</Response>

@@ -1,0 +1,7 @@
+{
+  "error": {
+    "message": "Invalid currency: ppp. Stripe currently supports these currencies: ...",
+    "param": "currency",
+    "type": "invalid_request_error"
+  }
+}

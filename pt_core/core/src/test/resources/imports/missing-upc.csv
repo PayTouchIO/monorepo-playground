@@ -1,0 +1,8 @@
+product name,description,sku,upc,sold by,price,cost,category,sub category,variant name,variant option,variant name,variant option,variant name,variant option,stock alert,stock count,tax name,enabled
+Simply a product,with Sneakers,ABCDEFG,123456789,unit,1,2.3,Footwear,,,,,,,,,0,New York,
+Simply another product,with Sneakers,ABCDEFG,,unit,1,2.3,Footwear,,,,,,,,,0,New York,
+OCP02- OFF COURT PRO UNISEX SNEAKERS,97% leather 2% polyester 1% polyurethane unisex Sneakers,H408712-001,7332939379937,unit,128,26.13,Footwear,,size,7,color,WHITE,,,,0,New York,
+OCP02- OFF COURT PRO UNISEX SNEAKERS,97% leather 2% polyester 1% polyurethane unisex Sneakers,H408712-001,7332939379944,unit,128,26.13,Footwear,,size,8,color,WHITE,,,,0,New York,
+OCP02- OFF COURT PRO UNISEX SNEAKERS,97% leather 2% polyester 1% polyurethane unisex Sneakers,H408712-001,7332939379951,unit,128,26.13,Footwear,,size,9,color,WHITE,,,,0,New York,
+OCP02- OFF COURT PRO UNISEX SNEAKERS,97% leather 2% polyester 1% polyurethane unisex Sneakers,H408712-001,,unit,128,26.13,Footwear,,size,9.5,color,WHITE,,,,0,New York,
+OCP02- OFF COURT PRO UNISEX SNEAKERS,97% leather 2% polyester 1% polyurethane unisex Sneakers,H408712-001,7332939379968,unit,128,26.13,Footwear,,size,10,color,WHITE,,,,0,New York,

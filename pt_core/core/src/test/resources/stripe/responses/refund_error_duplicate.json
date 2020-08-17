@@ -1,0 +1,8 @@
+{
+  "error": {
+    "code": "charge_already_refunded",
+    "doc_url": "https://stripe.com/docs/error-codes/charge-already-refunded",
+    "message": "Charge ch_1GYTdfJdRL7ojpuqdI2Mp9W1 has already been refunded.",
+    "type": "invalid_request_error"
+  }
+}

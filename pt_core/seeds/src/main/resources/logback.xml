@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_LEVEL:-INFO}">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="com.ning.http.client" level="WARN"/>
+    <logger name="liquibase" level="WARN"/>
+    <logger name="slick.jdbc.JdbcBackend.statement" level="WARN"/> <!-- change me to debug to see the queries in the DB -->
+    <logger name="com.zaxxer.hikari" level="WARN"/>
+</configuration>

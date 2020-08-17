@@ -1,0 +1,260 @@
+{
+  "headers": {
+    "suppress_strip_shine":{
+      "formatType":1,
+      "value":"true",
+      "fieldType":"topLevel"
+    },
+    "barcode_value":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"barcode"
+    },
+    "transitType":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"passTop"
+    },
+    "icon_image":{
+      "formatType":1,
+      "value":"https:\/\/s3.amazonaws.com\/passtools_prod\/1\/images\/b00fd5c1b2ddf68802091b8d2fba83474b26afb3_paytouchicon1x.png",
+      "fieldType":"image"
+    },
+    "footer_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "barcode_type":{
+      "formatType":1,
+      "value":"PKBarcodeFormatCode128",
+      "fieldType":"barcode"
+    },
+    "logo_image":{
+      "formatType":1,
+      "value":"https:\/\/d1uxuwjszi27mu.cloudfront.net\/ua_loyalty_program\/loyalty-box.png",
+      "fieldType":"image"
+    },
+    "thumbnail_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "background_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "background_color":{
+      "formatType":1,
+      "value":"rgb(255,255,255)",
+      "fieldType":"topLevel"
+    },
+    "barcode_encoding":{
+      "formatType":1,
+      "value":"iso-8859-1",
+      "fieldType":"barcode"
+    },
+    "logo_color":{
+      "formatType":1,
+      "value":"rgb(0,0,0)",
+      "fieldType":"topLevel"
+    },
+    "barcodeAltText":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"barcode"
+    },
+    "foreground_color":{
+      "formatType":1,
+      "value":"rgb(0,0,0)",
+      "fieldType":"topLevel"
+    },
+    "strip_image":{
+      "formatType":1,
+      "value":"https:\/\/s3.amazonaws.com\/passtools_prod\/1\/images\/884e97bb7984c1d3122bf74d0c344f1e40a10c7b_banner.png",
+      "fieldType":"image"
+    },
+    "logo_text":{
+      "formatType":1,
+      "value":"Willow Cafe",
+      "fieldType":"topLevel"
+    },
+    "expirationDate":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"topLevel"
+    }
+  },
+  "fields":{
+    "Program Name":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"PayTouch Software Inc.",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Program Name",
+      "fieldType":"notAssigned",
+      "required":false,
+      "order":1
+    },
+    "Program Details":{
+      "changeMessage":"",
+      "label":"Program Details",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"fooDetails",
+      "fieldType":"back",
+      "required":false,
+      "order":1
+    },
+    "Address":{
+      "changeMessage":"",
+      "label":"Our Store's Location:",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"test / bar",
+      "fieldType":"back",
+      "required":false,
+      "order":4
+    },
+    "Tier":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"Tier",
+      "hideEmpty":false,
+      "formatType":"Number",
+      "value":2.0,
+      "fieldType":"notAssigned",
+      "required":false,
+      "order":1
+    },
+    "Business Name":{
+      "changeMessage":null,
+      "label":" ",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Willow Cafe",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Loyalty Program Name":{
+      "changeMessage":null,
+      "label":"Loyalty Program Name",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"PayTouch Software Inc.",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Name":{
+      "changeMessage":null,
+      "label":" ",
+      "hideEmpty":true,
+      "formatType":"String",
+      "value":"n.a",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Member ID":{
+      "changeMessage":null,
+      "label":"Member ID",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"123456789",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Points":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"Points",
+      "hideEmpty":false,
+      "formatType":"Number",
+      "value":"",
+      "fieldType":"header",
+      "required":false,
+      "order":1
+    },
+    "Powered By":{
+      "changeMessage":null,
+      "label":"Powered By Paytouch",
+      "hideEmpty":false,
+      "formatType":"URL",
+      "value":"http:\/\/www.paytouch.com",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Visits":{
+      "changeMessage":"",
+      "label":"Visits",
+      "hideEmpty":false,
+      "formatType":"Number",
+      "value":"",
+      "fieldType":"secondary",
+      "required":false,
+      "order":1
+    },
+    "Phone":{
+      "changeMessage":"",
+      "label":"Phone:",
+      "hideEmpty":false,
+      "formatType":"Phone",
+      "value":"+1 (604) 555-1212",
+      "fieldType":"back",
+      "required":false,
+      "order":3
+    },
+    "Spend":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"Spend",
+      "hideEmpty":false,
+      "formatType":"Currency",
+      "value":0.0,
+      "currencyCode":"USD",
+      "fieldType":"secondary",
+      "required":false,
+      "order":2
+    },
+    "Merchant Website":{
+      "changeMessage":"",
+      "label":"Find us online:",
+      "hideEmpty":false,
+      "formatType":"URL",
+      "value":"http:\/\/www.paytouch.com",
+      "fieldType":"back",
+      "required":false,
+      "order":2
+    },
+    "Next Reward":{
+      "changeMessage":"",
+      "label":"Next Reward",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"100 pts",
+      "fieldType":"secondary",
+      "required":false,
+      "order":3
+    },
+    "Tier Name":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"Tier Name",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Silver",
+      "fieldType":"notAssigned",
+      "required":false,
+      "order":2
+    }
+  },
+  "vendor":"Apple",
+  "projectType":"memberCard",
+  "type":"Store Card",
+  "vendorId":1,
+  "deleted":"False",
+  "description":"Description",
+  "name":"Loyalty Card",
+  "disabled":"False"
+}

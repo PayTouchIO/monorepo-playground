@@ -1,0 +1,1078 @@
+swagger: "2.0"
+info:
+  description: This is Paytouch Ordering API documentation.
+  version: 0.1.0
+  title: Paytouch Ordering
+  contact: { name: apiteam@paytouch.io }
+  license:
+    { name: Apache 2.0, url: "http://www.apache.org/licenses/LICENSE-2.0.html" }
+host: example.com
+basePath: /v1
+schemes: [https]
+securityDefinitions:
+  bearer: { type: apiKey, name: Authorization, in: header }
+  basicAuth: { type: basic }
+paths:
+  /ping:
+    get:
+      tags: [utils]
+      summary: Checks if API responds something.
+      consumes: [application/json]
+      produces: [application/json]
+      responses:
+        "200": { description: API is alive }
+  /carts.add_product:
+    post:
+      tags: [carts]
+      parameters:
+        - name: cart
+          in: body
+          description: The product item you want to add to the cart.
+          required: true
+          schema: { $ref: "#/definitions/ProductCartItemCreation" }
+      summary: Adds a product to the cart
+      description: It will create a new item or merge quantity to an existing matching item.
+      operationId: cartsAddProduct
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.add_gift_card:
+    post:
+      tags: [carts]
+      parameters:
+        - name: cart
+          in: body
+          description: The gift card item you want to add to the cart.
+          required: true
+          schema:
+            { $ref: "#/definitions/GiftCardCartItemCreation" }
+      summary: Adds a product to the cart
+      description: It will create a new item or merge quantity to an existing matching item.
+      operationId: cartsAddGiftCard
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.get:
+    get:
+      tags: [carts]
+      summary: Returns a cart
+      description: Returns a cart by id
+      operationId: cartById
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+            required: true,
+          }
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.apply_gift_card:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart to check out,
+            required: true,
+          }
+        - name: cart
+          in: body
+          description: The cart you want to check out
+          required: false
+          schema: { $ref: "#/definitions/ApplyGiftCard" }
+      summary: Applies gift card
+      description: "Applied gift card unless it's already used."
+      operationId: applyGiftCard
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.unapply_gift_card:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart to check out,
+            required: true,
+          }
+        - name: cart
+          in: body
+          description: The cart you want to check out
+          required: false
+          schema: { $ref: "#/definitions/UnapplyGiftCard" }
+      summary: Unapplies gift card
+      description: "Unapplied gift card unless it's already used."
+      operationId: unapplyGiftCard
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/CartResponse" }
+        "400":
+          description: Bad Request. Gift card is already charged.
+  /carts.checkout:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart to check out,
+            required: true,
+          }
+        - name: cart
+          in: body
+          description: The cart you want to check out
+          required: false
+          schema: { $ref: "#/definitions/CartUpdate" }
+      summary: Checks out a cart
+      description: "This endpoint supports partial updates: only the fields sent will be changed, the others will remain untouched."
+      operationId: checkoutCart
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.create:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart to create,
+            required: true,
+          }
+        - name: cart
+          in: body
+          description: The cart you want to create
+          required: true
+          schema: { $ref: "#/definitions/CartCreation" }
+      summary: Creates a cart
+      description: ""
+      operationId: createCart
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "201":
+          description: Created - entity has been created
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.remove_item:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+          }
+        - {
+            name: cart_item_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart item,
+          }
+      summary: Adds a product to the cart
+      description: It will remove an item from the cart
+      operationId: cartsRemoveItem
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.update:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+          }
+        - name: cart
+          in: body
+          description: The cart you want to update
+          required: true
+          schema: { $ref: "#/definitions/CartUpdate" }
+      summary: Updates a cart
+      description: "This endpoint supports partial updates: only the fields sent will be changed, the others will remain untouched."
+      operationId: updateCart
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.update_item:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+          }
+        - {
+            name: cart_item_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart item,
+          }
+        - name: cart
+          in: body
+          description: The data you want to change in the item.
+          required: true
+          schema: { $ref: "#/definitions/ProductCartItemUpdate" }
+      summary: Updates a cart item
+      description: It will change the data for the given item. This endpoint supports partial updates. If modifier_options are not specified, ordering won't have to call core. This endpoint is maintained for backwards compatibility only. It behaves the same as the /carts.update_product_item endpoint.
+      operationId: cartsUpdateItem
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.update_product_item:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+          }
+        - {
+            name: cart_item_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart item,
+          }
+        - name: cart
+          in: body
+          description: The data you want to change in the product
+          required: true
+          schema: { $ref: "#/definitions/ProductCartItemUpdate" }
+      summary: Updates a cart product
+      description: It will change the data for the given product. This endpoint supports partial updates. If modifier_options are not specified, ordering won't have to call core.
+      operationId: cartsUpdateProductItem
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.update_gift_card_item:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart,
+          }
+        - {
+            name: cart_item_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart item,
+          }
+        - name: cart
+          in: body
+          description: The data you want to change in the gift card
+          required: true
+          schema:
+            { $ref: "#/definitions/GiftCardCartItemUpdate" }
+      summary: Updates a cart gift card
+      description: It will change the data for the given gift card. This endpoint supports partial updates. If modifier_options are not specified, ordering won't have to call core.
+      operationId: cartsUpdateGiftCardItem
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: Updated - entity has been updated
+          schema: { $ref: "#/definitions/CartResponse" }
+  /carts.sync:
+    post:
+      tags: [carts]
+      parameters:
+        - {
+            name: cart_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the cart to sync,
+            required: true,
+          }
+      summary: Sync a cart to core without marking it as paid. Will return errors if products are out of stock.
+      description: ""
+      operationId: syncCart
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - basicAuth: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/CartResponse" }
+  /stores.get:
+    get:
+      tags: [stores]
+      summary: Returns a store
+      description: Returns a store by id
+      operationId: storeById
+      parameters:
+        - {
+            name: store_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the store,
+            required: true,
+          }
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/StoreResponse" }
+  /stores.list:
+    get:
+      tags: [stores]
+      summary: Returns a paginated list of stores for the current merchant
+      description: ""
+      operationId: storesList
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/StoreListResponse" }
+  /stores.create:
+    post:
+      tags: [stores]
+      parameters:
+        - {
+            name: store_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the store to create,
+            required: true,
+          }
+        - name: store
+          in: body
+          description: The store you want to create
+          required: true
+          schema: { $ref: "#/definitions/StoreCreation" }
+      summary: Creates a store
+      description: ""
+      operationId: createStore
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "201":
+          description: Created - entity has been created
+          schema: { $ref: "#/definitions/StoreResponse" }
+  /stores.update:
+    post:
+      tags: [stores]
+      parameters:
+        - {
+            name: store_id,
+            in: query,
+            type: string,
+            format: uuid,
+            description: the UUID of the store,
+          }
+        - name: store
+          in: body
+          description: The store you want to update
+          required: true
+          schema: { $ref: "#/definitions/StoreUpdate" }
+      summary: Updates a store
+      description: "This endpoint supports partial updates: only the fields sent will be changed, the others will remain untouched."
+      operationId: updateStore
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK - entity has been updated
+          schema: { $ref: "#/definitions/StoreResponse" }
+  /stores.update_active:
+    post:
+      tags: [stores]
+      parameters:
+        - name: body
+          in: body
+          description:
+            An object mapping store ids to the desired boolean active state. Stores not included will not
+            change.
+          schema: { $ref: "#/definitions/UpdateActiveItemList" }
+      summary: Sets the global active flag for each store provided. Leaves all the other stores untouched.
+      description: ""
+      operationId: storesUpdateActive
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "204": { description: No Content - stores were enabled/disabled }
+  /merchants.me:
+    get:
+      tags: [merchants]
+      summary: Returns a merchant data
+      description: Returns a merchant data associated to the authenticated user
+      operationId: merchantsMe
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/MerchantResponse" }
+  /merchants.update:
+    post:
+      tags: [merchants]
+      parameters:
+        - name: merchant
+          in: body
+          description: The merchant data you want to update
+          required: true
+          schema: { $ref: "#/definitions/MerchantUpdate" }
+      summary: Updates a merchant data
+      description: "This endpoint supports partial updates: only the fields sent will be changed, the others will remain untouched."
+      operationId: updateMerchant
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK - entity has been updated
+          schema: { $ref: "#/definitions/MerchantResponse" }
+  /merchants.validate_url_slug:
+    get:
+      tags: [merchants]
+      parameters:
+        - {
+            name: url_slug,
+            in: query,
+            type: string,
+            description: the merchant url slug to validate,
+          }
+      summary: Checks if a merchant url slug is valid
+      description: ""
+      operationId: merchantsValidateUrlSlug
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "204": { description: No Content - the slug is valid }
+  /ids.check_usage:
+    post:
+      tags: [ids]
+      parameters:
+        - name: ids
+          in: body
+          description: The ids you want to check
+          required: true
+          schema: { $ref: "#/definitions/Ids" }
+      summary: Gives information of which ids are in use, which are not, which are used but not accessible
+      description: "This endpoint is used by core to get information of relations in ordering"
+      operationId: checkUsageId
+      consumes: [application/json]
+      produces: [application/json]
+      security:
+        - bearer: []
+      responses:
+        "200":
+          description: OK
+          schema: { $ref: "#/definitions/IdsUsageResponse" }
+
+definitions:
+  Address:
+    type: object
+    properties:
+      line1: {type: string}
+      line2: {type: string}
+      city: {type: string}
+      state: {type: string}
+      country: {type: string}
+      postal_code: {type: string}
+  AddressUpsertion:
+    type: object
+    properties:
+      line1: {type: string}
+      line2: {type: string}
+      city: {type: string}
+      state: {type: string}
+      country: {type: string}
+      postal_code: {type: string}
+  Cart:
+    type: object
+    required: [id, store_id, total, subtotal, tax, tip, email, order_type, status, created_at, updated_at]
+    properties:
+      id: {type: string, format: uuid}
+      store_id: {type: string, format: uuid}
+      order_id: {type: string, format: uuid}
+      order_number: {type: string}
+      total: {$ref: '#/definitions/MonetaryAmount'}
+      subtotal: {$ref: '#/definitions/MonetaryAmount'}
+      tax: {$ref: '#/definitions/MonetaryAmount'}
+      tip: {$ref: '#/definitions/MonetaryAmount'}
+      delivery_fee: {$ref: '#/definitions/MonetaryAmount'}
+      phone_number: {type: string}
+      email: {type: string}
+      delivery_address: {$ref: '#/definitions/DeliveryAddress'}
+      order_type: {$ref: '#/definitions/OrderType'}
+      prepare_by: {type: string}
+      driving_distance_in_meters: {type: number, format: double}
+      estimated_driving_time_in_mines: {type: integer}
+      tax_rates:
+        type: array
+        items: {$ref: '#/definitions/CartTaxRate'}
+      items:
+        type: array
+        items: {$ref: '#/definitions/CartItem'}
+      ekashu_data: {$ref: '#/definitions/PaymentProcessorData'}
+      payment_processor_data: {$ref: '#/definitions/PaymentProcessorData'}
+      payment_method_type: {$ref: '#/definitions/PaymentMethodType'}
+      applied_gift_card_passes: {type: array, $ref: '#/definitions/CartStatus'}
+      status: {$ref: '#/definitions/GiftCardPassApplied'}
+      created_at: {type: string, format: date-time}
+      updated_at: {type: string, format: date-time}
+  CartCreation:
+    type: object
+    required: [store_id]
+    properties:
+      store_id: {type: string, format: uuid}
+      email: {type: string}
+      phone_number: {type: string}
+      prepare_by: {type: string}
+      order_type: {$ref: '#/definitions/OrderType'}
+      delivery_address: {$ref: '#/definitions/DeliveryAddressUpsertion'}
+  ProductCartItemCreation:
+    type: object
+    required: [cart_id, product_id, quantity]
+    properties:
+      cart_id: {type: string, format: uuid}
+      product_id: {type: string, format: uuid}
+      quantity: {type: number, format: double}
+      notes: {type: string}
+      modifier_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemModifierOptionCreation'}
+      bundle_sets:
+        type: array
+        items: {$ref: '#/definitions/CartItemBundleSetCreation'}
+  GiftCardCartItemCreation:
+    type: object
+    required: [cart_id, product_id, gift_card_data]
+    properties:
+      cart_id: {type: string, format: uuid}
+      product_id: {type: string, format: uuid}
+      gift_card_data: {$ref: '#/definitions/GiftCardData'}
+  GiftCardData:
+    type: object
+    required: [recipient_email, amount]
+    properties:
+      recipient_email: {type: string}
+      amount: {type: number, format: double}
+  ApplyGiftCard:
+    type: object
+    required: [online_code]
+    properties:
+      online_code: {type: string}
+  UnapplyGiftCard:
+    type: object
+    required: [online_code]
+    properties:
+      online_code: {type: string}
+  GiftCardPassApplied:
+    type: object
+    required: [id, online_code, balance, added_at]
+    properties:
+      id: {type: string, format: uuid}
+      online_code: {type: string}
+      balance: {$ref: '#/definitions/MonetaryAmount'}
+      added_at: {type: string, format: date-time}
+      amount_to_charge: {$ref: '#/definitions/MonetaryAmount'}
+      payment_transaction_id: {type: string, format: uuid}
+  ProductCartItemUpdate:
+    type: object
+    properties:
+      product_id: {type: string, format: uuid}
+      quantity: {type: number, format: double}
+      notes: {type: string}
+      modifier_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemModifierOptionCreation'}
+  GiftCardCartItemUpdate:
+    type: object
+    required: [gift_card_data]
+    properties:
+      gift_card_data: {$ref: '#/definitions/GiftCardData'}
+  CartItem:
+    type: object
+    required: [id, product, quantity, unit, price, tax, calculated_price, total_price, variant_options]
+    properties:
+      id: {type: string, format: uuid}
+      product: {$ref: '#/definitions/CartItemProduct'}
+      quantity: {type: number, format: double}
+      unit: {$ref: '#/definitions/UnitType'}
+      price: {$ref: '#/definitions/MonetaryAmount'}
+      cost: {$ref: '#/definitions/MonetaryAmount'}
+      tax: {$ref: '#/definitions/MonetaryAmount'}
+      calculated_price: {$ref: '#/definitions/MonetaryAmount'}
+      total_price: {$ref: '#/definitions/MonetaryAmount'}
+      notes: {type: string}
+      modifier_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemModifierOption'}
+      tax_rates:
+        type: array
+        items: {$ref: '#/definitions/CartItemTaxRate'}
+      variant_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemVariantOption'}
+      bundle_sets:
+        type: array
+        items: {$ref: '#/definitions/CartItemBundleSet'}
+  CartItemBundleSet:
+    type: object
+    required: [bundle_set_id, position, cart_item_bundle_options]
+    properties:
+      bundle_set_id: {type: string, format: uuid}
+      name: {type: string}
+      position: {type: number, format: integer}
+      cart_item_bundle_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemBundleOption'}
+  CartItemBundleOption:
+    type: object
+    required: [bundle_option_id, item, price_adjustment, position]
+    properties:
+      bundle_option_id: {type: string, format: uuid}
+      item: {$ref: '#/definitions/CartItemBundleOptionItem'}
+      price_adjustment: {$ref: '#/definitions/MonetaryAmount'}
+      position: {type: number, format: integer}
+  CartItemBundleOptionItem:
+    type: object
+    required: [product, quantity, unit]
+    properties:
+      product: {$ref: '#/definitions/CartItemProduct'}
+      quantity: {type: number, format: double}
+      unit: {$ref: '#/definitions/UnitType'}
+      cost: {$ref: '#/definitions/MonetaryAmount'}
+      notes: {type: string}
+      modifier_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemModifierOption'}
+  CartItemBundleOptionCreation:
+    type: object
+    required: [bundle_option_id, modifier_options]
+    properties:
+      bundle_option_id: {type: string, format: uuid}
+      quantity: {type: number, format: double}
+      notes: {type: string}
+      modifier_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemModifierOptionCreation'}
+  CartItemBundleSetCreation:
+    type: object
+    required: [bundle_set_id, bundle_options]
+    properties:
+      bundle_set_id: {type: string, format: uuid}
+      bundle_options:
+        type: array
+        items: {$ref: '#/definitions/CartItemBundleOptionCreation'}
+  CartItemModifierOptionCreation:
+    type: object
+    required: [modifier_option_id, quantity]
+    properties:
+      modifier_option_id: {type: string, format: uuid}
+      quantity: {type: number, format: double}
+  CartItemProduct:
+    type: object
+    required: [id, name]
+    properties:
+      id: {type: string, format: uuid}
+      name: {type: string}
+      description: {type: string}
+  CartItemModifierOption:
+    type: object
+    required: [id, modifier_option_id, name, type, price, quantity]
+    properties:
+      id: {type: string, format: uuid}
+      modifier_option_id: {type: string, format: uuid}
+      name: {type: string}
+      type: {$ref: '#/definitions/ModifierSetType'}
+      price: {$ref: '#/definitions/MonetaryAmount'}
+      amount: {type: number, format: double}
+      quantity: {type: number, format: double}
+  CartItemTaxRate:
+    type: object
+    required: [id, tax_rate_id, name, value, total, apply_to_price]
+    properties:
+      id: {type: string, format: uuid}
+      tax_rate_id: {type: string, format: uuid}
+      name: {type: string}
+      value: {type: string}
+      total: {$ref: '#/definitions/MonetaryAmount'}
+      apply_to_price: {type: boolean}
+  CartItemVariantOption:
+    type: object
+    required: [id, variant_option_id, option_name, option_type_name]
+    properties:
+      id: {type: string, format: uuid}
+      variant_option_id: {type: string, format: uuid}
+      option_name: {type: string}
+      option_type_name: {type: string}
+  CartResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericResponse'}
+    - type: object
+      properties:
+        data: {$ref: '#/definitions/Cart'}
+  CartStatus:
+    type: string
+    enum: [new, paid]
+  CartTaxRate:
+    type: object
+    required: [id, tax_rate_id, name, value, total]
+    properties:
+      id: {type: string, format: uuid}
+      tax_rate_id: {type: string, format: uuid}
+      name: {type: string}
+      value: {type: string}
+      total: {$ref: '#/definitions/MonetaryAmount'}
+  CartUpdate:
+    type: object
+    properties:
+      email: {type: string}
+      phone_number: {type: string}
+      prepare_by: {type: string}
+      order_type: {$ref: '#/definitions/OrderType'}
+      delivery_address: {$ref: '#/definitions/DeliveryAddressUpsertion'}
+      tip_amount: {type: number, format: double}
+      payment_method_type: {$ref: '#/definitions/PaymentMethodType'}
+      checkout_success_return_url: {type: string}
+      checkout_failure_return_url: {type: string}
+  DeliveryAddress:
+    type: object
+    properties:
+      first_name: {type: string}
+      last_name: {type: string}
+      address: {$ref: '#/definitions/Address'}
+  DeliveryAddressUpsertion:
+    type: object
+    properties:
+      first_name: {type: string}
+      last_name: {type: string}
+      address: {$ref: '#/definitions/AddressUpsertion'}
+  PaymentProcessorData:
+    type: object
+    properties:
+      checkout_url: {type: string}
+      transaction_reference_id: {type: string}
+      reference: {type: string}
+      hash_code_value: {type: string}
+  GenericListResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericResponse'}
+    - type: object
+      properties:
+        pagination: {$ref: '#/definitions/PaginationLinks'}
+  GenericResponse:
+    type: object
+    properties:
+      object: {type: string}
+  Ids:
+    type: object
+    properties:
+      catalog_ids:
+        type: array
+        items: {type: string, format: uuid}
+  IdsUsage:
+    type: object
+    required: [accessible, not_used, non_accessible]
+    properties:
+      accessible: {$ref: '#/definitions/Ids'}
+      not_used: {$ref: '#/definitions/Ids'}
+      non_accessible: {$ref: '#/definitions/Ids'}
+  IdsUsageResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericResponse'}
+    - type: object
+      properties:
+        data: {$ref: '#/definitions/IdsUsage'}
+  ImageUploadType:
+    type: string
+    enum: [store_hero, store_logo]
+  ImageUrls:
+    type: object
+    required: [id, object_type, urls]
+    properties:
+      id: {type: string, format: uuid}
+      urls: {type: string, description: 'A map of sizes and S3 urls. If null, the upload is still in progress'}
+      object_type: {$ref: '#/definitions/ImageUploadType'}
+  ImageUrlsUpsertion:
+    type: object
+    required: [id, object_type, urls]
+    properties:
+      id: {type: string, format: uuid}
+      urls: {type: string, description: 'A map of sizes and S3 urls. If null, the upload is still in progress'}
+      object_type: {$ref: '#/definitions/ImageUploadType'}
+  Merchant:
+    type: object
+    required: [url_slug]
+    properties:
+      url_slug: {type: string}
+      payment_processor: {type: string, enum: [ekashu, jetdirect]}
+      payment_processor_config: {$ref: '#/definitions/PaymentProcessorConfig'}
+  MerchantResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericResponse'}
+    - type: object
+      properties:
+        data: {$ref: '#/definitions/Merchant'}
+  MerchantUpdate:
+    type: object
+    properties:
+      url_slug: {type: string}
+  ModifierSetType:
+    type: string
+    enum: [hold, addon, neutral]
+  MonetaryAmount:
+    type: object
+    required: [amount, currency]
+    properties:
+      amount: {type: number, format: double}
+      currency: {type: string, format: currency}
+  OrderType:
+    type: string
+    enum: [take_out, delivery]
+  PaginationLinks:
+    type: object
+    required: [first, last, per_page, total_count]
+    properties:
+      prev: {type: string, format: url}
+      next: {type: string, format: url}
+      first: {type: string, format: url}
+      last: {type: string, format: url}
+      per_page: {type: integer}
+      total_count: {type: integer}
+  PaymentProcessorConfig:
+    type: object
+    properties:
+      seller_id: {type: string}
+      seller_key: {type: string}
+      terminal_id: {type: string}
+      key: {type: string}
+  PaymentProcessorConfigUpsertion:
+    type: object
+    properties:
+      seller_id: {type: string}
+      seller_key: {type: string}
+      hash_key: {type: string}
+      merchant_id: {type: string}
+      terminal_id: {type: string}
+      key: {type: string}
+      security_token: {type: string}
+  Store:
+    type: object
+    required: [id, location_id, merchant_id, merchant_url_slug, url_slug, active, take_out_enabled, delivery_enabled]
+    properties:
+      id: {type: string, format: uuid}
+      location_id: {type: string, format: uuid}
+      merchant_id: {type: string, format: uuid}
+      merchant_url_slug: {type: string}
+      url_slug: {type: string}
+      catalog_id: {type: string, format: uuid}
+      active: {type: boolean}
+      description: {type: string}
+      hero_bg_color: {type: string}
+      hero_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrls'}
+      logo_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrls'}
+      take_out_enabled: {type: boolean}
+      take_out_stop_mins_before_closing: {type: integer}
+      delivery_enabled: {type: boolean}
+      delivery_min: {$ref: '#/definitions/MonetaryAmount'}
+      delivery_max: {$ref: '#/definitions/MonetaryAmount'}
+      delivery_max_distance: {type: number, format: double}
+      delivery_stop_mins_before_closing: {type: integer}
+      delivery_fee: {$ref: '#/definitions/MonetaryAmount'}
+      payment_methods:
+        type: array
+        items: {$ref: '#/definitions/PaymentMethod'}
+  StoreCreation:
+    type: object
+    required: [location_id, url_slug]
+    properties:
+      location_id: {type: string, format: uuid}
+      url_slug: {type: string}
+      catalog_id: {type: string, format: uuid}
+      active: {type: boolean}
+      description: {type: string}
+      hero_bg_color: {type: string}
+      hero_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrlsUpsertion'}
+      logo_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrlsUpsertion'}
+      take_out_enabled: {type: boolean}
+      take_out_stop_mins_before_closing: {type: integer}
+      delivery_enabled: {type: boolean}
+      delivery_min_amount: {type: number, format: double}
+      delivery_max_amount: {type: number, format: double}
+      delivery_max_distance: {type: number, format: double}
+      delivery_stop_mins_before_closing: {type: integer}
+      delivery_fee_amount: {type: number, format: double}
+      payment_methods:
+        type: array
+        items: {$ref: '#/definitions/PaymentMethod'}
+  StoreList:
+    type: array
+    items: {$ref: '#/definitions/Store'}
+  StoreListResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericListResponse'}
+    - type: object
+      properties:
+        data: {$ref: '#/definitions/StoreList'}
+  StoreResponse:
+    allOf:
+    - {$ref: '#/definitions/GenericResponse'}
+    - type: object
+      properties:
+        data: {$ref: '#/definitions/Store'}
+  StoreUpdate:
+    type: object
+    properties:
+      location_id: {type: string, format: uuid}
+      url_slug: {type: string}
+      catalog_id: {type: string, format: uuid}
+      active: {type: boolean}
+      description: {type: string}
+      hero_bg_color: {type: string}
+      hero_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrlsUpsertion'}
+      logo_image_urls:
+        type: array
+        items: {$ref: '#/definitions/ImageUrlsUpsertion'}
+      take_out_enabled: {type: boolean}
+      take_out_stop_mins_before_closing: {type: integer}
+      delivery_enabled: {type: boolean}
+      delivery_min_amount: {type: number, format: double}
+      delivery_max_amount: {type: number, format: double}
+      delivery_max_distance: {type: number, format: double}
+      delivery_stop_mins_before_closing: {type: integer}
+      delivery_fee_amount: {type: number, format: double}
+      payment_methods:
+        type: array
+        items: {$ref: '#/definitions/PaymentMethod'}
+  UnitType:
+      type: string
+      enum: [unit, ounce, pound, milligram, gram, kilogram, fl_ounce, pint, milliliter, liter, inch, foot, yard, millimeter,
+        centimeter, meter]
+  UpdateActiveItem:
+    type: object
+    required: [item_id, active]
+    properties:
+      item_id: {type: string, format: uuid}
+      active: {type: boolean}
+  UpdateActiveItemList:
+    type: array
+    items: {$ref: '#/definitions/UpdateActiveItem'}
+  PaymentMethod:
+    type: object
+    required: [type, active]
+    properties:
+      type: {type: string, format: uuid}
+      active: {$ref: '#/definitions/PaymentMethodType'}
+  PaymentMethodType:
+    type: string
+    enum: [cash, ekashu, worldpay, jetdirect]

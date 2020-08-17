@@ -1,0 +1,8 @@
+product name,description,sku,upc,sold by,price,cost,category,sub category,variant name,variant option,stock alert,stock count,tax name,brand,supplier,kitchen
+VariantProduct,Description1,Sku1,1234567890123,unit,12.34,32.44,Food,Pasta,Colour,Blue,2,22.12,City Tax,Barilla,aSupplier,Grill
+VariantProduct,Description2,Sku2,1234567890124,unit,55.44,,Desert,IceScream,Colour,Yellow,5,33,,Barilla,,
+SimpleProduct,Description3,Sku3,9876543210987,unit,76.54,,Food,Burger,,,,,,Burger King,,Kitchen
+ProductWithVariants,,,,unit,21.34,42.44,Food,Pasta,Colour,Blue,2,22,City Tax,McDonald,,Bar
+ProductWithVariants,,,,unit,65.44,,Desert,IceScream,Colour,Yellow,8,543,,Donught,,Kitchen
+
+

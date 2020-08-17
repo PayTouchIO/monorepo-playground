@@ -1,0 +1,6 @@
+product name,description,sku,upc,sold by,currency,price,cost,category,sub category,variant name,variant option,stock alert,stock count,tax name,tax amount
+VariantProduct1,Description1,Sku1,1234567890123,Unit1,USD,12.34,32.44,Food,Pasta,Colour,Blue,2,22,City Tax,22.54
+VariantProduct2,Description2,Sku2,1234567890123,Unit2,USD,55.44,,Desert,IceScream,Colour,Yellow,5,33,,
+SimpleProduct,Description3,Sku3,9876543210987,Unit3,USD,76.54,,Food,Burger,,,,,,
+ProductWithVariants,,,,Unit1,USD,21.34,42.44,Food,Pasta,Colour,Blue,2,22,City Tax,22.54
+ProductWithVariants,,,,Unit2,USD,65.44,,Desert,IceScream,Colour,Yellow,8,543,,

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<TransactionSetupResponse xmlns="https://transaction.elementexpress.com">
+  <Response>
+    <ExpressResponseCode>0</ExpressResponseCode>
+    <ExpressResponseMessage>Success</ExpressResponseMessage>
+    <ExpressTransactionDate>20190731</ExpressTransactionDate>
+    <ExpressTransactionTime>044644</ExpressTransactionTime>
+    <ExpressTransactionTimezone>UTC-05:00:00</ExpressTransactionTimezone>
+    <Transaction>
+      <TransactionSetupID>15BC256A-896F-4A3F-9455-043B30937AE6</TransactionSetupID>
+    </Transaction>
+    <PaymentAccount>
+      <TransactionSetupID>15BC256A-896F-4A3F-9455-043B30937AE6</TransactionSetupID>
+    </PaymentAccount>
+    <TransactionSetup>
+      <TransactionSetupID>15BC256A-896F-4A3F-9455-043B30937AE6</TransactionSetupID>
+      <ValidationCode>8BFE773CE75944E8</ValidationCode>
+    </TransactionSetup>
+  </Response>
+</TransactionSetupResponse>

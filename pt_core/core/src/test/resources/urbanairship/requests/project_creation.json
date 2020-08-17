@@ -1,0 +1,12 @@
+{
+  "name": "Aztec Barcode",
+  "projectType": "loyalty",
+  "description": "Aztec Barcode",
+  "settings": {
+    "barcode_alt_text": "123json=456789",
+    "barcode_label": "Member ID",
+    "barcode_default_value": "123456789",
+    "barcode_encoding": "iso-8859-1",
+    "barcode_type": "pdf417"
+  }
+}

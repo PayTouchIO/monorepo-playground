@@ -1,0 +1,44 @@
+[
+  {
+    "position": 0,
+    "parent_category_id": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "availabilities": null,
+        "active": true
+      }
+    },
+    "active": true,
+    "description": null,
+    "name": "Fries & Sides",
+    "subcategories": []
+  },
+  {
+    "position": 0,
+    "parent_category_id": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "availabilities": null,
+        "active": true
+      }
+    },
+    "active": true,
+    "description": null,
+    "name": "Drinks",
+    "subcategories": []
+  },
+  {
+    "position": 0,
+    "parent_category_id": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "availabilities": null,
+        "active": true
+      }
+    },
+    "active": true,
+    "description": null,
+    "name": "Classic Burgers",
+    "subcategories": []
+  }
+]

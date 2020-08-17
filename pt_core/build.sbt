@@ -3,7 +3,7 @@ addCommandAlias("root", "project pt_core")
 lazy val `pt_core` =
   project
     .in(file("."))
-    .aggregate(core)
+    .aggregate(core, seeds)
     .disablePlugins(AssemblyPlugin, DockerPlugin)
 
 lazy val core =

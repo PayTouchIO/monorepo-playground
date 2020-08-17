@@ -1,0 +1,149 @@
+{
+  "headers": {
+    "background_color": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "#ffffff",
+      "fieldType": "topLevel",
+      "required": false
+    },
+    "barcode_value": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "12345",
+      "fieldType": "barcode",
+      "required": false
+    },
+    "barcode_encoding": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "iso-8859-1",
+      "fieldType": "barcode",
+      "required": false
+    },
+    "barcodeAltText": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "12345",
+      "fieldType": "barcode",
+      "required": false
+    },
+    "barcode_type": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "CODE_128",
+      "fieldType": "barcode",
+      "required": false
+    },
+    "strip_image": {
+      "changeMessage": null,
+      "label": "",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "",
+      "fieldType": "image",
+      "required": false
+    }
+  },
+  "linksModuleData": {
+    "Merchant Website": {
+      "description": "Merchant Website",
+      "hideEmpty": false,
+      "formatType": "URL",
+      "uri": "http:\/\/wallet.urbanairship.com",
+      "fieldType": "linksModuleData",
+      "order": 1
+    }
+  },
+  "pointsModule": {
+  },
+  "titleModule": {
+    "image": {
+      "title.string": "https:\/\/d1uxuwjszi27mu.cloudfront.net\/ua_gift_card\/gitf-box.png",
+      "hideEmpty": false,
+      "formatType": "String",
+      "fieldType": "titleModule",
+      "description.string": "Logo Image"
+    },
+    "Balance": {
+      "col": 0,
+      "title.string": "Willow Cafe'",
+      "hideEmpty": false,
+      "row": 0,
+      "formatType": "Currency",
+      "fieldType": "titleModule",
+      "currencyCode": "USD",
+      "description.string": 25.0
+    }
+  },
+  "infoModuleData": {
+  },
+  "textModulesData": {
+    "Last Spend Text": {
+      "col": 0,
+      "header": "Last Spend",
+      "hideEmpty": false,
+      "row": 0,
+      "formatType": "String",
+      "body": "$0",
+      "fieldType": "textModulesData"
+    },
+    "Gift Card Details": {
+      "col": 0,
+      "header": "Gift Card Details",
+      "hideEmpty": false,
+      "row": 2,
+      "formatType": "String",
+      "body": "Program details, terms and conditions, and additional gift card information goes here.",
+      "fieldType": "textModulesData"
+    },
+    "Original Value Text": {
+      "col": 0,
+      "header": "Original Value",
+      "hideEmpty": false,
+      "row": 1,
+      "formatType": "String",
+      "body": "N/A",
+      "fieldType": "textModulesData"
+    }
+  },
+  "imageModulesData": {
+    "imageModulesData": {
+      "image": "",
+      "imageDescription": "Logo Image",
+      "hideEmpty": false,
+      "formatType": "String",
+      "fieldType": "imageModulesData"
+    }
+  },
+  "notAssigned": {
+    "EventNumber": {
+      "changeMessage": null,
+      "label": "Event Number",
+      "hideEmpty": false,
+      "formatType": "String",
+      "value": "334422",
+      "fieldType": "notAssigned",
+      "required": false
+    }
+  },
+  "acctModule": {
+  },
+  "vendor" : "Google",
+  "projectType" : "giftCard",
+  "type" : "Gift Card",
+  "vendorId" : 2,
+  "deleted" : "False",
+  "description" : "Gift Card",
+  "name" : "Gift Card"
+}

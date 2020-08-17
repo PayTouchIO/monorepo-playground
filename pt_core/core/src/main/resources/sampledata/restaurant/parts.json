@@ -1,0 +1,224 @@
+[
+  {
+    "cost": "2.00",
+    "location_overrides": {
+      "ref-location-1": {
+        "cost": "2.00",
+        "unit": "lb",
+        "active": true
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-3"
+    ],
+    "track_inventory": true,
+    "has_variants": false,
+    "apply_pricing_to_all_locations": true,
+    "name": "Tomatoes",
+    "brand_id": "ref-brand-2",
+    "unit": "lb"
+  },
+  {
+    "cost": "0.02",
+    "location_overrides": {
+      "ref-location-1": {
+        "cost": "0.02",
+        "unit": "unit",
+        "active": true
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-3"
+    ],
+    "track_inventory": true,
+    "has_variants": false,
+    "apply_pricing_to_all_locations": true,
+    "name": "Lids",
+    "brand_id": "ref-brand-2",
+    "unit": "unit"
+  },
+  {
+    "cost": "0.05",
+    "location_overrides": {
+      "ref-location-1": {
+        "cost": "0.05",
+        "unit": "unit",
+        "active": true
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-3"
+    ],
+    "track_inventory": true,
+    "has_variants": true,
+    "apply_pricing_to_all_locations": true,
+    "name": "Cups",
+    "brand_id": "ref-brand-2",
+    "unit": "unit",
+    "variants": [
+      {
+        "id": "ref-part-variant-type-1",
+        "name": "Size",
+        "options": [
+          {
+            "id": "ref-part-variant-option-1",
+            "name": "Small"
+          },
+          {
+            "id": "ref-part-variant-option-2",
+            "name": "Medium"
+          },
+          {
+            "id": "ref-part-variant-option-3",
+            "name": "Large"
+          }
+        ]
+      }
+    ],
+    "variant_products": [
+      {
+        "cost": "0.05",
+        "unit": "unit",
+        "id": "ref-part-variant-product-1",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "0.05",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-1"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "cost": "0.05",
+        "unit": "unit",
+        "id": "ref-part-variant-product-2",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "0.05",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-2"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "cost": "0.05",
+        "unit": "unit",
+        "id": "ref-part-variant-product-3",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "0.05",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-3"
+        ],
+        "sku": null,
+        "upc": null
+      }
+    ]
+  },
+  {
+    "cost": "1.00",
+    "location_overrides": {
+      "ref-location-1": {
+        "cost": "1.00",
+        "unit": "fl",
+        "active": true
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-3"
+    ],
+    "track_inventory": true,
+    "has_variants": true,
+    "apply_pricing_to_all_locations": true,
+    "name": "Burger Sauce",
+    "brand_id": "ref-brand-2",
+    "unit": "fl",
+    "variants": [
+      {
+        "id": "ref-part-variant-type-2",
+        "name": "Type",
+        "options": [
+          {
+            "id": "ref-part-variant-option-4",
+            "name": "Hot"
+          },
+          {
+            "id": "ref-part-variant-option-5",
+            "name": "Mild"
+          },
+          {
+            "id": "ref-part-variant-option-6",
+            "name": "Smokin'"
+          }
+        ]
+      }
+    ],
+    "variant_products": [
+      {
+        "cost": "1.00",
+        "unit": "fl",
+        "id": "ref-part-variant-product-4",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "1.00",
+            "unit": "fl",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-4"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "cost": "1.00",
+        "unit": "fl",
+        "id": "ref-part-variant-product-5",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "1.00",
+            "unit": "fl",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-5"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "cost": "1.00",
+        "unit": "fl",
+        "id": "ref-part-variant-product-6",
+        "location_overrides": {
+          "ref-location-1": {
+            "cost": "1.00",
+            "unit": "fl",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-part-variant-option-6"
+        ],
+        "sku": null,
+        "upc": null
+      }
+    ]
+  }
+]

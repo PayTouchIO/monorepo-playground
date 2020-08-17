@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "id": "c6342289-5123-3971-908d-57a29b01bd24",
+      "name": "Apple Store",
+      "email": "apple-store@paytouch-test.io",
+      "phone_number": "+090800701",
+      "website": "https://www.paytouch.io",
+      "active": true,
+      "address": {
+        "line1": "700 5th Ave",
+        "line2": null,
+        "city": "New York",
+        "state": "New York",
+        "country": "United States",
+        "state_data": {
+          "code": "NY",
+          "name": "New York",
+          "country": {
+            "code": "US",
+            "name": "United States"
+          }
+        },
+        "country_data": {
+          "code": "US",
+          "name": "United States"
+        },
+        "postal_code": "NY 10153"
+      },
+      "timezone": "America/New_York",
+      "currency": "USD",
+      "settings": null,
+      "tax_rates": null,
+      "opening_hours": {
+        "sunday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "friday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "monday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "saturday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "tuesday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "wednesday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ],
+        "thursday": [
+          {
+            "start": "12:00:00",
+            "end": "00:00:00"
+          }
+        ]
+      },
+      "coordinates": {
+        "lat": 1.23,
+        "lng": 2.34
+      }
+    }
+  ],
+  "object": "list",
+  "pagination": {
+    "prev": null,
+    "next": null,
+    "first": "http://core-dev.paytouch.io/v1/locations.list?page=1",
+    "last": "http://core-dev.paytouch.io/v1/locations.list?page=1",
+    "per_page": 30,
+    "total_count": 1
+  }
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Tax A",
+    "value": "10.000",
+    "apply_to_price": true,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": false
+      },
+      "ref-location-2": {
+        "active": true
+      }
+    }
+  },
+  {
+    "name": "Tax B",
+    "value": "10.000",
+    "apply_to_price": true,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    }
+  }
+]

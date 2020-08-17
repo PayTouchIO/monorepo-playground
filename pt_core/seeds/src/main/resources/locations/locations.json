@@ -1,0 +1,122 @@
+[
+	{
+		"name": "Apple Store",
+		"address": {
+			"line1": "767 5th Ave",
+			"line2": "",
+			"city": "New York",
+			"state": "New York",
+			"country": "US",
+			"postalCode": "NY 10153"
+		},
+		"timezone": "America/New_York"
+	},
+	{
+		"name": "Mollusk Surf Shop",
+		"address": {
+			"line1": "1600 Pacific Ave Venice",
+			"line2": "",
+			"city": "Los Angeles",
+			"state": "California",
+			"country": "US",
+			"postalCode": "CA 90291"
+		},
+		"timezone": "America/Los_Angeles"
+	},
+	{
+		"name": "Bang Bang Pie Shop",
+		"address": {
+			"line1": "2051 North California Avenue",
+			"line2": "",
+			"city": "Chicago",
+			"state": "Illinois",
+			"country": "US",
+			"postalCode": "IL 60647"
+		},
+		"timezone": "America/Chicago"
+	},
+	{
+		"name": "Full Armor Firearms",
+		"address": {
+			"line1": "11911 Katy Fwy",
+			"line2": "",
+			"city": "Houston",
+			"state": "Texas",
+			"country": "US",
+			"postalCode": "TX 77079"
+		},
+		"timezone": "US/Central"
+	},
+	{
+		"name": "Blasius Chocolate Factory",
+		"address": {
+			"line1": "1849 E Venango St",
+			"line2": "",
+			"city": "Philadelphia",
+			"state": "Pennsylvania",
+			"country": "US",
+			"postalCode": "PA 19134"
+		},
+		"timezone": "US/Eastern"
+	},
+	{
+		"name": "Heard Museum Gift Shop",
+		"address": {
+			"line1": "2301 N Central Ave",
+			"line2": "",
+			"city": "Phoenix",
+			"state": "Arizona",
+			"country": "US",
+			"postalCode": "AZ 85004"
+		},
+		"timezone": "America/Phoenix"
+	},
+	{
+		"name": "Euclid Hall Bar & Kitchen",
+		"address": {
+			"line1": "1317 14th St",
+			"line2": "Larimer Square",
+			"city": "Denver",
+			"state": "Colorado",
+			"country": "US",
+			"postalCode": "CO 80202"
+		},
+		"timezone": "America/Denver"
+	},
+	{
+		"name": "EVO Seattle Store",
+		"address": {
+			"line1": "3500 Stone Way N",
+			"line2": "",
+			"city": "Seattle",
+			"state": "Washington",
+			"country": "US",
+			"postalCode": "WA 98103"
+		},
+		"timezone": "America/Los_Angeles"
+	},
+	{
+		"name": "The Mission",
+		"address": {
+			"line1": "3795 Mission Blvd",
+			"line2": "",
+			"city": "San Diego",
+			"state": "California",
+			"country": "US",
+			"postalCode": "CA 92109"
+		},
+		"timezone": "America/Los_Angeles"
+	},
+	{
+		"name": "Maggiano's Little Italy",
+		"address": {
+			"line1": "3200 S Las Vegas Blvd",
+			"line2": "Fashion Show",
+			"city": "Las Vegas",
+			"state": "Nevada",
+			"country": "US",
+			"postalCode": "NV 89109"
+		},
+		"timezone": "America/Los_Angeles"
+	}
+]

@@ -1,0 +1,57 @@
+{
+  "ref-location-1": {
+    "location_receipt": {
+      "email_image_upload_ids": [
+        "ref-email-receipt-image-1"
+      ],
+      "print_image_upload_ids": [
+        "ref-print-receipt-image-1"
+      ],
+      "address": {
+        "city": "San Francisco",
+        "line2": null,
+        "country": "US",
+        "state": "CA",
+        "line1": "22 James St",
+        "postal_code": "95054"
+      },
+      "phone_number": "(415) 555-1212",
+      "header_color": "#FFFFFF",
+      "location_name": "Burst Burgers",
+      "website_url": "www.burstburgers.co",
+      "facebook_url": "burstburgers",
+      "twitter_url": "@burstburgers",
+      "show_custom_text": true,
+      "custom_text": "Proudly serving non-GMO Organic Ethically sourced food since 2001",
+      "show_return_policy": false,
+      "return_policy_text": ""
+    },
+    "order_routing_kitchen": true,
+    "order_routing_bar": true,
+    "order_type_take_out": true,
+    "order_type_delivery_retail": false,
+    "order_type_dine_in": true,
+    "order_type_delivery_restaurant": false,
+    "order_type_in_store_pick_up": false,
+    "order_type_in_store": false,
+    "facebook_storefront_active": false,
+    "mobile_storefront_active": false,
+    "web_storefront_active": false,
+    "invoices_active": false,
+    "kitchen_view_active": true,
+    "bar_view_active": true,
+    "discount_below_cost_active": false,
+    "tips_enabled": true,
+    "tips_on_device_enabled": false,
+    "payment_type_credit_card": true,
+    "payment_type_debit_card": false,
+    "payment_type_gift_card": true,
+    "payment_type_store_credit": false,
+    "payment_type_check": false,
+    "payment_type_ebt": false,
+    "payment_type_apple_pay": false,
+    "payment_type_cash": true,
+    "cash_drawer_management_active": true,
+    "gift_cards_active": true
+  }
+}

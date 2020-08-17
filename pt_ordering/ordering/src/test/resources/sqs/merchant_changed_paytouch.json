@@ -1,0 +1,72 @@
+{
+  "event_name": "merchant_changed",
+  "payload": {
+    "object": "merchant",
+    "merchant_id": "43765f06-ce4d-4394-bfb9-91b1ef89fd31",
+    "data": {
+      "id": "43765f06-ce4d-4394-bfb9-91b1ef89fd31",
+      "business_type": "restaurant",
+      "currency": "USD",
+      "payment_processor": "paytouch",
+      "payment_processor_config": {
+        "json_class": "PaymentProcessorConfig$PaytouchConfigEntity"
+      },
+      "name": "Dash Merchant 2",
+      "display_name": "Dash Merchant 2",
+      "logo_urls": [],
+      "owner_user": null,
+      "mode": "production",
+      "loading_status": "not_started",
+      "locations": null,
+      "default_zone_id": "America/New_York",
+      "setup_completed": false,
+      "setup_steps": null,
+      "features": {
+        "pos": {
+          "enabled": false
+        },
+        "sales": {
+          "enabled": true
+        },
+        "reports": {
+          "enabled": true
+        },
+        "gift_cards": {
+          "enabled": true
+        },
+        "inventory": {
+          "enabled": false
+        },
+        "tables": {
+          "enabled": false
+        },
+        "employees": {
+          "enabled": true
+        },
+        "customers": {
+          "enabled": false
+        },
+        "coupons": {
+          "enabled": false
+        },
+        "loyalty": {
+          "enabled": false
+        },
+        "engagement": {
+          "enabled": false
+        },
+        "online_store": {
+          "enabled": true
+        }
+      },
+      "legal_details": null,
+      "legal_country": {
+        "code": "US",
+        "name": "United States of America"
+      },
+      "setup_type": "dash",
+      "created_at": "2020-04-22T17:27:16.883Z",
+      "updated_at": "2020-04-22T17:27:16.883Z"
+    }
+  }
+}

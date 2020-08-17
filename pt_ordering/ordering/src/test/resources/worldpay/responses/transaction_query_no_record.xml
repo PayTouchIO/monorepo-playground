@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<TransactionQueryResponse xmlns="https://reporting.elementexpress.com">
+    <Response>
+        <ExpressResponseCode>90</ExpressResponseCode>
+        <ExpressResponseMessage>No Record(s)</ExpressResponseMessage>
+        <ExpressTransactionDate>20190805</ExpressTransactionDate>
+        <ExpressTransactionTime>065035</ExpressTransactionTime>
+        <ExpressTransactionTimezone>UTC-05:00:00</ExpressTransactionTimezone>
+        <ReportingData>
+            <Items />
+        </ReportingData>
+        <ReportingID>66106538</ReportingID>
+    </Response>
+  </TransactionQueryResponse>

@@ -1,0 +1,245 @@
+{
+  "data": [
+    {
+      "id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+      "type": "variant",
+      "scope": "product",
+      "is_combo": false,
+      "name": "Incididunt Sirloin",
+      "description": "Sed nostrud swine jowl velit quisaliqua bone proident round pariatur pork cupim mignon ipsumenim bacon",
+      "brand_id": "5f1b1b93-137e-3107-9db8-e145e69ab8e6",
+      "price": {
+        "amount": "93.00",
+        "currency": "USD"
+      },
+      "price_range": {
+        "min": {
+          "amount": "1.00",
+          "currency": "USD"
+        },
+        "max": {
+          "amount": "1.00",
+          "currency": "USD"
+        }
+      },
+      "cost": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "cost_range": null,
+      "average_cost": null,
+      "unit": "unit",
+      "margin": "29.00",
+      "upc": "810330009513622",
+      "sku": "Sausage-e21806a9-0778-31f3-8faf-459defbd0e89",
+      "is_variant_of_product_id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+      "has_variant": false,
+      "track_inventory": false,
+      "track_inventory_parts": false,
+      "active": true,
+      "apply_pricing_to_all_locations": true,
+      "discountable": false,
+      "avatar_bg_color": "9b2fae",
+      "avatar_image_urls": [
+        {
+          "image_upload_id": "152444e7-168f-4b1b-8e28-a33fc3f5f92a",
+          "urls": {
+            "medium": "http://my-image-url-medium",
+            "thumbnail": "http://my-image-url-thumbnail",
+            "small": "http://my-image-url-small",
+            "original": "http://my-image-url-original",
+            "large": "http://my-image-url-large"
+          }
+        }
+      ],
+      "is_service": false,
+      "order_routing_bar": false,
+      "order_routing_kitchen": false,
+      "has_parts": false,
+      "options": [
+        {
+          "id": "4011b496-08e0-480c-a917-e60c7288a321",
+          "name": "Anim Rump",
+          "type_name": "Filet",
+          "position": 1,
+          "type_position": 1
+        }
+      ],
+      "categories": null,
+      "category_ids": null,
+      "location_overrides": {
+        "a07c7e10-713e-3050-8907-072c36eec741": {
+          "price": {
+            "amount": "1.00",
+            "currency": "USD"
+          },
+          "cost": {
+            "amount": "1.00",
+            "currency": "USD"
+          },
+          "average_cost": null,
+          "unit": "unit",
+          "margin": "59.00",
+          "active": true,
+          "tax_rates": [
+            {
+              "id": "061cedf1-b7ed-38d6-a32c-f926032b5409",
+              "name": "Jowl Eiusmod",
+              "value": "59.000",
+              "apply_to_price": false,
+              "location_overrides": {
+                "a07c7e10-713e-3050-8907-072c36eec741": {
+                  "active": true
+                }
+              }
+            }
+          ],
+          "tax_rate_ids": null,
+          "stock": null
+        }
+      },
+      "variants": [
+        {
+          "id": "6e66cfd7-5a72-40d0-8a53-6bdc9cb26fec",
+          "name": "Filling",
+          "position": 1,
+          "options": [
+            {
+              "id": "70994ac6-ecf0-41cc-854d-7d9446b81daa",
+              "name": "Kheema",
+              "position": 1
+            }
+          ]
+        }
+      ],
+      "variant_products": [
+        {
+          "id": "ff01a033-2bb8-4497-86b9-019ca760da3a",
+          "type": "variant",
+          "scope": "product",
+          "is_combo": false,
+          "name": "Roasted Chips & Salsa",
+          "description": "Spicy lentil crackers served with mint chutney and homemade salsa.",
+          "brand_id": null,
+          "price": {
+            "amount": "2.00",
+            "currency": "USD"
+          },
+          "price_range": null,
+          "cost": {
+            "amount": "0.00",
+            "currency": "USD"
+          },
+          "cost_range": null,
+          "average_cost": null,
+          "unit": "unit",
+          "margin": "100.00",
+          "upc": null,
+          "sku": null,
+          "is_variant_of_product_id": "deb046a9-5ff4-40f9-b057-233337f8e8b7",
+          "has_variant": false,
+          "track_inventory": true,
+          "track_inventory_parts": false,
+          "active": true,
+          "apply_pricing_to_all_locations": true,
+          "discountable": true,
+          "avatar_bg_color": "#546E7A",
+          "avatar_image_urls": [],
+          "is_service": false,
+          "order_routing_bar": false,
+          "order_routing_kitchen": false,
+          "has_parts": false,
+          "options": [],
+          "categories": null,
+          "category_ids": null,
+          "location_overrides": {},
+          "variants": null,
+          "variant_products": null,
+          "modifiers": null,
+          "modifier_ids": null,
+          "stock_level": null,
+          "reorder_amount": null,
+          "suppliers": null,
+          "recipe_details": null,
+          "category_positions": null,
+          "catalog_categories": null,
+          "catalog_category_positions": null,
+          "created_at": "2017-12-22T11:00:33.894Z",
+          "updated_at": "2018-01-05T17:39:09.005Z"
+        }
+      ],
+      "modifiers": [
+        {
+          "id": "a508c3c2-9fae-34d6-83bb-bdd97413db93",
+          "type": "hold",
+          "name": "Chicken Aliquaexercitation",
+          "minimum_option_count": 1,
+          "maximum_option_count": null,
+          "single_choice": false,
+          "force": false,
+          "location_overrides": {
+            "478a122b-37fc-318c-a70f-f95cdd699b78": {
+              "active": true
+            }
+          },
+          "options": [
+            {
+              "id": "1b163c2e-7ca9-4500-b7ac-70541129f5f6",
+              "name": "Cow Chicken",
+              "price": {
+                "amount": "1.00",
+                "currency": "USD"
+              },
+              "maximum_count": 1337,
+              "position": 1,
+              "active": true
+            }
+          ],
+          "products_count": null
+        }
+      ],
+      "modifier_positions": [
+        {
+          "modifier_set_id": "a508c3c2-9fae-34d6-83bb-bdd97413db93",
+          "position": 3
+        }
+      ],
+      "modifier_ids": ["a508c3c2-9fae-34d6-83bb-bdd97413db93"],
+      "stock_level": null,
+      "reorder_amount": null,
+      "suppliers": null,
+      "recipe_details": null,
+      "catalog_categories": null,
+      "catalog_category_options": [
+        {
+          "category_id": "5a3b6c93-77f1-4c9a-a664-54d19c6d2961",
+          "delivery_enabled": true,
+          "take_away_enabled": false
+        }
+      ],
+      "category_positions": [
+        {
+          "category_id": "5a3b6c93-77f1-4c9a-a664-54d19c6d2962",
+          "position": 1
+        }
+      ],
+      "catalog_category_positions": [
+        {
+          "category_id": "5a3b6c93-77f1-4c9a-a664-54d19c6d2961",
+          "position": 1
+        }
+      ],
+      "created_at": "2017-10-12T12:36:15.748Z",
+      "updated_at": "2017-10-12T12:36:15.748Z"
+    }
+  ],
+  "object": "list",
+  "pagination": {
+    "prev": null,
+    "next": null,
+    "first": "http://core-dev.paytouch.io/v1/products.list?page=1",
+    "last": "http://core-dev.paytouch.io/v1/products.list?page=1",
+    "per_page": 30,
+    "total_count": 1
+  }
+}

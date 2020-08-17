@@ -1,0 +1,144 @@
+{
+  "deleted": false,
+  "description": "Loyalty Program Template for Google Pay",
+  "disabled": false,
+  "expireInfo": {
+    "expiryNever": ""
+  },
+  "type": "loyalty",
+  "name": "Loyalty Program Template for Google Pay",
+  "projectType": "loyalty",
+  "vendor": "Google",
+  "vendorId": 2,
+  "acctModule": {},
+  "headers": {
+    "barcodeAltText": {
+      "formatType": "String",
+      "value": "Barcode could not be generated.",
+      "fieldType": "barcode"
+    },
+    "barcode_encoding": {
+      "formatType": "String",
+      "value": "iso-8859-1",
+      "fieldType": "barcode"
+    },
+    "barcode_type": {
+      "formatType": "String",
+      "value": "code128",
+      "fieldType": "barcode"
+    },
+    "barcode_value": {
+      "formatType": "String",
+      "value": "123456789",
+      "fieldType": "barcode"
+    },
+    "barcode_label": {
+      "formatType": "String",
+      "value": "Test 8",
+      "fieldType": "barcode"
+    }
+  },
+  "imageModulesData": {
+    "imageModulesData": {
+      "image": "https:\/\/s3.amazonaws.com\/passtools_prod\/1\/images\/5fc0f25da514d85a4dac59c965d997f09cf88081_banner.png",
+      "imageDescription": "Logo Image",
+      "hideEmpty": false,
+      "label": "Test 4",
+      "order": 0,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "String",
+      "value": "n/a"
+    }
+  },
+  "linksModuleData": {
+    "Merchant Address": {
+      "header": "Store Location",
+      "required": false,
+      "hideEmpty": true,
+      "formatType": "String",
+      "value": "test / bar",
+      "uri": "https://maps.google.com?q=test / bar"
+    },
+    "Merchant Phone": {
+      "hideEmpty": true,
+      "label": "Test 5",
+      "order": 1,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "Phone",
+      "value": "+1 (604) 555-1212",
+      "uri": "+1 (604) 555-1212"
+    },
+    "Merchant Website": {
+      "hideEmpty": true,
+      "label": "Test 6",
+      "order": 2,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "URL",
+      "value": "https://foo.bar",
+      "uri": "https://foo.bar"
+    }
+  },
+  "pointsModule": {
+    "Points": {
+      "hideEmpty": false,
+      "label": "Points",
+      "order": 1,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "Number",
+      "value": "0"
+    }
+  },
+  "textModulesData": {
+    "Program Details": {
+      "header": "Program Details",
+      "body": "fooDetails",
+      "hideEmpty": false,
+      "order": 1,
+      "formatType": "String"
+    },
+    "Spend": {
+      "header": "Spend",
+      "body": "0",
+      "hideEmpty": false,
+      "order": 2,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "Number"
+    },
+    "Visits": {
+      "hideEmpty": false,
+      "header": "Visits",
+      "order": 3,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "Number",
+      "body": "0"
+    },
+    "Next Reward": {
+      "hideEmpty": false,
+      "header": "Next Reward",
+      "order": 4,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "Number",
+      "body": "n/a"
+    }
+  },
+  "titleModule": {
+    "image": "https:\/\/d1uxuwjszi27mu.cloudfront.net\/ua_loyalty_program\/loyalty-box.png",
+    "imageDescription": "Logo Image",
+    "Business Name": {
+      "hideEmpty": false,
+      "label": "Willow Cafe",
+      "order": 0,
+      "required": false,
+      "textAlignment": "textAlignmentCenter",
+      "formatType": "String",
+      "value": "Loyalty Card"
+    }
+  }
+}

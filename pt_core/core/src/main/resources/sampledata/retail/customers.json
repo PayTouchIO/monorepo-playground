@@ -1,0 +1,70 @@
+[
+  {
+    "first_name": "Joe",
+    "last_name": "Smith",
+    "phone_number": "(510) 555-2121",
+    "address": {
+      "city": "San Jose",
+      "line1": "16 Oak Dr",
+      "line2": null,
+      "country": "US",
+      "state": "CA",
+      "postal_code": "95125"
+    },
+    "dob": "1980-11-20",
+    "email": "joe.smith.demo@paytouch.com",
+    "anniversary": "2008-01-01",
+    "enroll_in_loyalty_program_id": null
+  },
+  {
+    "first_name": "Jane",
+    "last_name": "Austen",
+    "phone_number": null,
+    "address": {
+      "line1": null,
+      "line2": null,
+      "city": null,
+      "state": "CA",
+      "country": "US",
+      "postal_code": null
+    },
+    "dob": null,
+    "email": "jane.austen.demo@paytouch.com",
+    "anniversary": null,
+    "enroll_in_loyalty_program_id": null
+  },
+  {
+    "first_name": "Marco",
+    "last_name": "Polo",
+    "phone_number": null,
+    "address": {
+      "line1": null,
+      "line2": null,
+      "city": null,
+      "state": null,
+      "country": null,
+      "postal_code": null
+    },
+    "dob": null,
+    "email": null,
+    "anniversary": null,
+    "enroll_in_loyalty_program_id": null
+  },
+  {
+    "first_name": "Jon",
+    "last_name": "Snow",
+    "phone_number": null,
+    "address": {
+      "line1": null,
+      "line2": null,
+      "city": null,
+      "state": "CA",
+      "country": "US",
+      "postal_code": null
+    },
+    "dob": null,
+    "email": "jon.snow.demo@paytouch.com",
+    "anniversary": null,
+    "enroll_in_loyalty_program_id": null
+  }
+]

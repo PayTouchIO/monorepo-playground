@@ -1,0 +1,210 @@
+[
+  {
+    "product_id": "ref-product-1",
+    "reorder_amount": "2.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "18.0000",
+    "minimum_on_hand": "2.0000"
+  },
+  {
+    "product_id": "ref-product-1",
+    "reorder_amount": "2.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "5.0000",
+    "minimum_on_hand": "2.0000"
+  },
+  {
+    "product_id": "ref-variant-product-1",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-1",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "19.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-2",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-2",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "19.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-3",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "19.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-3",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "19.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-4",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-4",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-5",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-5",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-6",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-6",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-7",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "19.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-7",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-8",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-8",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "20.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-9",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "18.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-9",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "18.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-10",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "7.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-variant-product-10",
+    "reorder_amount": "5.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "11.0000",
+    "minimum_on_hand": "5.0000"
+  },
+  {
+    "product_id": "ref-product-4",
+    "reorder_amount": "20.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "28.0000",
+    "minimum_on_hand": "20.0000"
+  },
+  {
+    "product_id": "ref-product-4",
+    "reorder_amount": "50.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "86.0000",
+    "minimum_on_hand": "20.0000"
+  },
+  {
+    "product_id": "ref-product-5",
+    "reorder_amount": "10.0000",
+    "location_id": "ref-location-2",
+    "sell_out_of_stock": false,
+    "quantity": "29.0000",
+    "minimum_on_hand": "10.0000"
+  },
+  {
+    "product_id": "ref-product-5",
+    "reorder_amount": "10.0000",
+    "location_id": "ref-location-1",
+    "sell_out_of_stock": false,
+    "quantity": "42.0000",
+    "minimum_on_hand": "10.0000"
+  }
+]

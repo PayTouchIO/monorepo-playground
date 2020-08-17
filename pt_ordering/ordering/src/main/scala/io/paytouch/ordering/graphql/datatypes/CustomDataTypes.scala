@@ -1,0 +1,34 @@
+package io.paytouch.ordering.graphql.datatypes
+
+object CustomDataTypes
+    extends AddressDataType
+       with AvailabilitiesDataType
+       with AvailabilityDataType
+       with BigDecimalDataType
+       with BundleOptionDataType
+       with BundleSetDataType
+       with CatalogDataType
+       with CategoryDataType
+       with CategoryOptionDataType
+       with CoordinatesDataType
+       with CurrencyDataType
+       with GiftCardDataType
+       with EnumDataType
+       with ImageUrlsDataType
+       with ItemLocationDataType
+       with LocalTimeDataType
+       with LocationDataType
+       with MerchantDataType
+       with ModifierSetDataType
+       with MonetaryAmountDataType
+       with MonetaryRangeDataType
+       with OrderDataType
+       with PaymentMethodDataType
+       with ProductDataType
+       with StoreDataType
+       with TableDataType
+       with TaxRateDataType
+       with UUIDDataType
+       with VariantOptionTypeDataType
+       with ZonedDateTimeDataType
+       with ZoneIdDataType

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Java Hut",
+    "contact": null,
+    "address": null,
+    "secondary_address": null,
+    "email": null,
+    "phone_number": null,
+    "secondary_phone_number": null,
+    "account_number": null,
+    "notes": null,
+    "products_count": null,
+    "stock_value": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    }
+  },
+  {
+    "name": "Moo's Milk",
+    "contact": null,
+    "address": null,
+    "secondary_address": null,
+    "email": null,
+    "phone_number": null,
+    "secondary_phone_number": null,
+    "account_number": null,
+    "notes": null,
+    "products_count": null,
+    "stock_value": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    }
+  },
+  {
+    "name": "Sysco",
+    "contact": null,
+    "address": null,
+    "secondary_address": null,
+    "email": null,
+    "phone_number": null,
+    "secondary_phone_number": null,
+    "account_number": null,
+    "notes": null,
+    "products_count": null,
+    "stock_value": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    }
+  }
+]

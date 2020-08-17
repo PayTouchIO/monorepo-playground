@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Tantra Bikes",
+    "contact": null,
+    "address": null,
+    "secondary_address": null,
+    "email": null,
+    "phone_number": null,
+    "secondary_phone_number": null,
+    "account_number": null,
+    "notes": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      },
+      "ref-location-2": {
+        "active": true
+      }
+    }
+  },
+  {
+    "name": "Yolo Bike Parts",
+    "contact": null,
+    "address": null,
+    "secondary_address": null,
+    "email": null,
+    "phone_number": null,
+    "secondary_phone_number": null,
+    "account_number": null,
+    "notes": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      },
+      "ref-location-2": {
+        "active": true
+      }
+    }
+  }
+]

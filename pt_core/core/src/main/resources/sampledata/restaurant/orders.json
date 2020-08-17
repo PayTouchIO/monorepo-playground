@@ -1,0 +1,1763 @@
+[
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-1",
+    "total_amount": "19.58",
+    "tax_amount": "1.58",
+    "completed_at": "ref-date-1",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.58",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-1",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "19.58",
+          "paid_in_amount": "20.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.42",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-1",
+        "order_item_ids": [],
+        "paid_at": "ref-date-1",
+        "type": "payment",
+        "customer_id": "ref-customer-1",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Banana",
+            "variant_option_id": "ref-variant-option-4",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-2",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-1",
+        "product_id": "ref-variant-product-4",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Vanilla",
+            "variant_option_id": "ref-variant-option-7",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-3",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-2",
+        "product_id": "ref-variant-product-7",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "3.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.26",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-4",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Bottled Coke",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.26",
+        "quantity": "1.00",
+        "id": "ref-item-3",
+        "product_id": "ref-product-8",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "3.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Chocolate",
+            "variant_option_id": "ref-variant-option-6",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-5",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-4",
+        "product_id": "ref-variant-product-6",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "18.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-2",
+    "total_amount": "46.23",
+    "tax_amount": "3.73",
+    "completed_at": "ref-date-2",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "3.73",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-6",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "46.23",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-2",
+        "order_item_ids": [],
+        "paid_at": "ref-date-2",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Large",
+            "variant_option_id": "ref-variant-option-9",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "1.25",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-7",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Fresh Cut Fries",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-5",
+        "product_id": "ref-variant-product-9",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Strawberry",
+            "variant_option_id": "ref-variant-option-5",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-8",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-6",
+        "product_id": "ref-variant-product-5",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "2.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "6.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.53",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-9",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Sliders",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.53",
+        "quantity": "1.00",
+        "id": "ref-item-7",
+        "product_id": "ref-product-5",
+        "product_description": "With Cheddar, Ketchup & M&B Sauce",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "6.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.79",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.48",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-10",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Mini M&B",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.48",
+        "quantity": "1.00",
+        "id": "ref-item-8",
+        "product_id": "ref-product-3",
+        "product_description": "Over 4oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Turkey",
+            "variant_option_id": "ref-variant-option-3",
+            "option_type_name": "Meat Options"
+          }
+        ],
+        "cost_amount": "2.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "10.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "1.84",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-11",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Meat",
+        "total_price_amount": "0.00",
+        "discounts": [
+          {
+            "amount": "0.00",
+            "title": null,
+            "total_amount": "0.00",
+            "discount_id": null,
+            "type": "percentage",
+            "currency": "USD"
+          }
+        ],
+        "tax_amount": "1.84",
+        "quantity": "2.00",
+        "id": "ref-item-9",
+        "product_id": "ref-variant-product-3",
+        "product_description": "Over 6oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "10.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "42.50"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-2",
+    "ticket_discount_amount": "0.75",
+    "received_at": "ref-date-3",
+    "total_amount": "7.34",
+    "tax_amount": "0.59",
+    "completed_at": "ref-date-3",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "0.59",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-12",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "7.34",
+          "paid_in_amount": "7.34",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.00",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-3",
+        "order_item_ids": [],
+        "paid_at": "ref-date-3",
+        "type": "payment",
+        "customer_id": "ref-customer-2",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "0.75",
+        "payment_status": "paid",
+        "calculated_price_amount": "2.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.59",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-13",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Dasani",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.59",
+        "quantity": "3.00",
+        "id": "ref-item-10",
+        "product_id": "ref-product-11",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "2.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "6.75"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-2",
+    "ticket_discount_amount": "1.95",
+    "received_at": "ref-date-4",
+    "total_amount": "19.09",
+    "tax_amount": "1.54",
+    "completed_at": "ref-date-4",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.54",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-14",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "19.09",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-4",
+        "order_item_ids": [],
+        "paid_at": "ref-date-4",
+        "type": "payment",
+        "customer_id": "ref-customer-2",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "6.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "1.54",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-15",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Sweet Potato Fries",
+        "total_price_amount": "0.00",
+        "discounts": [
+          {
+            "amount": "0.00",
+            "title": null,
+            "total_amount": "0.00",
+            "discount_id": null,
+            "type": "percentage",
+            "currency": "USD"
+          }
+        ],
+        "tax_amount": "1.54",
+        "quantity": "3.00",
+        "id": "ref-item-11",
+        "product_id": "ref-product-6",
+        "product_description": null,
+        "unit": "unit",
+        "notes": "Extra ketchup on the side",
+        "price_amount": "6.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "17.55"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-3",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-5",
+    "total_amount": "21.76",
+    "tax_amount": "1.76",
+    "completed_at": "ref-date-5",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.76",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-16",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "21.76",
+          "paid_in_amount": "30.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "8.24",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-5",
+        "order_item_ids": [],
+        "paid_at": "ref-date-5",
+        "type": "payment",
+        "customer_id": "ref-customer-3",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Banana",
+            "variant_option_id": "ref-variant-option-4",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-17",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-12",
+        "product_id": "ref-variant-product-4",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Chocolate",
+            "variant_option_id": "ref-variant-option-6",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-18",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-13",
+        "product_id": "ref-variant-product-6",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Strawberry",
+            "variant_option_id": "ref-variant-option-5",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-19",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-14",
+        "product_id": "ref-variant-product-5",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Vanilla",
+            "variant_option_id": "ref-variant-option-7",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.44",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-20",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.44",
+        "quantity": "1.00",
+        "id": "ref-item-15",
+        "product_id": "ref-variant-product-7",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "20.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-6",
+    "total_amount": "21.21",
+    "tax_amount": "1.71",
+    "completed_at": "ref-date-6",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.71",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-21",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "21.21",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-6",
+        "order_item_ids": [],
+        "paid_at": "ref-date-6",
+        "type": "payment",
+        "customer_id": "ref-customer-1",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "1.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "3.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.79",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-22",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Bottled Coke",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.79",
+        "quantity": "3.00",
+        "id": "ref-item-16",
+        "product_id": "ref-product-8",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "3.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "2.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "7.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.61",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-23",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Veggie",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.61",
+        "quantity": "1.00",
+        "id": "ref-item-17",
+        "product_id": "ref-product-7",
+        "product_description": "Soy-based, M&B's own recipe",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "7.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.25",
+        "payment_status": "paid",
+        "calculated_price_amount": "3.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.31",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-24",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Minute Maid Juice",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.31",
+        "quantity": "1.00",
+        "id": "ref-item-18",
+        "product_id": "ref-product-4",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "3.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "19.50"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-3",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-7",
+    "total_amount": "21.21",
+    "tax_amount": "1.71",
+    "completed_at": "ref-date-7",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.71",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-25",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "21.21",
+          "paid_in_amount": "100.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "78.79",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-7",
+        "order_item_ids": [],
+        "paid_at": "ref-date-7",
+        "type": "payment",
+        "customer_id": "ref-customer-3",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Double",
+            "variant_option_id": "ref-variant-option-10",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "3.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "10.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.92",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-26",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "M&B",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.92",
+        "quantity": "1.00",
+        "id": "ref-item-19",
+        "product_id": "ref-variant-product-10",
+        "product_description": "Over 6oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "10.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "0.75",
+        "payment_status": "paid",
+        "calculated_price_amount": "2.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.22",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-27",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Dasani",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.22",
+        "quantity": "1.00",
+        "id": "ref-item-20",
+        "product_id": "ref-product-11",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "2.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "6.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.57",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-28",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Sweet Potato Fries",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.57",
+        "quantity": "1.00",
+        "id": "ref-item-21",
+        "product_id": "ref-product-6",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "6.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "19.50"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-8",
+    "total_amount": "46.77",
+    "tax_amount": "3.77",
+    "customer_id": "ref-customer-1",
+    "completed_at": "ref-date-8",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "3.77",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-29",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "46.77",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-8",
+        "order_item_ids": [],
+        "paid_at": "ref-date-8",
+        "type": "payment",
+        "customer_id": "ref-customer-1",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Double",
+            "variant_option_id": "ref-variant-option-10",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "3.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "10.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "2.76",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-30",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "M&B",
+        "total_price_amount": "0.00",
+        "discounts": [
+          {
+            "amount": "0.00",
+            "title": null,
+            "total_amount": "0.00",
+            "discount_id": null,
+            "type": "percentage",
+            "currency": "USD"
+          }
+        ],
+        "tax_amount": "2.76",
+        "quantity": "3.00",
+        "id": "ref-item-22",
+        "product_id": "ref-variant-product-10",
+        "product_description": "Over 6oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "10.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "2.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "6.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.53",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-31",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Sliders",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.53",
+        "quantity": "1.00",
+        "id": "ref-item-23",
+        "product_id": "ref-product-5",
+        "product_description": "With Cheddar, Ketchup & M&B Sauce",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "6.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.79",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.48",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-32",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Mini M&B",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.48",
+        "quantity": "1.00",
+        "id": "ref-item-24",
+        "product_id": "ref-product-3",
+        "product_description": "Over 4oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "43.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-9",
+    "total_amount": "21.21",
+    "tax_amount": "1.71",
+    "completed_at": "ref-date-9",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.71",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-33",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "21.21",
+          "paid_in_amount": "100.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "78.79",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-9",
+        "order_item_ids": [],
+        "paid_at": "ref-date-9",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "1.25",
+        "payment_status": "paid",
+        "calculated_price_amount": "3.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.31",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-34",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Minute Maid Juice",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.31",
+        "quantity": "1.00",
+        "id": "ref-item-24",
+        "product_id": "ref-product-4",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "3.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.79",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.48",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-35",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Mini M&B",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.48",
+        "quantity": "1.00",
+        "id": "ref-item-25",
+        "product_id": "ref-product-3",
+        "product_description": "Over 4oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Turkey",
+            "variant_option_id": "ref-variant-option-3",
+            "option_type_name": "Meat Options"
+          }
+        ],
+        "cost_amount": "2.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "10.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.92",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-36",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Meat",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.92",
+        "quantity": "1.00",
+        "id": "ref-item-26",
+        "product_id": "ref-variant-product-3",
+        "product_description": "Over 6oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "10.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "19.50"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-3",
+    "ticket_discount_amount": "1.35",
+    "received_at": "ref-date-10",
+    "total_amount": "27.90",
+    "tax_amount": "2.25",
+    "completed_at": "ref-date-10",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "2.25",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-37",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "27.90",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-10",
+        "order_item_ids": [],
+        "paid_at": "ref-date-10",
+        "type": "payment",
+        "customer_id": "ref-customer-3",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "3.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "9.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.75",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-38",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Chicken Breast",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.75",
+        "quantity": "1.00",
+        "id": "ref-item-27",
+        "product_id": "ref-product-10",
+        "product_description": "Organic, Free-range Chicken",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "9.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Strawberry",
+            "variant_option_id": "ref-variant-option-5",
+            "option_type_name": "Flavor"
+          }
+        ],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.42",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-39",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Milkshakes",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.42",
+        "quantity": "1.00",
+        "id": "ref-item-28",
+        "product_id": "ref-variant-product-5",
+        "product_description": "Rich, creamy perfection",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "1.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "6.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "1.08",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-40",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Sweet Potato Fries",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "1.08",
+        "quantity": "2.00",
+        "id": "ref-item-29",
+        "product_id": "ref-product-6",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "6.50",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "25.65"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "1.13",
+    "received_at": "ref-date-11",
+    "total_amount": "23.24",
+    "tax_amount": "1.87",
+    "completed_at": "ref-date-11",
+    "type": "dine_in",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "1.87",
+        "value": "8.75",
+        "name": "Tax",
+        "id": "ref-tax-41",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "10.00",
+          "paid_in_amount": "10.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.00",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-11",
+        "order_item_ids": [],
+        "paid_at": "ref-date-11",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      },
+      {
+        "payment_details": {
+          "amount": "13.24",
+          "paid_in_amount": "20.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "6.76",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-12",
+        "order_item_ids": [],
+        "paid_at": "ref-date-11",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "2.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "7.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.58",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-42",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Veggie",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.58",
+        "quantity": "1.00",
+        "id": "ref-item-29",
+        "product_id": "ref-product-7",
+        "product_description": "Soy-based, M&B's own recipe",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "7.00",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Double",
+            "variant_option_id": "ref-variant-option-10",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "3.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "10.50",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.87",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-43",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "M&B",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.87",
+        "quantity": "1.00",
+        "id": "ref-item-30",
+        "product_id": "ref-variant-product-10",
+        "product_description": "Over 6oz",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "10.50",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Large",
+            "variant_option_id": "ref-variant-option-9",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "1.25",
+        "payment_status": "paid",
+        "calculated_price_amount": "5.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "0.42",
+            "value": "8.75",
+            "name": "Tax",
+            "id": "ref-tax-44",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Fresh Cut Fries",
+        "total_price_amount": "0.00",
+        "discounts": [],
+        "tax_amount": "0.42",
+        "quantity": "1.00",
+        "id": "ref-item-31",
+        "product_id": "ref-variant-product-9",
+        "product_description": null,
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "5.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "21.37"
+  }
+]

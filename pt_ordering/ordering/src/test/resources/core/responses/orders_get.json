@@ -1,0 +1,534 @@
+{
+  "data": {
+    "id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+    "location": {
+      "id": "fdd8866e-b609-44af-97b2-3a6d0582d78c",
+      "name": "Fresh Natural Food - Central Drive",
+      "email": "ordering.tommy-block+all@example.com",
+      "phone_number": "",
+      "website": null,
+      "active": true,
+      "address": {
+        "line1": "2200 Central Drive",
+        "line2": null,
+        "city": "Bedford",
+        "state": "Texas",
+        "country": "United States of America",
+        "state_data": {
+          "code": "TX",
+          "name": "Texas",
+          "country": {
+            "code": "US",
+            "name": "United States"
+          }
+        },
+        "country_data": {
+          "code": "US",
+          "name": "United States"
+        },
+        "postal_code": "76021"
+      },
+      "timezone": "America/Los_Angeles",
+      "currency": "USD",
+      "settings": null,
+      "tax_rates": null,
+      "opening_hours": null,
+      "coordinates": {
+        "lat": "32.84147180000",
+        "lng": "-97.13301420000"
+      }
+    },
+    "device_id": null,
+    "creator_user_id": null,
+    "creator_user": null,
+    "customer": {
+      "id": "779e93a1-073c-492a-8a89-ee8afad69262",
+      "first_name": "asdad",
+      "last_name": "asdas",
+      "dob": null,
+      "anniversary": null,
+      "email": "luca@paytouch.io",
+      "phone_number": "32432424234",
+      "address": {
+        "line1": null,
+        "line2": null,
+        "city": null,
+        "state": null,
+        "country": null,
+        "state_data": null,
+        "country_data": null,
+        "postal_code": null
+      },
+      "mobile_storefront_last_login": null,
+      "web_storefront_last_login": null,
+      "total_visits": 4,
+      "total_spend": [
+        {
+          "amount": "39.01",
+          "currency": "USD"
+        }
+      ],
+      "avg_tips": [
+        {
+          "amount": "0.00",
+          "currency": "USD"
+        }
+      ],
+      "locations": null,
+      "loyalty_programs": [],
+      "loyalty_statuses": [],
+      "loyalty_memberships": [],
+      "created_at": "2019-08-27T05:12:11.39Z",
+      "updated_at": "2019-11-12T10:03:23.204Z"
+    },
+    "number": "12",
+    "tag": null,
+    "source": "storefront",
+    "type": "take_out",
+    "payment_type": "credit_card",
+    "total": {
+      "amount": "23.01",
+      "currency": "USD"
+    },
+    "subtotal": {
+      "amount": "22.49",
+      "currency": "USD"
+    },
+    "discount": null,
+    "tax": {
+      "amount": "0.52",
+      "currency": "USD"
+    },
+    "tip": {
+      "amount": "0.00",
+      "currency": "USD"
+    },
+    "ticket_discount": null,
+    "delivery_fee": null,
+    "tax_rates": [
+      {
+        "id": "42c4da40-fab3-4307-aa44-1c604fc5e240",
+        "tax_rate_id": "d01f2299-5941-4d3e-a19c-f9986f058973",
+        "name": "City Tax",
+        "value": "8.740",
+        "total_amount": "0.52"
+      }
+    ],
+    "customer_notes": [],
+    "merchant_notes": [],
+    "payment_status": "paid",
+    "status": "received",
+    "fulfillment_status": null,
+    "order_routing_statuses": {
+      "bar": null,
+      "kitchen": null
+    },
+    "order_routing_kitchen_statuses": {},
+    "status_transitions": [
+      {
+        "id": "4f476566-19d6-4843-a2ce-1c92487807ad",
+        "status": "received",
+        "created_at": "2019-11-12T10:02:42.857Z"
+      },
+      {
+        "id": "227df838-da31-4603-a53e-ef46bd0f1c06",
+        "status": "in_progress",
+        "created_at": null
+      },
+      {
+        "id": "0d6afab4-2465-4483-9216-f4a4bdef69b5",
+        "status": "ready",
+        "created_at": null
+      },
+      {
+        "id": "aee37bc3-1ed2-4686-a7ee-55482c7e5fc7",
+        "status": "picked_up",
+        "created_at": null
+      },
+      {
+        "id": "8c26c3cf-d6fa-4cdd-a6b2-199af7bb431c",
+        "status": "completed",
+        "created_at": null
+      }
+    ],
+    "is_invoice": false,
+    "payment_transactions": null,
+    "items": [
+      {
+        "id": "41c806cb-15ea-4d82-b95c-b197caed42d7",
+        "order_id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+        "product_id": "d35fff4a-d7d6-44e7-81a6-fa532a94eda9",
+        "product_name": "Fresh Brunch",
+        "product_description": "Quinoa Bowl plus salad on the side, and a smoothie to finish with a smile.",
+        "product_type": "simple",
+        "quantity": "1.0000",
+        "unit": "unit",
+        "payment_status": "paid",
+        "price": {
+          "amount": "16.00",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "discount": null,
+        "tax": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "base_price": null,
+        "calculated_price": {
+          "amount": "16.00",
+          "currency": "USD"
+        },
+        "total_price": {
+          "amount": "16.50",
+          "currency": "USD"
+        },
+        "variant_options": [],
+        "modifier_options": [],
+        "discounts": [],
+        "order_routing_status": null,
+        "notes": null,
+        "tax_rates": [],
+        "gift_card_pass": null
+      },
+      {
+        "id": "94271ea8-8808-407a-b681-22c119eb0b9e",
+        "order_id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+        "product_id": "15e392ac-5f5a-4108-96e7-7ca18e9738c4",
+        "product_name": "Just Greens Smoothie",
+        "product_description": "Cucumber, kale, celery, spinach, ginger and honey.",
+        "product_type": "variant",
+        "quantity": "1.0000",
+        "unit": "unit",
+        "payment_status": "paid",
+        "price": {
+          "amount": "5.99",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "discount": null,
+        "tax": {
+          "amount": "0.52",
+          "currency": "USD"
+        },
+        "base_price": null,
+        "calculated_price": {
+          "amount": "5.99",
+          "currency": "USD"
+        },
+        "total_price": {
+          "amount": "6.51",
+          "currency": "USD"
+        },
+        "variant_options": [
+          {
+            "id": "16dd00d1-5eae-4562-b7d7-01f5c947e477",
+            "order_item_id": "94271ea8-8808-407a-b681-22c119eb0b9e",
+            "variant_option_id": "0e179275-9b4e-4c40-8a95-88c08f783264",
+            "option_name": "Small",
+            "option_type_name": "Size",
+            "position": 0
+          }
+        ],
+        "modifier_options": [],
+        "discounts": [],
+        "order_routing_status": null,
+        "notes": "",
+        "tax_rates": [
+          {
+            "id": "5791d1ca-5733-468f-9ec6-9f7bd33332ef",
+            "tax_rate_id": "d01f2299-5941-4d3e-a19c-f9986f058973",
+            "name": "City Tax",
+            "value": "8.740",
+            "total_amount": "0.52",
+            "apply_to_price": true,
+            "active": true
+          }
+        ],
+        "gift_card_pass": null
+      },
+      {
+        "id": "476819b2-7568-49fa-9dd0-b51e519d82cc",
+        "order_id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+        "product_id": "6d387088-d0bc-4bb1-8014-cfbe4ebc5044",
+        "product_name": "Greek Bowl",
+        "product_description": "Cherry tomatoes, olives, onions, cucumber, kale and feta cheese with oil, and red vinegar.",
+        "product_type": "simple",
+        "quantity": "1.0000",
+        "unit": "unit",
+        "payment_status": "paid",
+        "price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "discount": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "tax": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "base_price": null,
+        "calculated_price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "total_price": null,
+        "variant_options": [],
+        "modifier_options": [
+          {
+            "id": "6732987f-1334-4b64-abac-f2a9d3d45b5e",
+            "order_item_id": "476819b2-7568-49fa-9dd0-b51e519d82cc",
+            "modifier_option_id": "d384ea34-3901-48ce-89c0-d5a0c60bdf1b",
+            "name": "Greek Lime",
+            "modifier_set_name": "Dressing",
+            "type": "addon",
+            "price": {
+              "amount": "0.50",
+              "currency": "USD"
+            },
+            "quantity": "1.0000"
+          },
+          {
+            "id": "67a03832-117d-4916-8547-a20e01487145",
+            "order_item_id": "476819b2-7568-49fa-9dd0-b51e519d82cc",
+            "modifier_option_id": "ae16d285-d468-44db-8405-f27af150fdfa",
+            "name": "Salt",
+            "modifier_set_name": "Seasonings",
+            "type": "hold",
+            "price": {
+              "amount": "0.00",
+              "currency": "USD"
+            },
+            "quantity": "1.0000"
+          }
+        ],
+        "discounts": [],
+        "order_routing_status": null,
+        "notes": "",
+        "tax_rates": [],
+        "gift_card_pass": null
+      },
+      {
+        "id": "87f2c301-75c5-47d8-aead-f9b6632ce452",
+        "order_id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+        "product_id": "6fccd80b-3252-4cda-a613-bbbdbfe66ef1",
+        "product_name": "California Salad",
+        "product_description": "Turkey, crispy bacon, spinach, Romaine lettuce, mushrooms, cherry tomatoes, cucumbers, and egg whites.",
+        "product_type": "simple",
+        "quantity": "1.0000",
+        "unit": "unit",
+        "payment_status": "paid",
+        "price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "discount": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "tax": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "base_price": null,
+        "calculated_price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "total_price": null,
+        "variant_options": [],
+        "modifier_options": [
+          {
+            "id": "dd1e280f-f809-4e15-bef8-5b003b81ec34",
+            "order_item_id": "87f2c301-75c5-47d8-aead-f9b6632ce452",
+            "modifier_option_id": "da9511eb-8993-4d55-86fc-3faf1443a44b",
+            "name": "Yogurt",
+            "modifier_set_name": "Dressing",
+            "type": "addon",
+            "price": {
+              "amount": "0.00",
+              "currency": "USD"
+            },
+            "quantity": "1.0000"
+          },
+          {
+            "id": "4bf97e3c-a2dc-41f0-9428-0ee05fa90d07",
+            "order_item_id": "87f2c301-75c5-47d8-aead-f9b6632ce452",
+            "modifier_option_id": "ca88b0e5-114d-400d-9c60-e5e41a4e2c37",
+            "name": "Pepper",
+            "modifier_set_name": "Seasonings",
+            "type": "hold",
+            "price": {
+              "amount": "0.00",
+              "currency": "USD"
+            },
+            "quantity": "1.0000"
+          }
+        ],
+        "discounts": [],
+        "order_routing_status": null,
+        "notes": "",
+        "tax_rates": [],
+        "gift_card_pass": null
+      },
+      {
+        "id": "82820abb-0fdd-4b9f-a33b-8fae0cc1e70d",
+        "order_id": "ac544e46-63a7-4d2f-81f9-53f68bcd02b2",
+        "product_id": "2ba749ba-b35c-4ceb-bb97-319a5ca53e27",
+        "product_name": "Very Berry Smoothie",
+        "product_description": "Blueberry, raspberry, strawberry, and apple juice.",
+        "product_type": "variant",
+        "quantity": "1.0000",
+        "unit": "unit",
+        "payment_status": "paid",
+        "price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "discount": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "tax": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "base_price": null,
+        "calculated_price": {
+          "amount": "0.00",
+          "currency": "USD"
+        },
+        "total_price": null,
+        "variant_options": [
+          {
+            "id": "da7f1179-471e-47ce-be19-a819919b8541",
+            "order_item_id": "82820abb-0fdd-4b9f-a33b-8fae0cc1e70d",
+            "variant_option_id": "ee3592e5-010a-49dd-a42f-b85c88ee2174",
+            "option_name": "Small",
+            "option_type_name": "Size",
+            "position": 0
+          }
+        ],
+        "modifier_options": [],
+        "discounts": [],
+        "order_routing_status": null,
+        "notes": "",
+        "tax_rates": [],
+        "gift_card_pass": null
+      }
+    ],
+    "assigned_users": [],
+    "discount_details": [],
+    "rewards": [],
+    "loyalty_points": null,
+    "delivery_address": {
+      "id": "2353a2d8-8190-4567-8fd8-aa5d96980cfb",
+      "first_name": "asdad",
+      "last_name": "asdas",
+      "address": {
+        "line1": null,
+        "line2": null,
+        "city": null,
+        "state": null,
+        "country": null,
+        "state_data": null,
+        "country_data": null,
+        "postal_code": null
+      },
+      "driving_distance_in_meters": null,
+      "estimated_driving_time_in_mins": null
+    },
+    "online_order_attribute": {
+      "id": "3f615ffa-aa65-4382-9791-099882e9b947",
+      "acceptance_status": "pending",
+      "rejection_reason": null,
+      "prepare_by_time": null,
+      "estimated_prep_time_in_mins": null
+    },
+    "bundles": [
+      {
+        "id": "3bb521ba-bda0-4d66-af1f-98c967be8757",
+        "bundle_order_item_id": "41c806cb-15ea-4d82-b95c-b197caed42d7",
+        "order_bundle_sets": [
+          {
+            "id": "c975c60c-a7e6-4b10-97d3-d2d63e079001",
+            "bundle_set_id": "4557fd88-2d18-413b-acea-7a6f28e8c099",
+            "name": "Choose Bowl",
+            "position": 1,
+            "order_bundle_options": [
+              {
+                "id": "aecae035-875a-4817-93f1-9c1230779e3f",
+                "bundle_option_id": "2e149e5b-5cef-4b40-bdea-e1989a4bca41",
+                "article_order_item_id": "476819b2-7568-49fa-9dd0-b51e519d82cc",
+                "position": 1,
+                "price_adjustment": "0.00"
+              }
+            ]
+          },
+          {
+            "id": "809b15d1-8d0b-43a8-96a8-411b5af23037",
+            "bundle_set_id": "9e2db18c-8d5a-4c04-bf70-90d47cdc0e75",
+            "name": "Choose Salad",
+            "position": 2,
+            "order_bundle_options": [
+              {
+                "id": "be92f8dd-b792-427e-ae30-3a1c51361e3d",
+                "bundle_option_id": "137e9b82-1e3b-4ea1-8696-379d91df3863",
+                "article_order_item_id": "87f2c301-75c5-47d8-aead-f9b6632ce452",
+                "position": 1,
+                "price_adjustment": "0.00"
+              }
+            ]
+          },
+          {
+            "id": "281f4710-251f-4b0c-bb30-fb57e59e34e7",
+            "bundle_set_id": "b53daa23-9c61-41a6-9333-707dc148b3ab",
+            "name": "Choose Smoothie",
+            "position": 3,
+            "order_bundle_options": [
+              {
+                "id": "ca59461a-ef15-4240-8abd-830d6a76d359",
+                "bundle_option_id": "59dd4f60-3363-4e97-af78-e511a15ae359",
+                "article_order_item_id": "82820abb-0fdd-4b9f-a33b-8fae0cc1e70d",
+                "position": 1,
+                "price_adjustment": "0.00"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tickets": null,
+    "tips_assignments": [],
+    "version": 1,
+    "seating": null,
+    "delivery_provider": null,
+    "delivery_provider_id": null,
+    "delivery_provider_number": null,
+    "received_at": "2019-11-12T10:03:22.977Z",
+    "completed_at": null,
+    "created_at": "2019-11-12T10:02:42.857Z",
+    "updated_at": "2019-11-12T10:03:23.355Z"
+  },
+  "object": "order"
+}

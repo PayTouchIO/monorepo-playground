@@ -1,0 +1,22 @@
+{
+  "data": {
+    "accessible": {
+      "catalog_ids": [
+        "b82b7b62-8251-3fd9-9e18-d73ab1adb918",
+        "c6342289-5123-3971-908d-57a29b01bd24"
+      ]
+    },
+    "not_used": {
+      "catalog_ids": [
+        "478a122b-37fc-318c-a70f-f95cdd699b78",
+        "ac65f053-e966-3bdd-82f2-c8be7c02ad8c"
+      ]
+    },
+    "non_accessible": {
+      "catalog_ids": [
+        "29f42b30-e479-3e2e-bd24-4003332f071d"
+      ]
+    }
+  },
+  "object": "ids_usage"
+}

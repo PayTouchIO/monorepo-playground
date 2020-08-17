@@ -1,0 +1,38 @@
+[
+  {
+    "position": 0,
+    "parent_category_id": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "availabilities": null,
+        "active": true
+      },
+      "ref-location-2": {
+        "availabilities": null,
+        "active": true
+      }
+    },
+    "active": true,
+    "description": null,
+    "name": "Bikes",
+    "subcategories": []
+  },
+  {
+    "position": 0,
+    "parent_category_id": null,
+    "location_overrides": {
+      "ref-location-1": {
+        "availabilities": null,
+        "active": true
+      },
+      "ref-location-2": {
+        "availabilities": null,
+        "active": true
+      }
+    },
+    "active": true,
+    "description": null,
+    "name": "Accessories",
+    "subcategories": []
+  }
+]

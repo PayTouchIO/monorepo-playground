@@ -1,0 +1,57 @@
+{
+  "data": {
+    "id": "60f0b330-2116-4d50-8e55-fab0ddc4e7b0",
+    "name": "Basico",
+    "products_count": 42,
+    "categories_count": null,
+    "location_overrides": {
+      "4a886481-d516-4f4c-b54d-1e534468b22d": {
+        "availabilities": {
+          "sunday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "friday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "monday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "saturday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "tuesday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "wednesday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ],
+          "thursday": [
+            {
+              "start": "12:00:00",
+              "end": "00:00:00"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "object": "catalog"
+}

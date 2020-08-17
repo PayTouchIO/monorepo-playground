@@ -1,0 +1,608 @@
+[
+  {
+    "image_upload_ids": [
+      "ref-product-image-1"
+    ],
+    "price": "1999.00",
+    "cost": "800.00",
+    "margin": 60,
+    "location_overrides": {
+      "ref-location-1": {
+        "price": "1999.00",
+        "cost": "800.00",
+        "margin": "60.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-2"
+        ]
+      },
+      "ref-location-2": {
+        "price": "1999.00",
+        "cost": "800.00",
+        "margin": "60.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-1"
+        ]
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-1"
+    ],
+    "discountable": true,
+    "is_service": false,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "track_inventory": true,
+    "track_inventory_parts": false,
+    "has_variants": false,
+    "category_ids": [
+      "ref-category-1"
+    ],
+    "description": "Carbon Frame/Fork\\nShimano 105 2 x 11 Speed Shifting\\nShimano Rim Brake Calipers\\nComfortable endurance frame geometry",
+    "apply_pricing_to_all_locations": true,
+    "name": "Bianchi Intrepida 105",
+    "avatar_bg_color": "#546E7A",
+    "brand_id": "ref-brand-1",
+    "unit": "unit",
+    "reason": "manual"
+  },
+  {
+    "image_upload_ids": [
+      "ref-product-image-2",
+      "ref-product-image-3",
+      "ref-product-image-4",
+      "ref-product-image-5"
+    ],
+    "price": "109.00",
+    "cost": "33.00",
+    "margin": 69.7,
+    "location_overrides": {
+      "ref-location-1": {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": "69.70",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-2"
+        ]
+      },
+      "ref-location-2": {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": "69.70",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-1"
+        ]
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-2"
+    ],
+    "discountable": true,
+    "is_service": false,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "track_inventory": true,
+    "track_inventory_parts": false,
+    "has_variants": true,
+    "category_ids": [
+      "ref-category-2"
+    ],
+    "description": "The ideal companion on all-mountain and trail tours. The TrailRS provides all round protection with Inmould technology in which the helmet is directly connected with the absorbing EPS material. The high number of ventilation openings, as well as the placement angles and integrated channels provide lots of air circulation and the best cooling. The two-components adjustment unit with precision interlocking, \"ErgoFit UltraTM\" creates a comfortable and extremely exact fit vertically and horizontally, guaranteeing a good fit and a high degree of wearing comfort. The visor is fully adjustable and has a quick release system, \"QuickRelease\" that allows the visor to fold out of the way in the case of a fall. This means that we can minimize the danger of injuries and the risk of damage. The TrailRS helmet series fulfils the European safety standard, EN1078 as well as the American CPSC. full inmould coverage for optimized absorbtion and weight aeration system with 22 large vents and internal air channels adjustable bolt system MX style visor, optimized felxibility and full visual field crash release visor Dual-Compound dial adjuster Ergo-Fit Ultra, fully flexible and adjustable retention system Dual-Compound head ring for highest comfort and optimized fit Dual-Inmould, lower 360 degree inmould shell to prevent from damage Y-Clip adjustable strap system ratchet safety closure SM (54-58cm), ML (58-62cm) EN1078 & CPSC certified +/- 320g",
+    "apply_pricing_to_all_locations": true,
+    "name": "IXS Helmet",
+    "avatar_bg_color": "#A12D56",
+    "brand_id": "ref-brand-2",
+    "unit": "unit",
+    "reason": "manual",
+    "variants": [
+      {
+        "id": "ref-variant-type-1",
+        "name": "Color",
+        "options": [
+          {
+            "id": "ref-variant-option-1",
+            "name": "Red"
+          },
+          {
+            "id": "ref-variant-option-2",
+            "name": "Black"
+          },
+          {
+            "id": "ref-variant-option-3",
+            "name": "Blue"
+          },
+          {
+            "id": "ref-variant-option-4",
+            "name": "Yellow"
+          }
+        ]
+      },
+      {
+        "id": "ref-variant-type-2",
+        "name": "Style",
+        "options": [
+          {
+            "id": "ref-variant-option-5",
+            "name": "Open Face"
+          },
+          {
+            "id": "ref-variant-option-6",
+            "name": "Full Face"
+          }
+        ]
+      }
+    ],
+    "variant_products": [
+      {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": 69.7,
+        "unit": "unit",
+        "id": "ref-variant-product-1",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-1",
+          "ref-variant-option-5"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "220.00",
+        "cost": "53.00",
+        "margin": 75.9,
+        "unit": "unit",
+        "id": "ref-variant-product-2",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-6",
+          "ref-variant-option-1"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": 69.7,
+        "unit": "unit",
+        "id": "ref-variant-product-3",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-5",
+          "ref-variant-option-2"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "220.00",
+        "cost": "53.00",
+        "margin": 75.9,
+        "unit": "unit",
+        "id": "ref-variant-product-4",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-6",
+          "ref-variant-option-2"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": 69.7,
+        "unit": "unit",
+        "id": "ref-variant-product-5",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-5",
+          "ref-variant-option-3"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "220.00",
+        "cost": "53.00",
+        "margin": 75.9,
+        "unit": "unit",
+        "id": "ref-variant-product-6",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-6",
+          "ref-variant-option-3"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "109.00",
+        "cost": "33.00",
+        "margin": 69.7,
+        "unit": "unit",
+        "id": "ref-variant-product-7",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "109.00",
+            "cost": "33.00",
+            "margin": "69.70",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-4",
+          "ref-variant-option-5"
+        ],
+        "sku": null,
+        "upc": null
+      },
+      {
+        "price": "220.00",
+        "cost": "53.00",
+        "margin": 75.9,
+        "unit": "unit",
+        "id": "ref-variant-product-8",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "220.00",
+            "cost": "53.00",
+            "margin": "75.90",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-6",
+          "ref-variant-option-4"
+        ],
+        "sku": null,
+        "upc": null
+      }
+    ]
+  },
+  {
+    "image_upload_ids": [
+      "ref-product-image-6",
+      "ref-product-image-7",
+      "ref-product-image-8",
+      "ref-product-image-9"
+    ],
+    "price": "0.00",
+    "cost": "0.00",
+    "margin": 0,
+    "location_overrides": {
+      "ref-location-1": {
+        "price": "0.00",
+        "cost": "0.00",
+        "margin": "0.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-2"
+        ]
+      },
+      "ref-location-2": {
+        "price": "0.00",
+        "cost": "0.00",
+        "margin": "0.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-1"
+        ]
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-1"
+    ],
+    "discountable": true,
+    "is_service": false,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "track_inventory": true,
+    "track_inventory_parts": false,
+    "has_variants": true,
+    "category_ids": [
+      "ref-category-1"
+    ],
+    "description": "A Fixed Gear / Single Speed Bike that'll fly through traffic jams and will beat down the grind of your daily commute. This is your bicycle for urban riding. \\n\\nFrame: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFork: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFront Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nRear Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nHeadset: 1 1/8\" Threadless Integrated\\nCrankset: 46T Chainring, 170mm Crank\\nBottom Bracket: O\u2019ring Sealed Cartridge, 103mm, BSA\\nPedals: BMX Flat Pedals Alloy\\nCog: 16T Fixed Cog / 16T Freewheel \\nChain: KMC Z-410 \\nHandlebar: Bullhorns Alloy \\nStem: 70mm Alloy\\nGrips: Velo Track 1800mm PVC\\nSaddle: PX2\\nSeat Post: Tantra Alloy\\nSeat Clamp: Alloy 28.6mm\\nWheelset: Tantra 30mm Deep Dish 32 hole Rims, Flip-Flop Hub Alloy\\nTires: 700 x 23c\\nFront Brake: 55mm Alloy Brake Lever Hinged Alloy Lever\\nWeight: 20.7 lbs or 9.4 kg",
+    "apply_pricing_to_all_locations": true,
+    "name": "Jam Bomber",
+    "avatar_bg_color": "#D93F63",
+    "brand_id": "ref-brand-1",
+    "unit": "unit",
+    "reason": "manual",
+    "variants": [
+      {
+        "id": "ref-variant-type-3",
+        "name": "Size",
+        "options": [
+          {
+            "id": "ref-variant-option-7",
+            "name": "Large"
+          },
+          {
+            "id": "ref-variant-option-8",
+            "name": "Extra Large"
+          }
+        ]
+      }
+    ],
+    "variant_products": [
+      {
+        "price": "599.00",
+        "cost": "325.00",
+        "margin": 45.7,
+        "unit": "unit",
+        "id": "ref-variant-product-9",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "599.00",
+            "cost": "325.00",
+            "margin": "45.70",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "599.00",
+            "cost": "325.00",
+            "margin": "45.70",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-7"
+        ],
+        "sku": "19181716",
+        "upc": null
+      },
+      {
+        "price": "499.00",
+        "cost": "265.00",
+        "margin": 46.9,
+        "unit": "unit",
+        "id": "ref-variant-product-10",
+        "location_overrides": {
+          "ref-location-1": {
+            "price": "499.00",
+            "cost": "265.00",
+            "margin": "46.90",
+            "unit": "unit",
+            "active": true
+          },
+          "ref-location-2": {
+            "price": "499.00",
+            "cost": "265.00",
+            "margin": "46.90",
+            "unit": "unit",
+            "active": true
+          }
+        },
+        "option_ids": [
+          "ref-variant-option-8"
+        ],
+        "sku": "19181715",
+        "upc": null
+      }
+    ]
+  },
+  {
+    "image_upload_ids": [
+      "ref-product-image-10",
+      "ref-product-image-11"
+    ],
+    "price": "29.99",
+    "cost": "9.50",
+    "margin": 68.3,
+    "location_overrides": {
+      "ref-location-1": {
+        "price": "29.99",
+        "cost": "9.50",
+        "margin": "68.30",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-2"
+        ]
+      },
+      "ref-location-2": {
+        "price": "29.99",
+        "cost": "9.50",
+        "margin": "68.30",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-1"
+        ]
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-2"
+    ],
+    "discountable": true,
+    "is_service": false,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "track_inventory": true,
+    "track_inventory_parts": false,
+    "has_variants": false,
+    "category_ids": [
+      "ref-category-2"
+    ],
+    "description": "This belt compatible key holder has a quick release magnetic clip that allows you to take your keys on and off with one hand. The KEYClip has a 2\" loop that allows for all sized belts to be passed through it and the military style snap hook would then hold your keys. You can also wear it the other way, where you use the 2\" loop to hold your keys and the military hook to snap onto belt loops or bags.\\n\\nFEATURES:\\n\\nCan be passed through your belt\\nMilitary style metal snap hook\\nAuto-locating magnetic hardware to take your keys quickly and easily on and off\\nCONSTRUCTION:\\n\\nAuto-locating magnetic hardware\\nMetal snap hook\\n1\" nylon webbing\\nSewn with no. 69 nylon thread\\nBartacked for reinforcement\\nMade in Toronto, Canada. Lifetime warranty.\\nSPECS\\n\\nDimensions: Height: 7\", Width: 1\"",
+    "apply_pricing_to_all_locations": true,
+    "name": "Magnetic Key Chain",
+    "avatar_bg_color": "#4CAF50",
+    "brand_id": "ref-brand-1",
+    "unit": "unit",
+    "reason": "manual",
+    "sku": "19181714"
+  },
+  {
+    "image_upload_ids": [
+      "ref-product-image-12",
+      "ref-product-image-13"
+    ],
+    "price": "29.99",
+    "cost": "12.00",
+    "margin": 60,
+    "location_overrides": {
+      "ref-location-1": {
+        "price": "29.99",
+        "cost": "12.00",
+        "margin": "60.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-2"
+        ]
+      },
+      "ref-location-2": {
+        "price": "29.99",
+        "cost": "12.00",
+        "margin": "60.00",
+        "unit": "unit",
+        "active": true,
+        "tax_rate_ids": [
+          "ref-tax-rate-1"
+        ]
+      }
+    },
+    "supplier_ids": [
+      "ref-supplier-2"
+    ],
+    "discountable": true,
+    "is_service": false,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "track_inventory": true,
+    "track_inventory_parts": false,
+    "has_variants": false,
+    "category_ids": [
+      "ref-category-2"
+    ],
+    "description": "Versatile, comfortable, and durable, YNOT Pedal Straps are adjustable to fit nearly any footwear. Great for anybody that rides hard and needs the ultimate foot retention system. SOLD IN PAIRS.\\n\\n\\nFEATURES:\\n\\nTriple layer reinforcement for added strength\\nKeep their desired shape, allowing you to easily get your footing every time.\\nIdeal for commuting, cross, FGFS, mountain biking, hardworking messengers & everyday riding.\\nAvailablity in a variety of colours and designs so you can customize your ride.\\nEvery set of straps comes with a vinyl YNOT decal.\\n\\nFIT:\\nAdjustable to accommodate nearly any footwear, from slip-ons to winter boots\\nBottom strap fit any standard platform pedal with 3/4\" x 5/16\" slotted openings\\n\\nCONSTRUCTION:\\nAvailable in: 1000D CORDURA\u00AE exterior (North American Milled), Heavy-duty Reinforced Vinyl, Reclaimed Leather, Repurposed Denim*\\nConstructed with heavy duty nylon, industrial-strength hook & loop and durable nickel-plated hardware\\nMade in Toronto, Canada\\nWeight: g / 0.35 lb\\n*Cut Off straps are made from repurposed denim. Because of this, the colour / wash of the denim on each set may vary.\\n*Pedals not included.\\n*Warning: The use of any foot retention system on a bicycle entails a degree of risk. YNOT Cycle and Tantra Bicycle Co. does not assume any responsibility for any damage or injury that occurs while using these Pedal Straps.\\n\\n",
+    "apply_pricing_to_all_locations": true,
+    "name": "Pedal Straps",
+    "avatar_bg_color": "#4786E1",
+    "brand_id": "ref-brand-2",
+    "unit": "unit",
+    "reason": "manual",
+    "sku": "1981231"
+  }
+]

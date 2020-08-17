@@ -1,0 +1,114 @@
+{
+  "ref-location-1": {
+    "payment_type_credit_card": true,
+    "payment_type_debit_card": false,
+    "payment_type_gift_card": true,
+    "payment_type_store_credit": false,
+    "payment_type_check": false,
+    "payment_type_ebt": false,
+    "payment_type_apple_pay": false,
+    "payment_type_cash": true,
+    "cash_drawer_management_active": true,
+    "gift_cards_active": true,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "order_type_take_out": false,
+    "order_type_delivery_retail": false,
+    "order_type_dine_in": false,
+    "order_type_in_store": true,
+    "facebook_storefront_active": false,
+    "mobile_storefront_active": false,
+    "web_storefront_active": false,
+    "invoices_active": false,
+    "kitchen_view_active": false,
+    "discount_below_cost_active": false,
+    "bypass_signature_amount": "0.00",
+    "tips_enabled": true,
+    "bar_view_active": false,
+    "order_type_in_store_pick_up": false,
+    "tips_on_device_enabled": false,
+    "order_type_delivery_restaurant": false,
+    "location_receipt": {
+      "email_image_upload_ids": [
+        "ref-email-receipt-image-1"
+      ],
+      "print_image_upload_ids": [
+        "ref-print-receipt-image-1"
+      ],
+      "address": {
+        "city": "San Jose",
+        "line2": null,
+        "country": "US",
+        "state": "CA",
+        "line1": "12 Elm Street",
+        "postal_code": "95125"
+      },
+      "phone_number": "(510) 555-1212",
+      "header_color": "#FFFFFF",
+      "location_name": "Woxii",
+      "website_url": "www.woxii.bikes",
+      "facebook_url": "woxii",
+      "twitter_url": "@woxii_bikes",
+      "show_custom_text": true,
+      "custom_text": "Thanks for considering Woxii. We appreciate your business.",
+      "show_return_policy": true,
+      "return_policy_text": "Bikes are returanable in unused condition within 30 days with receipt."
+    }
+  },
+  "ref-location-2": {
+    "bypass_signature_amount": "0.00",
+    "payment_type_credit_card": true,
+    "payment_type_debit_card": false,
+    "payment_type_gift_card": true,
+    "payment_type_store_credit": false,
+    "payment_type_check": false,
+    "payment_type_ebt": false,
+    "payment_type_apple_pay": false,
+    "payment_type_cash": true,
+    "cash_drawer_management_active": true,
+    "gift_cards_active": true,
+    "order_routing_kitchen": false,
+    "order_routing_bar": false,
+    "order_type_take_out": false,
+    "order_type_delivery_retail": false,
+    "order_type_dine_in": false,
+    "order_type_delivery_restaurant": false,
+    "order_type_in_store_pick_up": false,
+    "order_type_in_store": true,
+    "facebook_storefront_active": false,
+    "mobile_storefront_active": false,
+    "web_storefront_active": false,
+    "invoices_active": false,
+    "kitchen_view_active": false,
+    "bar_view_active": false,
+    "discount_below_cost_active": false,
+    "tips_enabled": true,
+    "tips_on_device_enabled": false,
+    "location_receipt": {
+      "email_image_upload_ids": [
+        "ref-email-receipt-image-2"
+      ],
+      "print_image_upload_ids": [
+        "ref-print-receipt-image-2"
+      ],
+      "address": {
+        "city": "San Francisco",
+        "line2": null,
+        "country": "US",
+        "state": "CA",
+        "line1": "22 Ash Lane",
+        "postal_code": "94555"
+      },
+      "phone_number": "(415) 333-1212",
+      "header_color": "#FFFFFF",
+      "location_name": "Woxii",
+      "website_url": "www.woxii.bikes",
+      "facebook_url": "woxii",
+      "twitter_url": "@woxii_bikes",
+      "show_custom_text": true,
+      "custom_text": "Thanks for considering Woxii. We appreciate your business.",
+      "show_return_policy": true,
+      "return_policy_text": "Bikes are returanable in unused condition within 30 days with receipt."
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "global": [
+    {
+      "message": "Location ids not accessible",
+      "code": "NonAccessibleLocationIds",
+      "values": [
+        "03d3fcd7-96d1-3868-abee-ab3d0cad7bb4"
+      ],
+      "object_id": null,
+      "field": null
+    },
+    {
+      "message": "Catalog ids not accessible",
+      "code": "NonAccessibleCatalogIds",
+      "values": [
+        "03d3fcd7-96d1-3868-abee-ab3d0cad7bb4"
+      ],
+      "object_id": null,
+      "field": null
+    }
+  ],
+  "objects_with_errors": {}
+}

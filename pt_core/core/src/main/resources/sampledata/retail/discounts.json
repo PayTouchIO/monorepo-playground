@@ -1,0 +1,18 @@
+[
+  {
+    "type": "percentage",
+    "active": true,
+    "require_manager_approval": true,
+    "amount": "10.00",
+    "title": "Student",
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      },
+      "ref-location-2": {
+        "active": true
+      }
+    },
+    "availability_hours": {}
+  }
+]

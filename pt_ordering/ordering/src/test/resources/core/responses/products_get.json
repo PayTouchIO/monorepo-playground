@@ -1,0 +1,171 @@
+{
+  "data": {
+    "id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+    "type": "variant",
+    "scope": "product",
+    "is_combo": false,
+    "name": "Incididunt Sirloin",
+    "description": "Sed nostrud swine jowl velit quisaliqua bone proident round pariatur pork cupim mignon ipsumenim bacon",
+    "brand_id": "5f1b1b93-137e-3107-9db8-e145e69ab8e6",
+    "price": {
+      "amount": "93.00",
+      "currency": "USD"
+    },
+    "price_range": {
+      "min": {
+        "amount": "1.00",
+        "currency": "USD"
+      },
+      "max": {
+        "amount": "1.00",
+        "currency": "USD"
+      }
+    },
+    "cost": {
+      "amount": "1.00",
+      "currency": "USD"
+    },
+    "cost_range": null,
+    "average_cost": null,
+    "unit": "unit",
+    "margin": "29.00",
+    "upc": "810330009513622",
+    "sku": "Sausage-e21806a9-0778-31f3-8faf-459defbd0e89",
+    "is_variant_of_product_id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+    "has_variant": false,
+    "track_inventory": false,
+    "track_inventory_parts": false,
+    "active": true,
+    "apply_pricing_to_all_locations": true,
+    "discountable": false,
+    "avatar_bg_color": "9b2fae",
+    "avatar_image_urls": [],
+    "is_service": false,
+    "order_routing_bar": false,
+    "order_routing_kitchen": false,
+    "has_parts": false,
+    "options": [
+      {
+        "id": "4011b496-08e0-480c-a917-e60c7288a321",
+        "name": "Anim Rump",
+        "type_name": "Filet",
+        "position": 1,
+        "type_position": 1
+      }
+    ],
+    "categories": null,
+    "category_ids": null,
+    "location_overrides": {
+      "a07c7e10-713e-3050-8907-072c36eec741": {
+        "price": {
+          "amount": "1.00",
+          "currency": "USD"
+        },
+        "cost": {
+          "amount": "1.00",
+          "currency": "USD"
+        },
+        "average_cost": null,
+        "unit": "unit",
+        "margin": "59.00",
+        "active": true,
+        "tax_rates": [
+          {
+            "id": "061cedf1-b7ed-38d6-a32c-f926032b5409",
+            "name": "Jowl Eiusmod",
+            "value": "59.125",
+            "apply_to_price": false,
+            "location_overrides": {
+              "a07c7e10-713e-3050-8907-072c36eec741": {
+                "active": true
+              }
+            }
+          }
+        ],
+        "tax_rate_ids": null,
+        "stock": {
+          "id": "7f79257d-f846-459a-a27a-11bbac2a894f",
+          "location_id": "a07c7e10-713e-3050-8907-072c36eec741",
+          "product_id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+          "quantity": 1234,
+          "minimum_on_hand": 50,
+          "reorder_amount": 250,
+          "sell_out_of_stock": false
+        }
+      }
+    },
+    "variants": [],
+    "variant_products": [],
+    "modifiers": [
+      {
+        "id": "a508c3c2-9fae-34d6-83bb-bdd97413db93",
+        "type": "hold",
+        "name": "Chicken Aliquaexercitation",
+        "minimum_option_count": 1,
+        "maximum_option_count": null,
+        "single_choice": false,
+        "force": false,
+        "location_overrides": {
+          "478a122b-37fc-318c-a70f-f95cdd699b78": {
+            "active": true
+          }
+        },
+        "options": [
+          {
+            "id": "1b163c2e-7ca9-4500-b7ac-70541129f5f6",
+            "name": "Cow Chicken",
+            "price": {
+              "amount": "1.00",
+              "currency": "USD"
+            },
+            "maximum_count": 1337,
+            "position": 1,
+            "active": true
+          }
+        ],
+        "products_count": null
+      }
+    ],
+    "modifier_positions": [
+      {
+        "modifier_set_id": "a508c3c2-9fae-34d6-83bb-bdd97413db93",
+        "position": 3
+      }
+    ],
+    "modifier_ids": ["a508c3c2-9fae-34d6-83bb-bdd97413db93"],
+    "stock_level": null,
+    "reorder_amount": null,
+    "suppliers": null,
+    "recipe_details": null,
+    "category_positions": null,
+    "catalog_categories": null,
+    "catalog_category_options": null,
+    "catalog_category_positions": null,
+    "bundle_sets": [
+      {
+        "id": "a508c3c2-9fae-34d6-83bb-bdd97413db93",
+        "name": "Chicken Aliquaexercitation",
+        "position": 1,
+        "min_quantity": 1,
+        "max_quantity": 1,
+        "options": [
+          {
+            "id": "1b163c2e-7ca9-4500-b7ac-70541129f5f6",
+            "price_adjustment": "1.0",
+            "position": 1,
+            "article": {
+              "id": "63f291ce-da3f-35da-a050-9bc51f80eee6",
+              "name": "Bundle Product",
+              "sku": "sku",
+              "upc": "upc",
+              "options": []
+            }
+          }
+        ]
+      }
+    ],
+    "created_at": "2017-10-12T12:36:15.748Z",
+    "updated_at": "2017-10-12T12:36:15.748Z"
+  },
+  "object": "product"
+}

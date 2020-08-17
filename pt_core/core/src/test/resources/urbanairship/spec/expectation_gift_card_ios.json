@@ -1,0 +1,186 @@
+{
+  "headers":{
+    "suppress_strip_shine":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"topLevel"
+    },
+    "barcode_value":{
+      "formatType":1,
+      "value":"123456789",
+      "fieldType":"barcode"
+    },
+    "transitType":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"passTop"
+    },
+    "icon_image":{
+      "formatType":1,
+      "value":"https:\/\/s3.amazonaws.com\/passtools_prod\/1\/images\/98e32dfaabacd49556a63d6727f45d008fbf9fe7_paytouchicon1x.png",
+      "fieldType":"image"
+    },
+    "footer_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "barcode_type":{
+      "formatType":1,
+      "value":"PKBarcodeFormatCode128",
+      "fieldType":"barcode"
+    },
+    "logo_image":{
+      "formatType":1,
+      "value":"https:\/\/d1uxuwjszi27mu.cloudfront.net\/ua_gift_card\/gitf-box.png",
+      "fieldType":"image"
+    },
+    "thumbnail_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "background_image":{
+      "formatType":1,
+      "value":"",
+      "fieldType":"image"
+    },
+    "background_color":{
+      "formatType":1,
+      "value":"rgb(255,255,255)",
+      "fieldType":"topLevel"
+    },
+    "barcode_encoding":{
+      "formatType":1,
+      "value":"iso-8859-1",
+      "fieldType":"barcode"
+    },
+    "logo_color":{
+      "formatType":1,
+      "value":"rgb(0,0,0)",
+      "fieldType":"topLevel"
+    },
+    "barcodeAltText":{
+      "formatType":1,
+      "value":"123456789",
+      "fieldType":"barcode"
+    },
+    "foreground_color":{
+      "formatType":1,
+      "value":"rgb(0,0,0)",
+      "fieldType":"topLevel"
+    },
+    "strip_image":{
+      "formatType":1,
+      "value":"https:\/\/d1uxuwjszi27mu.cloudfront.net\/ua_gift_card\/xmas-boxes.png",
+      "fieldType":"image"
+    },
+    "logo_text":{
+      "formatType":1,
+      "value":"Willow Cafe",
+      "fieldType":"topLevel"
+    }
+  },
+  "fields":{
+    "Last Spend":{
+      "changeMessage":"",
+      "label":"Last Spend",
+      "hideEmpty":false,
+      "formatType":"Currency",
+      "value":2.49,
+      "currencyCode":"USD",
+      "fieldType":"secondary",
+      "required":false,
+      "order":2
+    },
+    "Find us online:":{
+      "changeMessage":"",
+      "label":"Find us online:",
+      "hideEmpty":false,
+      "formatType":"URL",
+      "value":"http://www.willowcafe.ca",
+      "fieldType":"back",
+      "required":false,
+      "order":2
+    },
+    "Phone":{
+      "changeMessage":"",
+      "label":"Phone:",
+      "hideEmpty":false,
+      "formatType":"Phone",
+      "value":"+1 (604) 555-1212",
+      "fieldType":"back",
+      "required":false,
+      "order":3
+    },
+    "Card Name":{
+      "changeMessage":"",
+      "label":"Card Name",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"PayTouch Software Inc.",
+      "fieldType":"notAssigned",
+      "required":false,
+      "order":1
+    },
+    "Merchant Name":{
+      "changeMessage":"",
+      "label":"Merchant Name",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Willow Cafe",
+      "fieldType":"notAssigned",
+      "required":false
+    },
+    "Our Location:":{
+      "changeMessage":"",
+      "label":"Our Location:",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Address",
+      "fieldType":"back",
+      "required":false,
+      "order":4
+    },
+    "Original Value":{
+      "changeMessage":"",
+      "label":"Original Value",
+      "hideEmpty":false,
+      "formatType":"Currency",
+      "value":25.0,
+      "currencyCode":"USD",
+      "fieldType":"secondary",
+      "required":false,
+      "order":1
+    },
+    "Gift Card Details":{
+      "changeMessage":null,
+      "label":"Gift Card Details",
+      "hideEmpty":false,
+      "formatType":"String",
+      "value":"Some information about how the gift card works. Additional terms and support information.",
+      "fieldType":"back",
+      "required":false,
+      "order":1
+    },
+    "Balance":{
+      "textAlignment":"textAlignmentNatural",
+      "changeMessage":"",
+      "label":"Balance",
+      "hideEmpty":false,
+      "formatType":"Currency",
+      "value":19.78,
+      "currencyCode":"USD",
+      "fieldType":"header",
+      "required":false,
+      "order":1
+    }
+  },
+  "vendor" : "Apple",
+  "projectType" : "giftCard",
+  "type" : "Store Card",
+  "vendorId" : 1,
+  "deleted" : "False",
+  "description" : "Gift Card",
+  "name" : "Gift Card"
+}

@@ -1,0 +1,8 @@
+{
+  "error": {
+    "code": "amount_too_small",
+    "doc_url": "https://stripe.com/docs/error-codes/amount-too-small",
+    "message": "Amount must convert to at least 50 cents. $0.01 converts to approximately €0.00.",
+    "type": "invalid_request_error"
+  }
+}

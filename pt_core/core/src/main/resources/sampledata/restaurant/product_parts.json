@@ -1,0 +1,63 @@
+{
+  "ref-variant-product-4": [
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-variant-product-2"
+    },
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-2"
+    }
+  ],
+  "ref-variant-product-5": [
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-variant-product-2"
+    },
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-2"
+    }
+  ],
+  "ref-variant-product-7": [
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-variant-product-2"
+    },
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-2"
+    }
+  ],
+  "ref-variant-product-6": [
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-variant-product-2"
+    },
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-2"
+    }
+  ],
+  "ref-product-10": [
+    {
+      "quantity_needed": "1.0000",
+      "part_id": "ref-part-variant-product-5"
+    },
+    {
+      "quantity_needed": "0.0500",
+      "part_id": "ref-part-1"
+    }
+  ],
+  "ref-product-7": [
+    {
+      "quantity_needed": "0.0500",
+      "part_id": "ref-part-variant-product-4"
+    },
+    {
+      "quantity_needed": "0.0500",
+      "part_id": "ref-part-1"
+    }
+  ]
+}
+

@@ -214,6 +214,11 @@ object Dependencies {
         toString %% "scalacheck" % "1.14.3"
     }
 
+    case object `org.scala-lang.modules` {
+      val `scala-xml` =
+        toString %% "scala-xml" % "1.3.0"
+    }
+
     case object `org.scalatest` {
       val `scalatest` =
         toString %% "scalatest" % "3.2.0"

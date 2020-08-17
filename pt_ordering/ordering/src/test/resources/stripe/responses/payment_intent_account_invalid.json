@@ -1,0 +1,8 @@
+{
+  "error": {
+    "code": "account_invalid",
+    "doc_url": "https://stripe.com/docs/error-codes/account-invalid",
+    "message": "The provided key 'sk_test_47****************************6GsH' does not have access to account 'acct_1GZxhiG1fbFG85s0' (or that account does not exist). Application access may have been revoked.",
+    "type": "invalid_request_error"
+  }
+}

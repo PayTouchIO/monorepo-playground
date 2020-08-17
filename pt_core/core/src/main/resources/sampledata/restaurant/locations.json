@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Burst Burgers",
+    "email": "food@paytouch.com",
+    "phone_number": "(415) 555-1212",
+    "website": null,
+    "address": {
+      "city": "San Francisco",
+      "line2": null,
+      "country": "US",
+      "state": "CA",
+      "line1": "22 James St",
+      "postal_code": "95054"
+    },
+    "active": true,
+    "timezone": "America/Los_Angeles",
+    "opening_hours": {}
+  }
+]

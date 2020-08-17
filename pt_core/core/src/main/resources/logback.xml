@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <fieldNames>
+                <timestamp>[ignore]</timestamp>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+                <thread>[ignore]</thread>
+                <logger>[ignore]</logger>
+            </fieldNames>
+            <customFields>{"app": "pt_core"}</customFields>
+            <mdc>
+                <excludeMdcKeyName>akkaSource</excludeMdcKeyName>
+                <excludeMdcKeyName>akkaTimestamp</excludeMdcKeyName>
+                <excludeMdcKeyName>sourceThread</excludeMdcKeyName>
+                <excludeMdcKeyName>sourceActorSystem</excludeMdcKeyName>
+                <excludeMdcKeyName>audit</excludeMdcKeyName>
+            </mdc>
+            <includeContext>false</includeContext>
+        </encoder>
+    </appender>
+
+    <appender name="Sentry" class="io.sentry.logback.SentryAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+    </appender>
+
+    <root level="${LOG_LEVEL:-INFO}">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="Sentry"/>
+    </root>
+
+    <logger name="com.ning.http.client" level="WARN"/>
+    <logger name="io.paytouch.core.reports.views.ReportView" level="${LOG_LEVEL_REPORTS:-INFO}"/>
+    <logger name="io.paytouch.core.reports.views" level="${LOG_LEVEL_REPORTS:-INFO}"/>
+    <logger name="io.paytouch.core.clients.urbanairship" level="${LOG_LEVEL_URBANAIRSHIP:-INFO}"/>
+    <logger name="io.paytouch.core.reports.data.daos" level="${LOG_LEVEL_REPORT_UPDATES:-INFO}"/>
+    <logger name="io.paytouch.core.services.HmacService" level="${LOG_LEVEL_HMAC_SERVICE:-INFO}"/>
+    <logger name="io.paytouch.core.services.TicketService" level="${LOG_LEVEL_TICKET_SERVICE:-INFO}"/>
+    <logger name="io.paytouch.core.services.OrderService" level="${LOG_LEVEL_ORDER_SERVICE:-INFO}"/>
+    <logger name="liquibase" level="WARN"/>
+    <logger name="slick.jdbc.JdbcBackend.statement" level="${LOG_LEVEL_SLICK_STATEMENTS:-WARN}"/> <!-- change me to debug to see the queries in the DB -->
+    <logger name="com.zaxxer.hikari" level="${LOG_LEVEL_HIKARI:-WARN}"/>
+</configuration>

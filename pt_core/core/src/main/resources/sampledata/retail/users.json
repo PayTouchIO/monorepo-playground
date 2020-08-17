@@ -1,0 +1,30 @@
+[
+  {
+    "first_name": "Mary",
+    "last_name": "Roseburg",
+    "phone_number": null,
+    "email": "ref-email-1",
+    "password": "ref-word-1",
+    "dob": null,
+    "address": {
+      "city": null,
+      "line2": null,
+      "country": "US",
+      "state": "CA",
+      "line1": null,
+      "postal_code": null
+    },
+    "currency": "USD",
+    "hourly_rate_amount": "20.00",
+    "overtime_rate_amount": "25.00",
+    "pay_schedule": "bi_weekly",
+    "location_ids": [
+      "ref-location-1",
+      "ref-location-2"
+    ],
+    "user_role_id": "ref-user-role-manager",
+    "avatar_image_id": "",
+    "avatar_bg_color": "fc5830",
+    "active": true
+  }
+]

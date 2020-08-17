@@ -1,0 +1,28 @@
+[
+  {
+    "type": "percentage",
+    "active": true,
+    "require_manager_approval": false,
+    "amount": "5.00",
+    "title": "Seniors",
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    },
+    "availability_hours": {}
+  },
+  {
+    "type": "percentage",
+    "active": true,
+    "require_manager_approval": false,
+    "amount": "10.00",
+    "title": "Military",
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    },
+    "availability_hours": {}
+  }
+]

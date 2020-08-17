@@ -1,0 +1,19 @@
+{
+  "data": {
+    "id": "13eede8d-c07a-307e-bfd6-6be95d897eaf",
+    "merchant_id": "265cb372-4f28-3035-af49-e2f23e537c4e",
+    "currency": "USD",
+    "business_type": "retail",
+    "location_ids": [
+      "b82b7b62-8251-3fd9-9e18-d73ab1adb918",
+      "c6342289-5123-3971-908d-57a29b01bd24",
+      "a07c7e10-713e-3050-8907-072c36eec741",
+      "478a122b-37fc-318c-a70f-f95cdd699b78",
+      "ac65f053-e966-3bdd-82f2-c8be7c02ad8c",
+      "29f42b30-e479-3e2e-bd24-4003332f071d"
+    ],
+    "admin_id": null,
+    "merchant_setup_completed": false
+  },
+  "object": "user_context"
+}

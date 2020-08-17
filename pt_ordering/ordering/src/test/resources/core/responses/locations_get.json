@@ -1,0 +1,199 @@
+{
+  "data": {
+    "id": "c6342289-5123-3971-908d-57a29b01bd24",
+    "name": "Apple Store",
+    "email": "apple-store@paytouch-test.io",
+    "phone_number": "+090800701",
+    "website": "https://www.paytouch.io",
+    "active": true,
+    "address": {
+      "line1": "700 5th Ave",
+      "line2": "",
+      "city": "New York",
+      "state": "New York",
+      "country": "United States",
+      "state_data": {
+        "code": "NY",
+        "name": "New York",
+        "country": {
+          "code": "US",
+          "name": "United States"
+        }
+      },
+      "country_data": {
+        "code": "US",
+        "name": "United States"
+      },
+      "postal_code": "NY 10153"
+    },
+    "timezone": "America/New_York",
+    "currency": "USD",
+    "settings": {
+      "location_id": "c6342289-5123-3971-908d-57a29b01bd24",
+      "order_routing_auto": true,
+      "order_routing_bar": true,
+      "order_routing_kitchen": true,
+      "order_type_dine_in": false,
+      "order_type_take_out": true,
+      "order_type_delivery_restaurant": true,
+      "order_type_in_store": true,
+      "order_type_in_store_pick_up": true,
+      "order_type_delivery_retail": true,
+      "bar_view_active": true,
+      "kitchen_view_active": true,
+      "invoices_active": true,
+      "discount_below_cost_active": true,
+      "cash_drawer_management_active": true,
+      "cash_drawer_management": "unlocked",
+      "gift_cards_active": false,
+      "payment_type_credit_card": true,
+      "payment_type_cash": true,
+      "payment_type_debit_card": false,
+      "payment_type_check": false,
+      "payment_type_gift_card": true,
+      "payment_type_store_credit": true,
+      "payment_type_ebt": false,
+      "payment_type_apple_pay": true,
+      "tips_enabled": true,
+      "tips_handling": "tip_jar",
+      "tips_on_device_enabled": false,
+      "bypass_signature_amount": "0.00",
+      "online_storefront_enabled": false,
+      "order_autocomplete": true,
+      "preauth_enabled": false,
+      "next_order_number_scope_type": "location",
+      "location_email_receipt": {
+        "location_id": "c6342289-5123-3971-908d-57a29b01bd24",
+        "header_color": null,
+        "location_name": null,
+        "address": {
+          "line1": null,
+          "line2": null,
+          "city": null,
+          "state": null,
+          "country": null,
+          "state_data": null,
+          "country_data": null,
+          "postal_code": null
+        },
+        "include_item_description": false,
+        "website_url": null,
+        "facebook_url": null,
+        "twitter_url": null,
+        "image_urls": null
+      },
+      "location_print_receipt": {
+        "location_id": "c6342289-5123-3971-908d-57a29b01bd24",
+        "header_color": null,
+        "location_name": null,
+        "address": {
+          "line1": null,
+          "line2": null,
+          "city": null,
+          "state": null,
+          "country": null,
+          "state_data": null,
+          "country_data": null,
+          "postal_code": null
+        },
+        "include_item_description": false,
+        "image_urls": null
+      },
+      "location_receipt": {
+        "location_id": "c6342289-5123-3971-908d-57a29b01bd24",
+        "location_name": "Apple Store",
+        "header_color": null,
+        "address": {
+          "line1": "700 5th Ave",
+          "line2": "",
+          "city": "New York",
+          "state": "New York",
+          "country": "United States",
+          "postal_code": "NY 10153",
+          "state_data": {
+            "code": "NY",
+            "name": "New York",
+            "country": {
+              "code": "US",
+              "name": "United States"
+            }
+          },
+          "country_data": {
+            "code": "US",
+            "name": "United States"
+          }
+        },
+        "phone_number": "+090800701",
+        "website_url": "https://www.paytouch.io",
+        "facebook_url": null,
+        "twitter_url": null,
+        "show_custom_text": false,
+        "custom_text": null,
+        "show_return_policy": false,
+        "return_policy_text": null,
+        "email_image_urls": [],
+        "print_image_urls": [],
+        "created_at": "2017-10-12T12:34:48.767Z",
+        "updated_at": "2018-01-11T09:12:53.365Z"
+      },
+      "cfd": {
+        "show_custom_text": false,
+        "custom_text": null,
+        "splash_image_urls": []
+      },
+      "online_order": {
+        "default_estimated_prep_time_in_mins": null
+      }
+    },
+    "tax_rates": null,
+    "opening_hours": {
+      "sunday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "friday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "monday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "saturday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "tuesday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "wednesday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ],
+      "thursday": [
+        {
+          "start": "00:00:00",
+          "end": "23:59:00"
+        }
+      ]
+    },
+    "coordinates": {
+      "lat": 1.23,
+      "lng": 2.34
+    }
+  },
+  "object": "location"
+}

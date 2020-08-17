@@ -1,0 +1,20 @@
+{
+  "updatedAt": "2013-07-01T19:57:36.190Z",
+  "id": "12345",
+  "templates": [
+  ],
+  "description": "Aztec Barcode",
+  "createdAt": "2013-07-01T19:57:36.190Z",
+  "settings": {
+    "id": "my-external-id",
+    "barcode_alt_text": "123json=456789",
+    "barcode_default_value": "123456789",
+    "barcode_encoding": "iso-8859-1",
+    "barcode_label": "Member ID",
+    "barcode_type": "pdf417",
+    "passbook_count": "2",
+    "google_count": "1"
+  },
+  "name": "Aztec Barcode",
+  "projectType":"loyalty"
+}

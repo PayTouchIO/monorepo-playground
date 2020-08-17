@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<TransactionQueryResponse xmlns="https://reporting.elementexpress.com">
+  <Response>
+    <ExpressResponseCode>0</ExpressResponseCode>
+    <ExpressResponseMessage>Success</ExpressResponseMessage>
+    <ExpressTransactionDate>20190902</ExpressTransactionDate>
+    <ExpressTransactionTime>144021</ExpressTransactionTime>
+    <ExpressTransactionTimezone>UTC-05:00:00</ExpressTransactionTimezone>
+    <ReportingData>
+      <Items>
+        <Item>
+          <TransactionID>21989217</TransactionID>
+          <AcceptorID>874767606</AcceptorID>
+          <AccountID>1066410</AccountID>
+          <Name>VANTIV TEST EMV 606- PayTouch</Name>
+          <TerminalID>0060810007</TerminalID>
+          <ApplicationID>10025</ApplicationID>
+          <CVVResponseCode>P         </CVVResponseCode>
+          <ExpirationMonth>01</ExpirationMonth>
+          <ExpirationYear>20</ExpirationYear>
+          <ExpressResponseCode>101</ExpressResponseCode>
+          <ExpressResponseMessage>INVALID CARD INFO</ExpressResponseMessage>
+          <HostBatchID>28</HostBatchID>
+          <HostResponseCode>14</HostResponseCode>
+          <TrackingID>7451903CF33F4051AE09C8F1D8D48FF0</TrackingID>
+          <TerminalType>0         </TerminalType>
+          <TransactionAmount>17.50</TransactionAmount>
+          <TransactionStatus>Error</TransactionStatus>
+          <TransactionStatusCode>13</TransactionStatusCode>
+          <TransactionType>CreditCardSale</TransactionType>
+          <CardNumberMasked>xxxx-xxxx-xxxx-1111</CardNumberMasked>
+          <CardLogo>Visa</CardLogo>
+          <CardType>Credit</CardType>
+          <TrackDataPresent>FALSE</TrackDataPresent>
+          <HostTransactionID>989217</HostTransactionID>
+          <TransactionSetupID>04BB79E8-17ED-4FF0-AA12-534D05D238BB</TransactionSetupID>
+          <ExpressTransactionDate>20190902</ExpressTransactionDate>
+          <ExpressTransactionTime>143939</ExpressTransactionTime>
+          <TimeStamp>2019-09-02T14:39:29.053</TimeStamp>
+          <SystemTraceAuditNumber>989217</SystemTraceAuditNumber>
+          <RetrievalReferenceNumber>924514989217</RetrievalReferenceNumber>
+          <TerminalData>0|2|2|5|2|3|2|1|1|0|2|0|9|1|0|1|6|9|2|0|0|0|0|0|0||| |||</TerminalData>
+          <MerchantCategoryCode>5999</MerchantCategoryCode>
+          <CardInputCode>5</CardInputCode>
+        </Item>
+        <Item>
+          <TransactionID>21989243</TransactionID>
+          <AcceptorID>874767606</AcceptorID>
+          <AccountID>1066410</AccountID>
+          <Name>VANTIV TEST EMV 606- PayTouch</Name>
+          <TerminalID>0060810007</TerminalID>
+          <ApplicationID>10025</ApplicationID>
+          <CVVResponseCode>P         </CVVResponseCode>
+          <ExpirationMonth>01</ExpirationMonth>
+          <ExpirationYear>20</ExpirationYear>
+          <ExpressResponseCode>101</ExpressResponseCode>
+          <ExpressResponseMessage>INVALID CARD INFO</ExpressResponseMessage>
+          <HostBatchID>28</HostBatchID>
+          <HostResponseCode>14</HostResponseCode>
+          <TrackingID>76430B9C5ACC487CA4741AA0B92D1ED8</TrackingID>
+          <TerminalType>0         </TerminalType>
+          <TransactionAmount>17.50</TransactionAmount>
+          <TransactionStatus>Error</TransactionStatus>
+          <TransactionStatusCode>13</TransactionStatusCode>
+          <TransactionType>CreditCardSale</TransactionType>
+          <CardNumberMasked>xxxx-xxxx-xxxx-0000</CardNumberMasked>
+          <CardLogo>Visa</CardLogo>
+          <CardType>Credit</CardType>
+          <TrackDataPresent>FALSE</TrackDataPresent>
+          <HostTransactionID>989243</HostTransactionID>
+          <TransactionSetupID>04BB79E8-17ED-4FF0-AA12-534D05D238BB</TransactionSetupID>
+          <ExpressTransactionDate>20190902</ExpressTransactionDate>
+          <ExpressTransactionTime>143958</ExpressTransactionTime>
+          <TimeStamp>2019-09-02T14:39:46.990</TimeStamp>
+          <SystemTraceAuditNumber>989243</SystemTraceAuditNumber>
+          <RetrievalReferenceNumber>924514989243</RetrievalReferenceNumber>
+          <TerminalData>0|2|2|5|2|3|2|1|1|0|2|0|9|1|0|1|6|9|2|0|0|0|0|0|0||| |||</TerminalData>
+          <MerchantCategoryCode>5999</MerchantCategoryCode>
+          <CardInputCode>5</CardInputCode>
+        </Item>
+        <Item>
+          <TransactionID>21989266</TransactionID>
+          <AcceptorID>874767606</AcceptorID>
+          <AccountID>1066410</AccountID>
+          <Name>VANTIV TEST EMV 606- PayTouch</Name>
+          <TerminalID>0060810007</TerminalID>
+          <ApplicationID>10025</ApplicationID>
+          <ApprovalNumber>907613</ApprovalNumber>
+          <ApprovedAmount>17.50</ApprovedAmount>
+          <CVVResponseCode>P         </CVVResponseCode>
+          <ExpirationMonth>01</ExpirationMonth>
+          <ExpirationYear>20</ExpirationYear>
+          <ExpressResponseCode>0</ExpressResponseCode>
+          <ExpressResponseMessage>Approved</ExpressResponseMessage>
+          <HostBatchID>28</HostBatchID>
+          <HostItemID>1</HostItemID>
+          <HostResponseCode>00</HostResponseCode>
+          <OriginalAuthorizedAmount>17.50</OriginalAuthorizedAmount>
+          <TrackingID>C1A63E7F30F74B18B2E900868DF81294</TrackingID>
+          <TerminalType>0         </TerminalType>
+          <TransactionAmount>17.50</TransactionAmount>
+          <TransactionStatus>Approved</TransactionStatus>
+          <TransactionStatusCode>1</TransactionStatusCode>
+          <TransactionType>CreditCardSale</TransactionType>
+          <CardNumberMasked>xxxx-xxxx-xxxx-0006</CardNumberMasked>
+          <CardLogo>Visa</CardLogo>
+          <CardType>Credit</CardType>
+          <TrackDataPresent>FALSE</TrackDataPresent>
+          <HostTransactionID>989266</HostTransactionID>
+          <TransactionSetupID>04BB79E8-17ED-4FF0-AA12-534D05D238BB</TransactionSetupID>
+          <ExpressTransactionDate>20190902</ExpressTransactionDate>
+          <ExpressTransactionTime>144032</ExpressTransactionTime>
+          <TimeStamp>2019-09-02T14:40:21.147</TimeStamp>
+          <SystemTraceAuditNumber>989266</SystemTraceAuditNumber>
+          <CardLevelResults>A </CardLevelResults>
+          <RetrievalReferenceNumber>924514989266</RetrievalReferenceNumber>
+          <TerminalData>0|2|2|5|2|3|2|1|1|0|2|0|9|1|0|1|6|9|2|0|0|0|0|0|0||| |||</TerminalData>
+          <MerchantCategoryCode>5999</MerchantCategoryCode>
+          <CardInputCode>5</CardInputCode>
+        </Item>
+      </Items>
+    </ReportingData>
+    <ReportingID>68938368</ReportingID>
+  </Response>
+</TransactionQueryResponse>

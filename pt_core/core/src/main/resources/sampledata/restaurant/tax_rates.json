@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Tax",
+    "value": "8.750",
+    "apply_to_price": true,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      }
+    }
+  }
+]

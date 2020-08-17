@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Woxii",
+    "email": "retail@paytouch.com",
+    "phone_number": "(510) 555-1212",
+    "website": null,
+    "address": {
+      "line1": "12 Elm Street",
+      "line2": null,
+      "city": "San Jose",
+      "country": "US",
+      "state": "CA",
+      "postal_code": "95125"
+    },
+    "timezone": "America/Los_Angeles",
+    "opening_hours": {}
+  },
+  {
+    "name": "Woxii",
+    "email": "retail@paytouch.com",
+    "phone_number": "(415) 333-1212",
+    "website": null,
+    "address": {
+      "line1": "22 Ash Lane",
+      "line2": null,
+      "city": "San Francisco",
+      "country": "US",
+      "state": "CA",
+      "postal_code": "94555"
+    },
+    "timezone": "America/Los_Angeles",
+    "opening_hours": {}
+  }
+]

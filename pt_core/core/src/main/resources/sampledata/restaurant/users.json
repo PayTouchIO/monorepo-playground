@@ -1,0 +1,29 @@
+[
+  {
+    "first_name": "Rocky",
+    "last_name": "Chang",
+    "phone_number": null,
+    "email": "ref-email-1",
+    "password": "ref-word-1",
+    "dob": null,
+    "address": {
+      "city": null,
+      "line2": null,
+      "country": "US",
+      "state": "CA",
+      "line1": null,
+      "postal_code": null
+    },
+    "currency": "USD",
+    "hourly_rate_amount": "10.00",
+    "overtime_rate_amount": "12.00",
+    "pay_schedule": "weekly",
+    "location_ids": [
+      "ref-location-1"
+    ],
+    "user_role_id": "ref-user-role-employee",
+    "avatar_image_id": "",
+    "avatar_bg_color": "FFFFFF",
+    "active": true
+  }
+]

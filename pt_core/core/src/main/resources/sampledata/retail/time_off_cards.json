@@ -1,0 +1,9 @@
+[
+  {
+    "user_id": "ref-user-1",
+    "paid": true,
+    "type": "vacation",
+    "start_at": "ref-date-start-1",
+    "end_at": "ref-date-end-1"
+  }
+]

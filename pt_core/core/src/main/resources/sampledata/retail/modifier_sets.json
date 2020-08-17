@@ -1,0 +1,48 @@
+[
+  {
+    "type": "addon",
+    "name": "Seat",
+    "minimum_option_count": 0,
+    "maximum_option_count": 1,
+    "location_overrides": {
+      "ref-location-1": {
+        "active": true
+      },
+      "ref-location-2": {
+        "active": true
+      }
+    },
+    "options": [
+      {
+        "id": "ref-modifier-option-1",
+        "name": "Leather",
+        "price": {
+          "amount": "49.99",
+          "currency": "USD"
+        },
+        "position": 1,
+        "active": true
+      },
+      {
+        "id": "ref-modifier-option-2",
+        "name": "Leatherette",
+        "price": {
+          "amount": "29.99",
+          "currency": "USD"
+        },
+        "position": 2,
+        "active": true
+      },
+      {
+        "id": "ref-modifier-option-3",
+        "name": "Cover",
+        "price": {
+          "amount": "9.99",
+          "currency": "USD"
+        },
+        "position": 3,
+        "active": true
+      }
+    ]
+  }
+]

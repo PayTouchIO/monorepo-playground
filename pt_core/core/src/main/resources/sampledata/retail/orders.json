@@ -1,0 +1,1073 @@
+[
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-1",
+    "total_amount": "2198.90",
+    "tax_amount": "199.90",
+    "completed_at": "ref-date-1",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "199.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-1",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "2198.90",
+          "paid_in_amount": "3000.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "801.10",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-1",
+        "order_item_ids": [],
+        "paid_at": "ref-date-1",
+        "type": "payment",
+        "customer_id": "ref-customer-1",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "800.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "1999.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "199.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-2",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Bianchi Intrepida 105",
+        "total_price_amount": "2198.90",
+        "discounts": [],
+        "tax_amount": "199.90",
+        "quantity": "1.00",
+        "id": "ref-item-1",
+        "product_id": "ref-product-1",
+        "product_description": "Carbon Frame\\/Fork\\nShimano 105 2 x 11 Speed Shifting\\nShimano Rim Brake Calipers\\nComfortable endurance frame geometry",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "1999.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "1999.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-2",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-2",
+    "total_amount": "647.87",
+    "tax_amount": "58.90",
+    "completed_at": "ref-date-2",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "58.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-3",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "647.87",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-2",
+        "order_item_ids": [],
+        "paid_at": "ref-date-2",
+        "type": "payment",
+        "customer_id": "ref-customer-2",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "12.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "29.99",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "3.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-4",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Pedal Straps",
+        "total_price_amount": "32.99",
+        "discounts": [],
+        "tax_amount": "3.00",
+        "quantity": "1.00",
+        "id": "ref-item-2",
+        "product_id": "ref-product-5",
+        "product_description": "Versatile, comfortable, and durable, YNOT Pedal Straps are adjustable to fit nearly any footwear. Great for anybody that rides hard and needs the ultimate foot retention system. SOLD IN PAIRS.\\n\\n\\nFEATURES:\\n\\nTriple layer reinforcement for added strength\\nKeep their desired shape, allowing you to easily get your footing every time.\\nIdeal for commuting, cross, FGFS, mountain biking, hardworking messengers & everyday riding.\\nAvailablity in a variety of colours and designs so you can customize your ride.\\nEvery set of straps comes with a vinyl YNOT decal.\\n\\nFIT:\\nAdjustable to accommodate nearly any footwear, from slip-ons to winter boots\\nBottom strap fit any standard platform pedal with 3\\/4\" x 5\\/16\" slotted openings\\n\\nCONSTRUCTION:\\nAvailable in: 1000D CORDURA\u00AE exterior (North American Milled), Heavy-duty Reinforced Vinyl, Reclaimed Leather, Repurposed Denim*\\nConstructed with heavy duty nylon, industrial-strength hook & loop and durable nickel-plated hardware\\nMade in Toronto, Canada\\nWeight: g \\/ 0.35 lb\\n*Cut Off straps are made from repurposed denim. Because of this, the colour \\/ wash of the denim on each set may vary.\\n*Pedals not included.\\n*Warning: The use of any foot retention system on a bicycle entails a degree of risk. YNOT Cycle and Tantra Bicycle Co. does not assume any responsibility for any damage or injury that occurs while using these Pedal Straps.\\n\\n",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "29.99",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "9.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "29.99",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "3.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-5",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Magnetic Key Chain",
+        "total_price_amount": "32.99",
+        "discounts": [],
+        "tax_amount": "3.00",
+        "quantity": "1.00",
+        "id": "ref-item-3",
+        "product_id": "ref-product-4",
+        "product_description": "This belt compatible key holder has a quick release magnetic clip that allows you to take your keys on and off with one hand. The KEYClip has a 2\" loop that allows for all sized belts to be passed through it and the military style snap hook would then hold your keys. You can also wear it the other way, where you use the 2\" loop to hold your keys and the military hook to snap onto belt loops or bags.\\n\\nFEATURES:\\n\\nCan be passed through your belt\\nMilitary style metal snap hook\\nAuto-locating magnetic hardware to take your keys quickly and easily on and off\\nCONSTRUCTION:\\n\\nAuto-locating magnetic hardware\\nMetal snap hook\\n1\" nylon webbing\\nSewn with no. 69 nylon thread\\nBartacked for reinforcement\\nMade in Toronto, Canada. Lifetime warranty.\\nSPECS\\n\\nDimensions: Height: 7\", Width: 1\"",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "29.99",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Extra Large",
+            "variant_option_id": "ref-variant-option-8",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "265.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "499.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "52.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-6",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Jam Bomber",
+        "total_price_amount": "581.89",
+        "discounts": [],
+        "tax_amount": "52.90",
+        "quantity": "1.00",
+        "id": "ref-item-4",
+        "product_id": "ref-variant-product-10",
+        "product_description": "A Fixed Gear \\/ Single Speed Bike that'll fly through traffic jams and will beat down the grind of your daily commute. This is your bicycle for urban riding. \\n\\nFrame: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFork: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFront Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nRear Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nHeadset: 1 1\\/8\" Threadless Integrated\\nCrankset: 46T Chainring, 170mm Crank\\nBottom Bracket: O\u2019ring Sealed Cartridge, 103mm, BSA\\nPedals: BMX Flat Pedals Alloy\\nCog: 16T Fixed Cog \\/ 16T Freewheel \\nChain: KMC Z-410 \\nHandlebar: Bullhorns Alloy \\nStem: 70mm Alloy\\nGrips: Velo Track 1800mm PVC\\nSaddle: PX2\\nSeat Post: Tantra Alloy\\nSeat Clamp: Alloy 28.6mm\\nWheelset: Tantra 30mm Deep Dish 32 hole Rims, Flip-Flop Hub Alloy\\nTires: 700 x 23c\\nFront Brake: 55mm Alloy Brake Lever Hinged Alloy Lever\\nWeight: 20.7 lbs or 9.4 kg",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "499.00",
+        "modifier_options": [
+          {
+            "quantity": "1.00",
+            "price": {
+              "currency": "USD",
+              "amount": "29.99"
+            },
+            "type": "addon",
+            "modifier_option_id": "ref-modifier-option-2",
+            "name": "Leatherette"
+          }
+        ]
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "588.97"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-3",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-3",
+    "total_amount": "119.90",
+    "tax_amount": "10.90",
+    "completed_at": "ref-date-3",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "10.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-7",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "119.90",
+          "paid_in_amount": "119.90",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.00",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-3",
+        "order_item_ids": [],
+        "paid_at": "ref-date-3",
+        "type": "payment",
+        "customer_id": "ref-customer-3",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Open Face",
+            "variant_option_id": "ref-variant-option-5",
+            "option_type_name": "Style"
+          },
+          {
+            "option_name": "Black",
+            "variant_option_id": "ref-variant-option-2",
+            "option_type_name": "Color"
+          }
+        ],
+        "cost_amount": "33.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "109.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "10.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-8",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "IXS Helmet",
+        "total_price_amount": "119.90",
+        "discounts": [],
+        "tax_amount": "10.90",
+        "quantity": "1.00",
+        "id": "ref-item-5",
+        "product_id": "ref-variant-product-3",
+        "product_description": "The ideal companion on all-mountain and trail tours. The TrailRS provides all round protection with Inmould technology in which the helmet is directly connected with the absorbing EPS material. The high number of ventilation openings, as well as the placement angles and integrated channels provide lots of air circulation and the best cooling. The two-components adjustment unit with precision interlocking, \"ErgoFit UltraTM\" creates a comfortable and extremely exact fit vertically and horizontally, guaranteeing a good fit and a high degree of wearing comfort. The visor is fully adjustable and has a quick release system, \"QuickRelease\" that allows the visor to fold out of the way in the case of a fall. This means that we can minimize the danger of injuries and the risk of damage. The TrailRS helmet series fulfils the European safety standard, EN1078 as well as the American CPSC. full inmould coverage for optimized absorbtion and weight aeration system with 22 large vents and internal air channels adjustable bolt system MX style visor, optimized felxibility and full visual field crash release visor Dual-Compound dial adjuster Ergo-Fit Ultra, fully flexible and adjustable retention system Dual-Compound head ring for highest comfort and optimized fit Dual-Inmould, lower 360 degree inmould shell to prevent from damage Y-Clip adjustable strap system ratchet safety closure SM (54-58cm), ML (58-62cm) EN1078 & CPSC certified +\\/- 320g",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "109.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "109.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-4",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-4",
+    "total_amount": "2198.90",
+    "tax_amount": "199.90",
+    "completed_at": "ref-date-4",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "199.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-9",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "2198.90",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-4",
+        "order_item_ids": [],
+        "paid_at": "ref-date-4",
+        "type": "payment",
+        "customer_id": "ref-customer-4",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "800.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "1999.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "199.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-10",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Bianchi Intrepida 105",
+        "total_price_amount": "2198.90",
+        "discounts": [],
+        "tax_amount": "199.90",
+        "quantity": "1.00",
+        "id": "ref-item-6",
+        "product_id": "ref-product-1",
+        "product_description": "Carbon Frame\\/Fork\\nShimano 105 2 x 11 Speed Shifting\\nShimano Rim Brake Calipers\\nComfortable endurance frame geometry",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "1999.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "1999.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-5",
+    "total_amount": "658.90",
+    "tax_amount": "59.90",
+    "completed_at": "ref-date-5",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "59.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-11",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "658.90",
+          "paid_in_amount": "660.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "1.10",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-5",
+        "order_item_ids": [],
+        "paid_at": "ref-date-5",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Large",
+            "variant_option_id": "ref-variant-option-7",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "325.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "599.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "59.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-12",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Jam Bomber",
+        "total_price_amount": "658.90",
+        "discounts": [],
+        "tax_amount": "59.90",
+        "quantity": "1.00",
+        "id": "ref-item-7",
+        "product_id": "ref-variant-product-9",
+        "product_description": "A Fixed Gear \\/ Single Speed Bike that'll fly through traffic jams and will beat down the grind of your daily commute. This is your bicycle for urban riding. \\n\\nFrame: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFork: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFront Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nRear Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nHeadset: 1 1\\/8\" Threadless Integrated\\nCrankset: 46T Chainring, 170mm Crank\\nBottom Bracket: O\u2019ring Sealed Cartridge, 103mm, BSA\\nPedals: BMX Flat Pedals Alloy\\nCog: 16T Fixed Cog \\/ 16T Freewheel \\nChain: KMC Z-410 \\nHandlebar: Bullhorns Alloy \\nStem: 70mm Alloy\\nGrips: Velo Track 1800mm PVC\\nSaddle: PX2\\nSeat Post: Tantra Alloy\\nSeat Clamp: Alloy 28.6mm\\nWheelset: Tantra 30mm Deep Dish 32 hole Rims, Flip-Flop Hub Alloy\\nTires: 700 x 23c\\nFront Brake: 55mm Alloy Brake Lever Hinged Alloy Lever\\nWeight: 20.7 lbs or 9.4 kg",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "599.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "599.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-3",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-6",
+    "total_amount": "152.89",
+    "tax_amount": "13.90",
+    "completed_at": "ref-date-6",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "13.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-13",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "152.89",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-6",
+        "order_item_ids": [],
+        "paid_at": "ref-date-6",
+        "type": "payment",
+        "customer_id": "ref-customer-3",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "12.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "29.99",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "3.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-14",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Pedal Straps",
+        "total_price_amount": "32.99",
+        "discounts": [],
+        "tax_amount": "3.00",
+        "quantity": "1.00",
+        "id": "ref-item-8",
+        "product_id": "ref-product-5",
+        "product_description": "Versatile, comfortable, and durable, YNOT Pedal Straps are adjustable to fit nearly any footwear. Great for anybody that rides hard and needs the ultimate foot retention system. SOLD IN PAIRS.\\n\\n\\nFEATURES:\\n\\nTriple layer reinforcement for added strength\\nKeep their desired shape, allowing you to easily get your footing every time.\\nIdeal for commuting, cross, FGFS, mountain biking, hardworking messengers & everyday riding.\\nAvailablity in a variety of colours and designs so you can customize your ride.\\nEvery set of straps comes with a vinyl YNOT decal.\\n\\nFIT:\\nAdjustable to accommodate nearly any footwear, from slip-ons to winter boots\\nBottom strap fit any standard platform pedal with 3\\/4\" x 5\\/16\" slotted openings\\n\\nCONSTRUCTION:\\nAvailable in: 1000D CORDURA\u00AE exterior (North American Milled), Heavy-duty Reinforced Vinyl, Reclaimed Leather, Repurposed Denim*\\nConstructed with heavy duty nylon, industrial-strength hook & loop and durable nickel-plated hardware\\nMade in Toronto, Canada\\nWeight: g \\/ 0.35 lb\\n*Cut Off straps are made from repurposed denim. Because of this, the colour \\/ wash of the denim on each set may vary.\\n*Pedals not included.\\n*Warning: The use of any foot retention system on a bicycle entails a degree of risk. YNOT Cycle and Tantra Bicycle Co. does not assume any responsibility for any damage or injury that occurs while using these Pedal Straps.\\n\\n",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "29.99",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [
+          {
+            "option_name": "Open Face",
+            "variant_option_id": "ref-variant-option-5",
+            "option_type_name": "Style"
+          },
+          {
+            "option_name": "Red",
+            "variant_option_id": "ref-variant-option-1",
+            "option_type_name": "Color"
+          }
+        ],
+        "cost_amount": "33.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "109.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "10.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-15",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "IXS Helmet",
+        "total_price_amount": "119.90",
+        "discounts": [],
+        "tax_amount": "10.90",
+        "quantity": "1.00",
+        "id": "ref-item-9",
+        "product_id": "ref-variant-product-1",
+        "product_description": "The ideal companion on all-mountain and trail tours. The TrailRS provides all round protection with Inmould technology in which the helmet is directly connected with the absorbing EPS material. The high number of ventilation openings, as well as the placement angles and integrated channels provide lots of air circulation and the best cooling. The two-components adjustment unit with precision interlocking, \"ErgoFit UltraTM\" creates a comfortable and extremely exact fit vertically and horizontally, guaranteeing a good fit and a high degree of wearing comfort. The visor is fully adjustable and has a quick release system, \"QuickRelease\" that allows the visor to fold out of the way in the case of a fall. This means that we can minimize the danger of injuries and the risk of damage. The TrailRS helmet series fulfils the European safety standard, EN1078 as well as the American CPSC. full inmould coverage for optimized absorbtion and weight aeration system with 22 large vents and internal air channels adjustable bolt system MX style visor, optimized felxibility and full visual field crash release visor Dual-Compound dial adjuster Ergo-Fit Ultra, fully flexible and adjustable retention system Dual-Compound head ring for highest comfort and optimized fit Dual-Inmould, lower 360 degree inmould shell to prevent from damage Y-Clip adjustable strap system ratchet safety closure SM (54-58cm), ML (58-62cm) EN1078 & CPSC certified +\\/- 320g",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "109.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "138.99"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-4",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-7",
+    "total_amount": "242.00",
+    "tax_amount": "22.00",
+    "completed_at": "ref-date-7",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "22.00",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-16",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "242.00",
+          "paid_in_amount": "242.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.00",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-7",
+        "order_item_ids": [],
+        "paid_at": "ref-date-7",
+        "type": "payment",
+        "customer_id": "ref-customer-4",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Full Face",
+            "variant_option_id": "ref-variant-option-6",
+            "option_type_name": "Style"
+          },
+          {
+            "option_name": "Red",
+            "variant_option_id": "ref-variant-option-1",
+            "option_type_name": "Color"
+          }
+        ],
+        "cost_amount": "53.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "220.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "22.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-17",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "IXS Helmet",
+        "total_price_amount": "242.00",
+        "discounts": [],
+        "tax_amount": "22.00",
+        "quantity": "1.00",
+        "id": "ref-item-10",
+        "product_id": "ref-variant-product-2",
+        "product_description": "The ideal companion on all-mountain and trail tours. The TrailRS provides all round protection with Inmould technology in which the helmet is directly connected with the absorbing EPS material. The high number of ventilation openings, as well as the placement angles and integrated channels provide lots of air circulation and the best cooling. The two-components adjustment unit with precision interlocking, \"ErgoFit UltraTM\" creates a comfortable and extremely exact fit vertically and horizontally, guaranteeing a good fit and a high degree of wearing comfort. The visor is fully adjustable and has a quick release system, \"QuickRelease\" that allows the visor to fold out of the way in the case of a fall. This means that we can minimize the danger of injuries and the risk of damage. The TrailRS helmet series fulfils the European safety standard, EN1078 as well as the American CPSC. full inmould coverage for optimized absorbtion and weight aeration system with 22 large vents and internal air channels adjustable bolt system MX style visor, optimized felxibility and full visual field crash release visor Dual-Compound dial adjuster Ergo-Fit Ultra, fully flexible and adjustable retention system Dual-Compound head ring for highest comfort and optimized fit Dual-Inmould, lower 360 degree inmould shell to prevent from damage Y-Clip adjustable strap system ratchet safety closure SM (54-58cm), ML (58-62cm) EN1078 & CPSC certified +\\/- 320g",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "220.00",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "220.00"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-8",
+    "total_amount": "65.98",
+    "tax_amount": "6.00",
+    "completed_at": "ref-date-8",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "6.00",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-18",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "65.98",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-8",
+        "order_item_ids": [],
+        "paid_at": "ref-date-8",
+        "type": "payment",
+        "customer_id": null,
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "12.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "29.99",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "3.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-19",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Pedal Straps",
+        "total_price_amount": "32.99",
+        "discounts": [],
+        "tax_amount": "3.00",
+        "quantity": "1.00",
+        "id": "ref-item-11",
+        "product_id": "ref-product-5",
+        "product_description": "Versatile, comfortable, and durable, YNOT Pedal Straps are adjustable to fit nearly any footwear. Great for anybody that rides hard and needs the ultimate foot retention system. SOLD IN PAIRS.\\n\\n\\nFEATURES:\\n\\nTriple layer reinforcement for added strength\\nKeep their desired shape, allowing you to easily get your footing every time.\\nIdeal for commuting, cross, FGFS, mountain biking, hardworking messengers & everyday riding.\\nAvailablity in a variety of colours and designs so you can customize your ride.\\nEvery set of straps comes with a vinyl YNOT decal.\\n\\nFIT:\\nAdjustable to accommodate nearly any footwear, from slip-ons to winter boots\\nBottom strap fit any standard platform pedal with 3\\/4\" x 5\\/16\" slotted openings\\n\\nCONSTRUCTION:\\nAvailable in: 1000D CORDURA\u00AE exterior (North American Milled), Heavy-duty Reinforced Vinyl, Reclaimed Leather, Repurposed Denim*\\nConstructed with heavy duty nylon, industrial-strength hook & loop and durable nickel-plated hardware\\nMade in Toronto, Canada\\nWeight: g \\/ 0.35 lb\\n*Cut Off straps are made from repurposed denim. Because of this, the colour \\/ wash of the denim on each set may vary.\\n*Pedals not included.\\n*Warning: The use of any foot retention system on a bicycle entails a degree of risk. YNOT Cycle and Tantra Bicycle Co. does not assume any responsibility for any damage or injury that occurs while using these Pedal Straps.\\n\\n",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "29.99",
+        "modifier_options": []
+      },
+      {
+        "variant_options": [],
+        "cost_amount": "9.50",
+        "payment_status": "paid",
+        "calculated_price_amount": "29.99",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "3.00",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-20",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Magnetic Key Chain",
+        "total_price_amount": "32.99",
+        "discounts": [],
+        "tax_amount": "3.00",
+        "quantity": "1.00",
+        "id": "ref-item-12",
+        "product_id": "ref-product-4",
+        "product_description": "This belt compatible key holder has a quick release magnetic clip that allows you to take your keys on and off with one hand. The KEYClip has a 2\" loop that allows for all sized belts to be passed through it and the military style snap hook would then hold your keys. You can also wear it the other way, where you use the 2\" loop to hold your keys and the military hook to snap onto belt loops or bags.\\n\\nFEATURES:\\n\\nCan be passed through your belt\\nMilitary style metal snap hook\\nAuto-locating magnetic hardware to take your keys quickly and easily on and off\\nCONSTRUCTION:\\n\\nAuto-locating magnetic hardware\\nMetal snap hook\\n1\" nylon webbing\\nSewn with no. 69 nylon thread\\nBartacked for reinforcement\\nMade in Toronto, Canada. Lifetime warranty.\\nSPECS\\n\\nDimensions: Height: 7\", Width: 1\"",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "29.99",
+        "modifier_options": []
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "59.98"
+  },
+  {
+    "device_id": "ref-device-1",
+    "customer_id": "ref-customer-2",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-9",
+    "total_amount": "669.89",
+    "tax_amount": "60.90",
+    "completed_at": "ref-date-9",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "60.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-21",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "669.89",
+          "paid_in_amount": "670.00",
+          "mask_pan": null,
+          "last4_digits": null,
+          "paid_out_amount": "0.11",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "cash",
+        "id": "ref-payment-transaction-9",
+        "order_item_ids": [],
+        "paid_at": "ref-date-9",
+        "type": "payment",
+        "customer_id": "ref-customer-2",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "cash",
+    "items": [
+      {
+        "variant_options": [
+          {
+            "option_name": "Large",
+            "variant_option_id": "ref-variant-option-7",
+            "option_type_name": "Size"
+          }
+        ],
+        "cost_amount": "325.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "599.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "60.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-22",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Jam Bomber",
+        "total_price_amount": "669.89",
+        "discounts": [],
+        "tax_amount": "60.90",
+        "quantity": "1.00",
+        "id": "ref-item-13",
+        "product_id": "ref-variant-product-9",
+        "product_description": "A Fixed Gear \\/ Single Speed Bike that'll fly through traffic jams and will beat down the grind of your daily commute. This is your bicycle for urban riding. \\n\\nFrame: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFork: Tantra Aircraft Grade 6061 Aluminum Alloy\\nFront Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nRear Hub: High Flange, Sealed Cartridge Bearings, Bolt-on\\nHeadset: 1 1\\/8\" Threadless Integrated\\nCrankset: 46T Chainring, 170mm Crank\\nBottom Bracket: O\u2019ring Sealed Cartridge, 103mm, BSA\\nPedals: BMX Flat Pedals Alloy\\nCog: 16T Fixed Cog \\/ 16T Freewheel \\nChain: KMC Z-410 \\nHandlebar: Bullhorns Alloy \\nStem: 70mm Alloy\\nGrips: Velo Track 1800mm PVC\\nSaddle: PX2\\nSeat Post: Tantra Alloy\\nSeat Clamp: Alloy 28.6mm\\nWheelset: Tantra 30mm Deep Dish 32 hole Rims, Flip-Flop Hub Alloy\\nTires: 700 x 23c\\nFront Brake: 55mm Alloy Brake Lever Hinged Alloy Lever\\nWeight: 20.7 lbs or 9.4 kg",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "599.00",
+        "modifier_options": [
+          {
+            "quantity": "1.00",
+            "price": {
+              "currency": "USD",
+              "amount": "9.99"
+            },
+            "type": "addon",
+            "modifier_option_id": "ref-modifier-option-3",
+            "name": "Cover"
+          }
+        ]
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "608.99"
+  },
+  {
+    "device_id": "ref-device-1",
+    "ticket_discount_amount": "0.00",
+    "received_at": "ref-date-10",
+    "total_amount": "2253.89",
+    "tax_amount": "204.90",
+    "customer_id": "ref-customer-1",
+    "completed_at": "ref-date-10",
+    "type": "in_store",
+    "is_invoice": false,
+    "tip_amount": "0.00",
+    "payment_status": "paid",
+    "merchant_notes": [],
+    "tax_rates": [
+      {
+        "total_amount": "204.90",
+        "value": "10.00",
+        "name": "Tax A",
+        "id": "ref-tax-23",
+        "tax_rate_id": "ref-tax-rate-1"
+      }
+    ],
+    "discounts": [],
+    "sync_status": "pending",
+    "status": "completed",
+    "location_id": "ref-location-1",
+    "creator_user_id": "ref-user-owner-1",
+    "payment_transactions": [
+      {
+        "payment_details": {
+          "amount": "2253.89",
+          "card_type": "visa",
+          "mask_pan": null,
+          "is_standalone": true,
+          "last4_digits": "1234",
+          "auth_code": "1234",
+          "currency": "USD",
+          "tip_amount": "0.00"
+        },
+        "refunded_payment_transaction_id": null,
+        "payment_type": "credit_card",
+        "id": "ref-payment-transaction-10",
+        "order_item_ids": [],
+        "paid_at": "ref-date-10",
+        "type": "payment",
+        "customer_id": "ref-customer-1",
+        "receipt_number": null
+      }
+    ],
+    "payment_type": "credit_card",
+    "items": [
+      {
+        "variant_options": [],
+        "cost_amount": "800.00",
+        "payment_status": "paid",
+        "calculated_price_amount": "1999.00",
+        "discount_amount": "0.00",
+        "currency": "USD",
+        "tax_rates": [
+          {
+            "active": true,
+            "apply_to_price": true,
+            "total_amount": "204.90",
+            "value": "10.00",
+            "name": "Tax A",
+            "id": "ref-tax-24",
+            "tax_rate_id": "ref-tax-rate-1"
+          }
+        ],
+        "product_name": "Bianchi Intrepida 105",
+        "total_price_amount": "2253.89",
+        "discounts": [],
+        "tax_amount": "204.90",
+        "quantity": "1.00",
+        "id": "ref-item-14",
+        "product_id": "ref-product-1",
+        "product_description": "Carbon Frame\\/Fork\\nShimano 105 2 x 11 Speed Shifting\\nShimano Rim Brake Calipers\\nComfortable endurance frame geometry",
+        "unit": "unit",
+        "notes": null,
+        "price_amount": "1999.00",
+        "modifier_options": [
+          {
+            "quantity": "1.00",
+            "price": {
+              "currency": "USD",
+              "amount": "49.99"
+            },
+            "type": "addon",
+            "modifier_option_id": "ref-modifier-option-1",
+            "name": "Leather"
+          }
+        ]
+      }
+    ],
+    "fulfillment_status": null,
+    "discount_amount": "0.00",
+    "subtotal_amount": "2048.99"
+  }
+]
