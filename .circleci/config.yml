@@ -446,6 +446,7 @@ jobs:
     parameters:
       project:
         type: string
+    resource_class: small
     docker:
       - image: $ECR_REPOSITORY_URL/paytouch/pt_devtools:circleci-master
     steps:
@@ -595,10 +596,8 @@ commands:
             tar -xf /tmp/workspace/<< parameters.project >>/targets-<< parameters.config >>.tar.gz --directory ~/project/<< parameters.project >> || true
 
   aws_install:
-    description: "Sets up remote docker and installs the AWS CLI V@."
+    description: "Installs the AWS CLI V@."
     steps:
-      - setup_remote_docker:
-          docker_layer_caching: true
       - run:
           name: Installing AWS CLI V2
           command: |
@@ -608,8 +607,10 @@ commands:
             aws --version
 
   aws_login:
-    description: "AWS login."
+    description: "Sets up remote docker and logs in into AWS."
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: AWS login
           command: |
