@@ -350,7 +350,7 @@ jobs:
       - restore_all_compilations
       - when:
           condition:
-            equal: [<< parameters.task >>, "package"]
+            equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - aws_login
             - download_additional_artifacts
@@ -371,7 +371,7 @@ jobs:
           config: << parameters.config >>
       - when:
           condition:
-            equal: [<< parameters.task >>, "package"]
+            equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - bag_it_and_tag_it
 
@@ -413,14 +413,14 @@ jobs:
       - restore_all_compilations
       - when:
           condition:
-            equal: [<< parameters.task >>, "package"]
+            equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - aws_login
             - download_additional_artifacts
       - run:
           name: Running the actual job
           command: |
-            cd pt_core
+            cd pt_ordering
             if [ << parameters.task >> = "compile" ]; then
               bin/build_swagger && \
               sbt test:update scalafmtSbtCheck scalafmtCheckAll compile
@@ -434,7 +434,7 @@ jobs:
           config: << parameters.config >>
       - when:
           condition:
-            equal: [<< parameters.task >>, "package"]
+            equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - bag_it_and_tag_it
 
