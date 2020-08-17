@@ -454,10 +454,10 @@ jobs:
             source /tmp/workspace/build-step-build-num
 
             export CIRCLE_BASTION_KEY="$CIRCLE_DEV_BASTION_KEY"
-            echo 'pt-circleci deploy dev << parameters.config >> $BUILD_STEP_BUILD_NUM --skip-ci'
+            echo 'pt-circleci deploy dev << parameters.project >> $BUILD_STEP_BUILD_NUM --skip-ci'
 
             export CIRCLE_BASTION_KEY="$CIRCLE_QA_BASTION_KEY"
-            echo 'pt-circleci deploy qa << parameters.config >> $BUILD_STEP_BUILD_NUM --skip-ci'
+            echo 'pt-circleci deploy qa << parameters.project >> $BUILD_STEP_BUILD_NUM --skip-ci'
 
 # https://circleci.com/docs/2.0/docker-image-tags.json
 executors:
