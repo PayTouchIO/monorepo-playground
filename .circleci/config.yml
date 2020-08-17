@@ -333,17 +333,17 @@ jobs:
       - when:
           condition:
             equal: [<< parameters.task >>, "compile"]
-            steps:
-              - build_swagger:
-                  project: pt_core
+          steps:
+            - build_swagger:
+                project: pt_core
       - when:
           condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
-            steps:
-              - aws_install
-              - aws_login
-              - download_additional_artifacts:
-                  project: pt_core
+          steps:
+            - aws_install
+            - aws_login
+            - download_additional_artifacts:
+                project: pt_core
       - sbt:
           project: pt_core
           task: << parameters.task >>
@@ -397,17 +397,17 @@ jobs:
       - when:
           condition:
             equal: [<< parameters.task >>, "compile"]
-            steps:
-              - build_swagger:
-                  project: pt_ordering
+          steps:
+            - build_swagger:
+                project: pt_ordering
       - when:
           condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
-            steps:
-              - aws_install
-              - aws_login
-              - download_additional_artifacts:
-                  project: pt_ordering
+          steps:
+            - aws_install
+            - aws_login
+            - download_additional_artifacts:
+                project: pt_ordering
       - sbt:
           project: pt_ordering
           task: << parameters.task >>
