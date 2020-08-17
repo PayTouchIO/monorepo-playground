@@ -352,6 +352,7 @@ jobs:
           condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
+            - aws_install
             - aws_login
             - download_additional_artifacts:
                 project: pt_core
@@ -416,6 +417,7 @@ jobs:
           condition:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
+            - aws_install
             - aws_login
             - download_additional_artifacts:
                 project: pt_ordering
@@ -592,8 +594,8 @@ commands:
           command: |
             tar -xf /tmp/workspace/<< parameters.project >>/targets-<< parameters.config >>.tar.gz --directory ~/project/<< parameters.project >> || true
 
-  aws_login:
-    description: "Sets up remote docker, downloads aws and logs in."
+  aws_install:
+    description: "Sets up remote docker and installs the AWS CLI V@."
     steps:
       - setup_remote_docker:
           docker_layer_caching: true
@@ -604,6 +606,10 @@ commands:
             unzip -qq awscliv2.zip
             sudo ./aws/install
             aws --version
+
+  aws_login:
+    description: "AWS login."
+    steps:
       - run:
           name: AWS login
           command: |
