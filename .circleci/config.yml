@@ -353,7 +353,8 @@ jobs:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - aws_login
-            - download_additional_artifacts
+            - download_additional_artifacts:
+                project: pt_core
       - run:
           name: Running the actual job
           command: |
@@ -416,7 +417,8 @@ jobs:
             equal: [<< parameters.task >>, "dockerBuildAndPush"]
           steps:
             - aws_login
-            - download_additional_artifacts
+            - download_additional_artifacts:
+                project: pt_ordering
       - run:
           name: Running the actual job
           command: |
@@ -448,14 +450,15 @@ jobs:
       - aws_login
       - attach_workspace:
           at: /tmp/workspace
+      - run: source /tmp/workspace/build-step-build-num
       - run:
-          name: Deploying to DEV & QA
+          name: Deploying to DEV
           command: |
-            source /tmp/workspace/build-step-build-num
-
             export CIRCLE_BASTION_KEY="$CIRCLE_DEV_BASTION_KEY"
             echo 'pt-circleci deploy dev << parameters.project >> $BUILD_STEP_BUILD_NUM --skip-ci'
-
+      - run:
+          name: Deploying to QA
+          command: |
             export CIRCLE_BASTION_KEY="$CIRCLE_QA_BASTION_KEY"
             echo 'pt-circleci deploy qa << parameters.project >> $BUILD_STEP_BUILD_NUM --skip-ci'
 
@@ -578,7 +581,6 @@ commands:
     description: "Restores sbt output (the target) folder from cache."
     parameters:
       project:
-        description: project
         type: string
       config:
         description: "Suffix for the cache since workspaces are prepend only we can't reuse the names."
@@ -609,16 +611,21 @@ commands:
 
   download_additional_artifacts:
     description: "Downloads additional artifacts (datadog & liquibase)."
+    parameters:
+      project:
+        type: string
     steps:
       - run:
           name: Downloading dd-java-agent.jar
           command: |
+            cd << parameters.project >>
             curl -L --silent --retry 3 'https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.datadoghq&a=dd-java-agent&v=LATEST' -o dd-java-agent.jar
       - run:
           name: Downloading liquibase.jar
           environment:
             LIQUIBASE_VERSION: 3.10.2
           command: |
+            cd << parameters.project >>
             curl -L --silent --retry 3 https://github.com/liquibase/liquibase/releases/download/v$LIQUIBASE_VERSION/liquibase-$LIQUIBASE_VERSION.jar -o liquibase.jar
 
   bag_it_and_tag_it:
