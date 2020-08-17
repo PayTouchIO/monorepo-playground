@@ -7,6 +7,8 @@ workflows:
       # determine which projects/jobs need to be rerun and which can be skipped
       - tag-changed-projects
 
+      # https://circleci.com/docs/2.0/executor-types/#available-docker-resource-classes
+
       # compile
       - sbt-paytouch:
           name: sbt-paytouch-compile
@@ -39,7 +41,7 @@ workflows:
           requires:
             - authentikat-jwt-compile
             - shared-compile
-          # resource_class: medium+
+          resource_class: medium
       - pt_ordering:
           name: pt_ordering-compile
           config: main
@@ -47,7 +49,7 @@ workflows:
           requires:
             - authentikat-jwt-compile
             - shared-compile
-          # resource_class: medium+
+          resource_class: medium
 
       # test:compile
       - sbt-paytouch:
@@ -84,7 +86,7 @@ workflows:
             - pt_core-compile
             - authentikat-jwt-test:compile
             - shared-test:compile
-          # resource_class: medium+
+          resource_class: medium
       - pt_ordering:
           name: pt_ordering-test:compile
           config: test
@@ -93,7 +95,7 @@ workflows:
             - pt_ordering-compile
             - authentikat-jwt-test:compile
             - shared-test:compile
-          # resource_class: medium+
+          resource_class: medium
 
       # test
       - sbt-paytouch:
